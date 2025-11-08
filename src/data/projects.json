@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "terrazas-de-sabanitas",
+    "title": "Terrazas de Sabanitas",
+    "category": "Plaza Comercial",
+    "heroImage": "/images/portfolio/sabanitas.png",
+    "roi": "+40% retención de arrendatarios",
+    "description": "Plaza comercial de referencia en Colón, diseñada para mejorar el flujo peatonal y vehicular, optimizar la visibilidad de locales y ofrecer una experiencia de compra cómoda y segura. Este proyecto transformó un espacio comercial tradicional en un destino moderno que maximiza la rentabilidad para los arrendatarios mientras crea un ambiente acogedor para los visitantes.",
+    "keywords": ["plaza comercial", "diseño arquitectónico", "retail", "Panamá", "Colón"],
+    "metaDescription": "Terrazas de Sabanitas: plaza comercial en Panamá con diseño que impulsa tráfico y valor para los negocios.",
+    "gallery": [
+      "/images/portfolio/Sabanitas/sabanitas1.jpg",
+      "/images/portfolio/Sabanitas/sabanitas2.jpg",
+      "/images/portfolio/Sabanitas/sabanitas3.jpg",
+      "/images/portfolio/Sabanitas/sabanitas4.jpg",
+      "/images/portfolio/Sabanitas/sabanitas5.jpg",
+      "/images/portfolio/Sabanitas/sabanitas6.jpg",
+      "/images/portfolio/Sabanitas/sabanitas7.jpg"
+    ]
+  },
+  {
+    "slug": "santa-maria-business-park",
+    "title": "Santa Maria Business Park",
+    "category": "Desarrollo Corporativo",
+    "heroImage": "/images/portfolio/santamaria.png",
+    "roi": "+25% tráfico peatonal",
+    "description": "Complejo corporativo con arquitectura contemporánea, iluminación natural y espacios de alto desempeño para potenciar la productividad y la imagen de marca. El diseño integra áreas de trabajo flexibles, zonas de colaboración y espacios de bienestar que elevan la experiencia laboral y fortalecen la identidad corporativa de las empresas residentes.",
+    "keywords": ["oficinas", "arquitectura corporativa", "campus empresarial", "Panamá", "business park"],
+    "metaDescription": "Santa Maria Business Park: diseño corporativo de alto desempeño con enfoque en productividad y marca.",
+    "gallery": [
+      "/images/portfolio/SantaMaria/businesspark1.jpg",
+      "/images/portfolio/SantaMaria/businesspark2.jpg",
+      "/images/portfolio/SantaMaria/businesspark3.jpg",
+      "/images/portfolio/SantaMaria/businesspark4.jpg",
+      "/images/portfolio/SantaMaria/businesspark5.jpg",
+      "/images/portfolio/SantaMaria/businesspark6.jpg"
+    ]
+  },
+  {
+    "slug": "boulevard-penonome",
+    "title": "Boulevard Penonomé",
+    "category": "Plaza Comercial",
+    "heroImage": "/images/portfolio/Boulevard.png",
+    "roi": "+30% eficiencia operativa",
+    "description": "Plaza comercial en el corazón de Penonomé con fachadas de alto impacto y circulación eficiente que atrae y retiene visitantes. El proyecto redefine el comercio en la región con un diseño que optimiza los recorridos, maximiza la visibilidad de cada local y crea una experiencia de compra memorable que impulsa las ventas.",
+    "keywords": ["plaza comercial", "retail", "diseño de fachadas", "Panamá", "Penonomé"],
+    "metaDescription": "Boulevard Penonomé: plaza comercial con circulación eficiente y fachadas de alto impacto en Panamá.",
+    "gallery": [
+      "/images/portfolio/Penonome/Boulevardpenonome1.jpg",
+      "/images/portfolio/Penonome/Boulevardpenonome2.jpg",
+      "/images/portfolio/Penonome/Boulevardpenonome3.jpg",
+      "/images/portfolio/Penonome/Boulevardpenonome4.jpg",
+      "/images/portfolio/Penonome/Boulevardpenonome5.jpg"
+    ]
+  },
+  {
+    "slug": "brisas-capital",
+    "title": "Brisas Capital",
+    "category": "Plaza Comercial",
+    "heroImage": "/images/portfolio/Brisascapital.png",
+    "roi": "+50% satisfacción de visitantes",
+    "description": "Desarrollo comercial en Brisas del Golf que combina arquitectura y funcionalidad para incrementar el flujo de clientes y la permanencia. Este proyecto eleva el estándar del retail en la zona con un diseño que integra naturaleza, tecnología y espacios sociales para crear un destino que va más allá de las compras.",
+    "keywords": ["retail", "centro comercial", "diseño arquitectónico", "Panamá", "Brisas del Golf"],
+    "metaDescription": "Brisas Capital: diseño comercial que impulsa el flujo de clientes y el rendimiento de los negocios.",
+    "gallery": [
+      "/images/portfolio/Brisascapital.png",
+      "/images/portfolio/brisasste.png",
+      "/images/portfolio/Boulevard.png",
+      "/images/portfolio/sabanitas.png",
+      "/images/portfolio/SBMP-15.jpg"
+    ]
+  },
+  {
+    "slug": "brisas-capital-este",
+    "title": "Brisas Capital Este",
+    "category": "Plaza Comercial",
+    "heroImage": "/images/portfolio/brisasste.png",
+    "roi": "+35% valorización inmobiliaria",
+    "description": "Proyecto comercial en el sector este de Brisas del Golf con diseño sostenible, áreas verdes y accesos claros para una experiencia moderna. La integración de espacios abiertos, iluminación natural y materiales ecológicos crea un ambiente premium que aumenta el valor del desarrollo y atrae marcas de prestigio.",
+    "keywords": ["retail", "plaza comercial", "sostenibilidad", "Panamá", "diseño verde"],
+    "metaDescription": "Brisas Capital Este: proyecto comercial con diseño sostenible y experiencia moderna en Panamá.",
+    "gallery": [
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste2.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste3.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste4.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste5.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste6.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste7.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste8.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste9.png",
+      "/images/portfolio/BrisasCapitaldeleste/brisasdeleste10.png"
+    ]
+  },
+  {
+    "slug": "centro-corporativo-business",
+    "title": "Centro Corporativo Business",
+    "category": "Desarrollo Corporativo",
+    "heroImage": "/images/portfolio/BusinessPark/businesspark.jpg",
+    "roi": "+60% satisfacción de empleados",
+    "description": "Centro corporativo de alto estándar con enfoque en eficiencia operativa, confort y representatividad para marcas exigentes. El diseño integra tecnología de punta, espacios flexibles y amenidades que transforman el entorno laboral en una ventaja competitiva para atraer y retener talento de alto nivel.",
+    "keywords": ["oficinas", "centro corporativo", "arquitectura", "Panamá", "espacios de trabajo"],
+    "metaDescription": "Centro Corporativo Business: oficinas de alto estándar con eficiencia y representatividad.",
+    "gallery": [
+      "/images/portfolio/BusinessPark/businesspark1.jpg",
+      "/images/portfolio/BusinessPark/businesspark2.jpg",
+      "/images/portfolio/BusinessPark/businesspark3.jpg",
+      "/images/portfolio/BusinessPark/businesspark4.jpg",
+      "/images/portfolio/BusinessPark/businesspark5.jpg",
+      "/images/portfolio/BusinessPark/businesspark6.jpg"
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+:root{
+  --brand:#E73D1D;
+  --brand-contrast:#ffffff;
+  --neutral-100:#f8f8f8;
+  --neutral-900:#0f0f0f;
+}
+.text-brand{ color: var(--brand); }
+.bg-brand{ background-color: var(--brand); }
+.border-brand{ border-color: var(--brand); }

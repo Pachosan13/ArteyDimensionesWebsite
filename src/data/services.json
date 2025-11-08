@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Arquitectura Corporativa",
+    "slug": "arquitectura-corporativa",
+    "tagline": "Oficinas que elevan la productividad y la marca.",
+    "heroImage": "/images/portfolio/BusinessPark/businesspark.jpg",
+    "keywords": ["arquitectura corporativa panamá","workplace strategy panamá","oficinas panamá"],
+    "valueCopy": "Diseñamos oficinas que impulsan la productividad, el bienestar y la identidad de marca. Desde la estrategia de espacio hasta la materialización, alineamos experiencia, flujo y tecnología para que tu equipo trabaje mejor. Medimos impacto con KPIs claros (colaboración, ocupación, NPS del espacio) y optimizamos cada m² para generar retorno.",
+    "faq": [
+      {"q":"¿Cómo miden el impacto en productividad?","a":"Definimos KPIs con el cliente (colaboración, ocupación, NPS del espacio) y comparamos pre vs. post."},
+      {"q":"¿Trabajan con espacios ocupados?","a":"Sí, planificamos por fases y horarios para minimizar interrupciones y garantizar seguridad."},
+      {"q":"¿Pueden alinear diseño con la marca?","a":"Integramos identidad visual y cultura en materiales, señalización y experiencia del espacio."}
+    ],
+    "testimonio": {"author":"Gerente General, Empresa Tech","quote":"Nuestro equipo trabaja mejor y los clientes perciben una marca más sólida. El proyecto superó expectativas."},
+    "gallery": [
+      "/images/services/arquitectura-corporativa/gallery-1.jpg",
+      "/images/services/arquitectura-corporativa/gallery-2.jpg",
+      "/images/services/arquitectura-corporativa/gallery-3.jpg",
+      "/images/services/arquitectura-corporativa/gallery-4.jpg",
+      "/images/services/arquitectura-corporativa/gallery-5.jpg",
+      "/images/services/arquitectura-corporativa/gallery-6.jpg"
+    ]
+  },
+  {
+    "name": "Arquitectura Comercial",
+    "slug": "arquitectura-comercial",
+    "tagline": "Espacios que convierten visitas en ventas.",
+    "heroImage": "/images/services/arquitectura-comercial/hero.jpg",
+    "keywords": ["arquitectura comercial panamá","diseño retail panamá","tiendas panamá","restaurantes panamá"],
+    "valueCopy": "Creamos espacios comerciales que atraen, retienen y convierten. Optimizamos recorridos, zonas calientes y señalización para elevar ventas y ticket promedio, integrando identidad de marca con una experiencia sensorial que invita a quedarse.",
+    "faq": [
+      {"q":"¿Cómo optimizan el flujo del cliente?","a":"Mapeamos recorridos y zonas calientes para impulsar permanencia y conversiones."},
+      {"q":"¿Trabajan con cadenas?","a":"Sí, documentamos lineamientos para escalar con consistencia entre locales."},
+      {"q":"¿Pueden coordinar con operador o franquicia?","a":"Sí, trabajamos con manuales de franquicia, proveedores y cronogramas exigentes."}
+    ],
+    "testimonio": {"author":"Director Retail, Cadena Regional","quote":"El rediseño incrementó el tráfico y mejoró el tiempo de permanencia. Un antes y después en nuestras tiendas."},
+    "gallery": [
+      "/images/services/arquitectura-comercial/gallery-1.jpg",
+      "/images/services/arquitectura-comercial/gallery-2.jpg",
+      "/images/services/arquitectura-comercial/gallery-3.jpg",
+      "/images/services/arquitectura-comercial/gallery-4.jpg",
+      "/images/services/arquitectura-comercial/gallery-5.jpg",
+      "/images/services/arquitectura-comercial/gallery-6.jpg"
+    ]
+  },
+  {
+    "name": "Arquitectura Institucional",
+    "slug": "arquitectura-institucional",
+    "tagline": "Diseño responsable para impacto social duradero.",
+    "heroImage": "/images/services/arquitectura-institucional/hero.jpg",
+    "keywords": ["arquitectura institucional panamá","edificios públicos panamá","infraestructura panamá"],
+    "valueCopy": "Desarrollamos proyectos institucionales con enfoque en funcionalidad, accesibilidad y sostenibilidad. Cumplimos normativa local e internacional, priorizando seguridad, mantenimiento y una experiencia digna para usuarios y colaboradores.",
+    "faq": [
+      {"q":"¿Cumplen normas locales e internacionales?","a":"Sí, diseñamos conforme a normativa local y buenas prácticas de accesibilidad y seguridad."},
+      {"q":"¿Cómo gestionan la durabilidad?","a":"Seleccionamos materiales y sistemas con bajo mantenimiento y alto desempeño a largo plazo."}
+    ],
+    "testimonio": {"author":"Coordinador de Infraestructura, Institución Pública","quote":"La obra es funcional, accesible y fácil de operar. El acompañamiento fue impecable."},
+    "gallery": [
+      "/images/services/arquitectura-institucional/gallery-1.jpg",
+      "/images/services/arquitectura-institucional/gallery-2.jpg",
+      "/images/services/arquitectura-institucional/gallery-3.jpg",
+      "/images/services/arquitectura-institucional/gallery-4.jpg",
+      "/images/services/arquitectura-institucional/gallery-5.jpg",
+      "/images/services/arquitectura-institucional/gallery-6.jpg"
+    ]
+  },
+  {
+    "name": "Diseño Interior",
+    "slug": "diseno-interior",
+    "tagline": "Materiales, luz y detalle al servicio de la experiencia.",
+    "heroImage": "/images/portfolio/BusinessPark/businesspark3.jpg",
+    "keywords": ["diseño interior panamá","interiorismo oficinas panamá","diseño espacios panamá"],
+    "valueCopy": "Combinamos materiales, iluminación y ergonomía para lograr atmósferas memorables. Curamos paletas, texturas y mobiliario con coherencia de marca y mantenimiento realista para tu operación.",
+    "faq": [
+      {"q":"¿Incluyen selección de materiales y mobiliario?","a":"Sí, curamos materiales y mobiliario con foco en durabilidad y coherencia con la marca."},
+      {"q":"¿Hacen renders y moodboards?","a":"Sí, usamos herramientas visuales para alinear expectativas y agilizar decisiones."}
+    ],
+    "testimonio": {"author":"Head of People, Empresa de Servicios","quote":"El ambiente se siente premium y funcional. El equipo está feliz y el cliente lo nota."},
+    "gallery": [
+      "/images/services/diseno-interior/gallery-1.jpg",
+      "/images/services/diseno-interior/gallery-2.jpg",
+      "/images/services/diseno-interior/gallery-3.jpg",
+      "/images/services/diseno-interior/gallery-4.jpg",
+      "/images/services/diseno-interior/gallery-5.jpg",
+      "/images/services/diseno-interior/gallery-6.jpg"
+    ]
+  },
+  {
+    "name": "Space Planning & Workplace Strategy",
+    "slug": "space-planning",
+    "tagline": "Cada metro cuadrado cuenta.",
+    "heroImage": "/images/services/space-planning/hero.jpg",
+    "keywords": ["space planning panamá","optimización de espacios panamá","layout oficinas panamá"],
+    "valueCopy": "Diseñamos layouts basados en datos reales: tipos de trabajo, ocupación, foco/colaboración y recorridos. Maximizamos uso, confort acústico y visual para que el espacio responda a la operación.",
+    "faq": [
+      {"q":"¿Cómo definen el layout ideal?","a":"Levantamos datos de ocupación, entrevistas y tipos de trabajo para asignar áreas por necesidad real."},
+      {"q":"¿Miden utilización de salas y puestos?","a":"Sí, proponemos métricas de ocupación y herramientas para seguimiento."}
+    ],
+    "testimonio": {"author":"Gerente de Operaciones, Firma de Servicios","quote":"Reducimos metros sin perder capacidad. El flujo es natural y el equipo más productivo."},
+    "gallery": [
+      "/images/services/space-planning/gallery-1.jpg",
+      "/images/services/space-planning/gallery-2.jpg",
+      "/images/services/space-planning/gallery-3.jpg",
+      "/images/services/space-planning/gallery-4.jpg",
+      "/images/services/space-planning/gallery-5.jpg",
+      "/images/services/space-planning/gallery-6.jpg"
+    ]
+  },
+  {
+    "name": "Remodelaciones & Fit-Out",
+    "slug": "remodelaciones-fitout",
+    "tagline": "Renovamos sin detener tu operación.",
+    "heroImage": "/images/services/remodelaciones-fitout/hero.jpg",
+    "keywords": ["remodelaciones oficinas panamá","fit out panamá","adecuaciones panamá"],
+    "valueCopy": "Planificamos por fases y coordinamos contratistas para ejecutar con seguridad, calidad y velocidad. Hacemos gestión fina para minimizar tiempos muertos y entregas con cero sorpresas.",
+    "faq": [
+      {"q":"¿Cómo minimizan tiempos muertos?","a":"Planificamos por fases, horarios extendidos y coordinación con proveedores."},
+      {"q":"¿Pueden trabajar de noche o fines de semana?","a":"Sí, nos adaptamos al plan operativo del cliente para no interrumpir."}
+    ],
+    "testimonio": {"author":"Administrador de Facility, Multinacional","quote":"La obra se ejecutó en tiempo récord y quedó impecable. Operamos sin pausas."},
+    "gallery": [
+      "/images/services/remodelaciones-fitout/gallery-1.jpg",
+      "/images/services/remodelaciones-fitout/gallery-2.jpg",
+      "/images/services/remodelaciones-fitout/gallery-3.jpg",
+      "/images/services/remodelaciones-fitout/gallery-4.jpg",
+      "/images/services/remodelaciones-fitout/gallery-5.jpg",
+      "/images/services/remodelaciones-fitout/gallery-6.jpg"
+    ]
+  }
+]
