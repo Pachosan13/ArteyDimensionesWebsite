@@ -26,7 +26,7 @@ export const teamMembers: TeamMember[] = [
     slug: "juan-manuel-rodriguez",
     name: "Arq. Juan Manuel Rodríguez Gotti",
     role: "Co-fundador y Arquitecto Superior",
-    photo: "/images/Team/JuanRodriguez.png",
+    photo: "/images/team/JuanRodriguez.png",
     shortBio: "Co-fundador de Arte y Dimensiones con más de 25 años liderando proyectos arquitectónicos innovadores que han transformado el paisaje comercial de Panamá.",
     bio: "Juan Manuel Rodríguez Gotti es co-fundador y Arquitecto Superior de Arte y Dimensiones, una firma que nació en 1999 como una iniciativa para potenciar las habilidades arquitectónicas y el crecimiento profesional. Con más de 25 años de trayectoria, Juan Manuel ha sido el visionario detrás de proyectos emblemáticos que han redefinido la arquitectura comercial en Panamá y la región. Su liderazgo se caracteriza por un compromiso inquebrantable con la innovación, la excelencia técnica y la búsqueda constante de soluciones que superen las expectativas de los clientes. Como Arquitecto Superior, supervisa personalmente los proyectos más complejos y estratégicos, asegurando que cada diseño refleje los valores fundamentales de la firma: puntualidad, comunicación abierta y transparencia. Su experiencia abarca desde grandes centros comerciales hasta proyectos corporativos de alta complejidad, siempre manteniendo un enfoque en la funcionalidad, la estética contemporánea y la viabilidad económica.",
     linkedin: "",
