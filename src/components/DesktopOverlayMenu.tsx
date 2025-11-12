@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Building2, X, Search, Linkedin, Instagram } from 'lucide-react';
 
 interface DesktopOverlayMenuProps {
@@ -85,7 +85,7 @@ const DesktopOverlayMenu: React.FC<DesktopOverlayMenuProps> = ({ isOpen, onClose
               { name: 'Portafolio', id: 'portafolio', delay: '200ms' },
               { name: 'Caso de Éxito', id: 'caso-estudio', delay: '400ms' },
               { name: 'Clientes', id: 'clientes', delay: '500ms' }
-            ].map((item, index) => (
+            ].map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleLinkClick(item.id)}

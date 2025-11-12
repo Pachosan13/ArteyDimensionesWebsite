@@ -29,13 +29,15 @@ const CounterEffect: React.FC<CounterEffectProps> = ({
       { threshold: 0.5 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    const currentElement = counterRef.current;
+
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [hasAnimated]);

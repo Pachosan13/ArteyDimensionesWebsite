@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Building2, Menu, X, ChevronDown } from 'lucide-react';
-import servicesData from '../data/services.json';
-import projectsData from '../data/projects.json';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { projects, services } from './types';
 
 interface HeaderProps {
   mobileMenuOpen: boolean;
@@ -52,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
               </button>
               <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="px-4 py-2 text-sm font-semibold text-gray-500 border-b">Nuestros Servicios</div>
-                {(servicesData as any[]).map((service) => (
+                {services.map((service) => (
                   <Link
                     key={service.slug}
                     to={`/servicios/${service.slug}`}
@@ -73,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({
               </button>
               <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="px-4 py-2 text-sm font-semibold text-gray-500 border-b">Proyectos Destacados</div>
-                {(projectsData as any[]).slice(0, 4).map((project) => (
+                {projects.slice(0, 4).map((project) => (
                   <Link
                     key={project.slug}
                     to={`/proyectos/${project.slug}`}
@@ -132,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({
               {/* Mobile Servicios */}
               <div className="space-y-2">
                 <div className="text-[#4B4B4B] font-semibold text-sm">SERVICIOS</div>
-                {(servicesData as any[]).map((service) => (
+                {services.map((service) => (
                   <Link
                     key={service.slug}
                     to={`/servicios/${service.slug}`}
@@ -147,7 +146,7 @@ const Header: React.FC<HeaderProps> = ({
               {/* Mobile Proyectos */}
               <div className="space-y-2">
                 <div className="text-[#4B4B4B] font-semibold text-sm">PROYECTOS</div>
-                {(projectsData as any[]).slice(0, 3).map((project) => (
+                {projects.slice(0, 3).map((project) => (
                   <Link
                     key={project.slug}
                     to={`/proyectos/${project.slug}`}

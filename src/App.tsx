@@ -9,7 +9,6 @@ import CaseStudy from './components/CaseStudy';
 import Clients from './components/Clients';
 import CTAForm from './components/CTAForm';
 import Footer from './components/Footer';
-import Servicios from './pages/Servicios';
 import Agenda from './pages/Agenda';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';

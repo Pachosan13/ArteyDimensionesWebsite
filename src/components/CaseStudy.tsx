@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart3, Users, DollarSign } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CaseStudy: React.FC = () => {
   return (

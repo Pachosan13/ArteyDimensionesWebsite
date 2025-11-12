@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import servicesData from "../data/services.json";
+import { services } from "./types";
 
 export default function Servicios() {
   return (
@@ -28,7 +28,7 @@ export default function Servicios() {
         </motion.h2>
 
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-          {(servicesData as any[]).map((service, idx) => (
+          {services.map((service, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 60, scale: 0.9 }}
