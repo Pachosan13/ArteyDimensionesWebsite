@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import { useParams, Navigate } from "react-router-dom";
-import servicesData from "../data/services.json";
+import { services, Service } from "../components/types";
 import ServiceHero from "../components/ServiceHero";
 import ServiceProcess from "../components/ServiceProcess";
 import ServiceFAQ from "../components/ServiceFAQ";
@@ -11,13 +11,13 @@ import FeaturedProjectsSection from "../components/FeaturedProjectsSection";
 
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
-  const svc = useMemo(() => (servicesData as any[]).find(s => s.slug === slug), [slug]);
+  const svc = useMemo(() => services.find((service: Service) => service.slug === slug), [slug]);
 
   useEffect(() => {
     if (svc) {
       document.title = `${svc.name} en Panamá | Arte y Dimensiones`;
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute("content", `${svc.tagline} — ${svc.keywords.slice(0,2).join(", ")}`);
+      if (metaDesc) metaDesc.setAttribute("content", `${svc.tagline} — ${svc.keywords.slice(0, 2).join(", ")}`);
     }
   }, [svc]);
 
@@ -49,11 +49,15 @@ export default function ServicePage() {
             </a>
             <a
               href="/#portafolio"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.pathname === '/'
-                  ? document.getElementById('portafolio')?.scrollIntoView({ behavior: 'smooth' })
-                  : window.location.href = '/#portafolio';
+              onClick={(event) => {
+                event.preventDefault();
+
+                if (window.location.pathname === '/') {
+                  document.getElementById('portafolio')?.scrollIntoView({ behavior: 'smooth' });
+                  return;
+                }
+
+                window.location.href = '/#portafolio';
               }}
               className="inline-flex items-center justify-center rounded-xl px-8 sm:px-10 py-4 sm:py-5 font-semibold text-lg border-2 border-neutral-300 text-neutral-700 hover:border-brand hover:text-brand transition-all duration-300 hover:scale-105 shadow-lg"
             >
@@ -85,7 +89,7 @@ export default function ServicePage() {
 
       <FeaturedProjectsSection />
       <ServiceFAQ items={svc.faq} />
-      <RelatedServices currentSlug={svc.slug} all={servicesData as any[]} />
+      <RelatedServices currentSlug={svc.slug} all={services} />
       <CTASection />
       <ContactServiceForm />
     </>

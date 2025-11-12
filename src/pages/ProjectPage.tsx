@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
-import data from "../data/projects.json";
+import { projects, Project } from "../components/types";
 import ProjectHero from "../components/ProjectHero";
 import ProjectInfo from "../components/ProjectInfo";
 import ProjectGallery from "../components/ProjectGallery";
@@ -8,7 +8,7 @@ import ProjectSEO from "../components/ProjectSEO";
 
 export default function ProjectPage() {
   const { slug } = useParams<{ slug: string }>();
-  const project = useMemo(() => (data as any[]).find(p => p.slug === slug), [slug]);
+  const project = useMemo(() => projects.find((item: Project) => item.slug === slug), [slug]);
 
   if (!project) return <Navigate to="/" replace />;
 
