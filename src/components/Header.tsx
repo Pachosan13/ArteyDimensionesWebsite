@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import { projects, services } from './types';
 
 interface HeaderProps {
@@ -8,11 +8,21 @@ interface HeaderProps {
   setMobileMenuOpen: (open: boolean) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ 
-  mobileMenuOpen, 
-  setMobileMenuOpen
-}) => {
+const focusableSelectors = [
+  'a[href]',
+  'button:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  'input[type="text"]',
+  'input[type="email"]'
+].join(',');
+
+const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const navigate = useNavigate();
+  const menuContainerRef = useRef<HTMLDivElement | null>(null);
+  const firstFocusableRef = useRef<HTMLAnchorElement | null>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
+  const wasMenuOpen = useRef(false);
 
   const handleLinkClick = (sectionId: string) => {
     setMobileMenuOpen(false);
@@ -27,6 +37,63 @@ const Header: React.FC<HeaderProps> = ({
       }, 100);
     }
   };
+
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      document.body.style.overflow = '';
+      if (wasMenuOpen.current) {
+        toggleButtonRef.current?.focus();
+      }
+      wasMenuOpen.current = false;
+      return;
+    }
+
+    wasMenuOpen.current = true;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const focusableElements = menuContainerRef.current?.querySelectorAll<HTMLElement>(
+      focusableSelectors
+    );
+
+    const firstElement = firstFocusableRef.current || focusableElements?.[0];
+    window.setTimeout(() => {
+      firstElement?.focus();
+    }, 0);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+        return;
+      }
+
+      if (event.key !== 'Tab' || !focusableElements || focusableElements.length === 0) {
+        return;
+      }
+
+      const first = focusableElements[0];
+      const last = focusableElements[focusableElements.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+
+      if (event.shiftKey) {
+        if (active === first) {
+          event.preventDefault();
+          last.focus();
+        }
+      } else if (active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileMenuOpen, setMobileMenuOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
@@ -116,9 +183,13 @@ const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
+            ref={toggleButtonRef}
             className="md:hidden text-neutral-900"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -126,68 +197,86 @@ const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 py-4">
-            <div className="flex flex-col space-y-4">
-              {/* Mobile Servicios */}
-              <div className="space-y-2">
-                <div className="text-[#4B4B4B] font-semibold text-sm">SERVICIOS</div>
-                {services.map((service) => (
-                  <Link
-                    key={service.slug}
-                    to={`/servicios/${service.slug}`}
-                    className="block pl-4 text-[#4B4B4B] hover:text-brand transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {service.name}
-                  </Link>
-                ))}
+          <>
+            <div
+              className="md:hidden fixed inset-0 bg-neutral-900/50 backdrop-blur-sm"
+              aria-hidden="true"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <div
+              ref={menuContainerRef}
+              id="mobile-navigation"
+              className="md:hidden fixed inset-x-4 top-20 bottom-6 bg-white border border-gray-100 rounded-3xl shadow-2xl overflow-y-auto px-6 py-8 space-y-8"
+              role="dialog"
+              aria-label="Menú de navegación principal"
+            >
+              <div className="space-y-4">
+                <div className="text-xs tracking-[0.2em] text-gray-400 font-semibold">SERVICIOS</div>
+                <div className="space-y-3">
+                  {services.map((service, index) => (
+                    <Link
+                      key={service.slug}
+                      to={`/servicios/${service.slug}`}
+                      ref={index === 0 ? (node) => {
+                        firstFocusableRef.current = node;
+                      } : undefined}
+                      className="flex items-start justify-between rounded-2xl border border-gray-100 bg-gray-50/70 px-4 py-3 text-[15px] font-medium text-[#2F2F2F] shadow-sm transition hover:border-brand/40 hover:bg-white hover:text-brand"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span>{service.name}</span>
+                      <ChevronDown className="h-4 w-4 rotate-[-90deg] text-gray-400" aria-hidden="true" />
+                    </Link>
+                  ))}
+                </div>
               </div>
 
-              {/* Mobile Proyectos */}
-              <div className="space-y-2">
-                <div className="text-[#4B4B4B] font-semibold text-sm">PROYECTOS</div>
-                {projects.slice(0, 3).map((project) => (
-                  <Link
-                    key={project.slug}
-                    to={`/proyectos/${project.slug}`}
-                    className="block w-full text-left pl-4 text-[#4B4B4B] hover:text-brand transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
+              <div className="space-y-4">
+                <div className="text-xs tracking-[0.2em] text-gray-400 font-semibold">PROYECTOS</div>
+                <div className="space-y-3">
+                  {projects.slice(0, 3).map((project) => (
+                    <Link
+                      key={project.slug}
+                      to={`/proyectos/${project.slug}`}
+                      className="block rounded-2xl border border-gray-100 bg-white px-4 py-3 text-[15px] font-medium text-[#2F2F2F] shadow-sm transition hover:border-brand/40 hover:text-brand"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {project.title}
+                    </Link>
+                  ))}
+                  <button
+                    onClick={() => handleLinkClick('portafolio')}
+                    className="flex w-full items-center justify-between rounded-2xl bg-brand text-white px-4 py-3 text-[15px] font-semibold tracking-tight shadow-lg transition hover:bg-brand/90"
                   >
-                    {project.title}
-                  </Link>
-                ))}
-                <button
-                  onClick={() => handleLinkClick('portafolio')}
-                  className="block w-full text-left pl-4 text-brand font-medium"
-                >
-                  Ver todos →
-                </button>
+                    Ver todos los proyectos
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
               </div>
 
-              <div className="border-t pt-4 space-y-4">
-                <Link 
-                  to="/equipo" 
-                  className="text-[#4B4B4B] hover:text-brand transition-colors font-medium"
+              <div className="space-y-3 border-t border-gray-100 pt-6">
+                <Link
+                  to="/equipo"
+                  className="block rounded-2xl border border-gray-100 px-4 py-3 text-[15px] font-semibold text-[#2F2F2F] transition hover:border-brand/50 hover:text-brand"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Equipo
+                  Conoce al equipo
                 </Link>
                 <button
                   onClick={() => handleLinkClick('formulario-cta')}
-                  className="text-left text-[#4B4B4B] hover:text-brand transition-colors font-medium"
+                  className="w-full rounded-2xl border border-gray-200 px-4 py-3 text-left text-[15px] font-semibold text-[#2F2F2F] transition hover:border-brand/50 hover:text-brand"
                 >
                   Contáctenos
                 </button>
-                <Link 
+                <Link
                   to="/agenda"
-                  className="btn-brand px-6 py-2 rounded-lg font-semibold transition-all w-fit"
+                  className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-900 px-6 py-3 text-[15px] font-semibold text-white shadow-lg transition hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Solicitar Propuesta
                 </Link>
               </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </header>
