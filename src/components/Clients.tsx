@@ -39,7 +39,7 @@ const Clients: React.FC = () => {
   ];
 
   return (
-    <section id="clientes" className="relative py-16 lg:py-24 overflow-hidden">
+    <section id="clientes" className="relative py-16 lg:py-24 overflow-hidden" aria-labelledby="clientes-title">
       {/* BG image */}
       <img
         src="/images/portfolio/Boulevard.png"
@@ -67,7 +67,8 @@ const Clients: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-white text-4xl md:text-5xl font-bold mb-6"
+              id="clientes-title"
+              className="text-white text-[clamp(2rem,4vw,3.5rem)] font-bold mb-6"
             >
               Confianza de <span className="border-b-4 border-brand">Líderes</span>
             </motion.h2>
@@ -88,24 +89,24 @@ const Clients: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl mb-16"
+              className="bg-white/95 p-6 sm:p-8 rounded-3xl shadow-2xl mb-16"
             >
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-10 items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 justify-items-center">
                 {clientLogos.map((client, index) => (
                   <motion.div
                     key={client.name}
-                    className="flex items-center justify-center"
+                    className="flex items-center justify-center h-16 w-full"
                     initial={{ opacity: 0, scale: 0.92 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.06 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
                     <img
                       src={encodeURI(client.imageUrl)}
                       alt={`${client.name} - Cliente de Arte y Dimensiones`}
                       loading="lazy"
                       decoding="async"
-                      className="h-16 md:h-20 max-h-20 object-contain mx-auto grayscale hover:grayscale-0 transition"
+                      className="h-12 sm:h-16 max-h-16 object-contain mx-auto grayscale hover:grayscale-0 transition"
                       onError={(e) => {
                         console.warn('No se pudo cargar el logo:', client.imageUrl);
                         (e.target as HTMLImageElement).style.opacity = '0.25';

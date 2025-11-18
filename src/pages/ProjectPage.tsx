@@ -6,9 +6,22 @@ import ProjectInfo from "../components/ProjectInfo";
 import ProjectGallery from "../components/ProjectGallery";
 import ProjectSEO from "../components/ProjectSEO";
 
+type Project = {
+  slug: string;
+  title: string;
+  category: string;
+  heroImage: string;
+  description: string;
+  keywords: string[];
+  metaDescription: string;
+  gallery: string[];
+};
+
+const projects = data as Project[];
+
 export default function ProjectPage() {
   const { slug } = useParams<{ slug: string }>();
-  const project = useMemo(() => (data as any[]).find(p => p.slug === slug), [slug]);
+  const project = useMemo(() => projects.find((p) => p.slug === slug), [slug]);
 
   if (!project) return <Navigate to="/" replace />;
 
