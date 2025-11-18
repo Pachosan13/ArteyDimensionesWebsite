@@ -47,7 +47,7 @@ const InteractiveMap: React.FC = () => {
           ref={containerRef}
           className="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
         >
-          {/* Lado izquierdo: título */}
+          {/* Texto izquierda */}
           <div>
             <h2
               id="mapa-panama-heading"
@@ -57,22 +57,24 @@ const InteractiveMap: React.FC = () => {
             </h2>
           </div>
 
-          {/* Card del mapa: el mapa ocupa TODO el card */}
+          {/* Card del mapa con BACKGROUND */}
           <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
             <div
-              className="relative w-full aspect-[2.6/1] sm:aspect-[2.8/1] lg:aspect-[3/1]"
+              className="
+                relative
+                w-full
+                aspect-[2.6/1]
+                sm:aspect-[2.8/1]
+                lg:aspect-[3/1]
+                bg-cover
+                bg-center
+              "
+              style={{
+                backgroundImage: "url('/images/portfolio/mapa-panama-flat.png')",
+              }}
               aria-label="Mapa de Panamá con ubicaciones destacadas"
             >
-              {/* La imagen cubre todo el card */}
-              <img
-                src="/images/portfolio/mapa-panama-flat.png"
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-
-              {/* Capa interactiva encima del mapa */}
+              {/* Capa interactiva encima del background */}
               <div className="pointer-events-none absolute inset-0">
                 {projects.map((project) => {
                   const isActive = project.id === activeProjectId;
@@ -115,7 +117,7 @@ const InteractiveMap: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* Fin card mapa */}
+          {/* Fin card */}
         </div>
       </div>
     </section>
