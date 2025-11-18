@@ -58,7 +58,7 @@ const InteractiveMap: React.FC = () => {
           </div>
 
           {/* CARD DEL MAPA (mapa como BACKGROUND real) */}
-          <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
+          <div className="relative overflow-hidden rounded-3xl bg-[#F5F5F5] shadow-2xl">
             <div
               className="
                 relative
@@ -68,7 +68,7 @@ const InteractiveMap: React.FC = () => {
               "
               style={{
                 backgroundImage: "url('/images/portfolio/mapa-panama-flat.png')",
-                backgroundSize: 'cover',          // 🔥 llena toda la card
+                backgroundSize: 'contain',
                 backgroundPosition: 'center center',
               }}
               aria-label="Mapa de Panamá con ubicaciones destacadas"
