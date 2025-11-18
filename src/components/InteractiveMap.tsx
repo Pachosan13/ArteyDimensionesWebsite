@@ -57,24 +57,25 @@ const InteractiveMap: React.FC = () => {
             </h2>
           </div>
 
-          {/* Card del mapa con BACKGROUND */}
+          {/* Card del mapa con background “zoomeado” */}
           <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
             <div
               className="
                 relative
                 w-full
-                aspect-[2.6/1]
-                sm:aspect-[2.8/1]
-                lg:aspect-[3/1]
-                bg-cover
-                bg-center
+                aspect-[2.8/1]
+                sm:aspect-[3/1]
+                bg-no-repeat
               "
               style={{
                 backgroundImage: "url('/images/portfolio/mapa-panama-flat.png')",
+                // 🔥 aquí el truco: zoom al mapa
+                backgroundSize: '170% auto',      // prueba 160–190% si quieres más zoom
+                backgroundPosition: 'center center',
               }}
               aria-label="Mapa de Panamá con ubicaciones destacadas"
             >
-              {/* Capa interactiva encima del background */}
+              {/* Capa interactiva con los puntos */}
               <div className="pointer-events-none absolute inset-0">
                 {projects.map((project) => {
                   const isActive = project.id === activeProjectId;
