@@ -5,18 +5,50 @@ interface CounterEffectProps {
   duration?: number;
   suffix?: string;
   className?: string;
+  formatValue?: (value: number) => string;
 }
 
-const CounterEffect: React.FC<CounterEffectProps> = ({ 
-  targetValue, 
-  duration = 2000, 
-  suffix = '', 
-  className = '' 
+const CounterEffect: React.FC<CounterEffectProps> = ({
+  targetValue,
+  duration = 2000,
+  suffix = '',
+  className = '',
+  formatValue,
 }) => {
   const [currentValue, setCurrentValue] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [shouldReduceMotion, setShouldReduceMotion] = useState<boolean>(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) {
+      return false;
+    }
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  });
   const counterRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) {
+      return;
+    }
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const handleChange = (event: MediaQueryListEvent) => {
+      setShouldReduceMotion(event.matches);
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,19 +61,23 @@ const CounterEffect: React.FC<CounterEffectProps> = ({
       { threshold: 0.5 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    const currentNode = counterRef.current;
+    if (currentNode) {
+      observer.observe(currentNode);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (currentNode) {
+        observer.unobserve(currentNode);
       }
     };
   }, [hasAnimated]);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || shouldReduceMotion) {
+      setCurrentValue(targetValue);
+      return;
+    }
 
     const startTime = Date.now();
     const startValue = 0;
@@ -65,11 +101,11 @@ const CounterEffect: React.FC<CounterEffectProps> = ({
     };
 
     requestAnimationFrame(animate);
-  }, [isVisible, targetValue, duration]);
+  }, [isVisible, targetValue, duration, shouldReduceMotion]);
 
   return (
     <div ref={counterRef} className={className}>
-      {currentValue}{suffix}
+      {formatValue ? formatValue(currentValue) : currentValue}{suffix}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart3, Users, DollarSign } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CaseStudy: React.FC = () => {
   return (
@@ -37,12 +37,13 @@ const CaseStudy: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2">
-              <motion.img 
-                whileHover={{ scale: 1.1 }}
+              <motion.img
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
-                src="/images/portfolio/business2.png" 
+                src="/images/portfolio/business2.png"
                 alt="Centro Corporativo Multiplaza - Caso de éxito de arquitectura corporativa en Panamá"
                 className="w-full h-64 md:h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="md:w-1/2 p-8 lg:p-12">

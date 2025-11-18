@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import ValuePillars from './components/ValuePillars';
 import AboutUsSection from './components/AboutUsSection';
+import InteractiveMap from './components/InteractiveMap';
 import ProjectsGrid from './components/ProjectsGrid';
 import InteractiveServices from './components/InteractiveServices';
 import CaseStudy from './components/CaseStudy';
 import Clients from './components/Clients';
 import CTAForm from './components/CTAForm';
 import Footer from './components/Footer';
-import Servicios from './pages/Servicios';
 import Agenda from './pages/Agenda';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
@@ -22,7 +23,9 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
+      <ValuePillars />
       <AboutUsSection />
+      <InteractiveMap />
       <ProjectsGrid />
       <InteractiveServices />
       <CaseStudy />
@@ -56,11 +59,11 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white">
-        <Header 
-          mobileMenuOpen={mobileMenuOpen} 
+        <Header
+          mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
         />
-        <main className="pt-16">
+        <main id="main-content" className="pt-20 lg:pt-24">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/servicios" element={<Navigate to="/servicios/arquitectura-corporativa" replace />} />

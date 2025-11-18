@@ -9,13 +9,16 @@ const ProjectsGrid: React.FC = () => {
     <section id="portafolio" className="py-20 bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#4B4B4B] mb-4">
+          <p className="text-sm font-semibold tracking-[0.3em] text-brand uppercase">Portafolio</p>
+          <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-bold text-[#1F1F1F] mb-4">
             Proyectos <span className="border-b-4 border-brand">Destacados</span>
           </h2>
-          <p className="text-lg text-[#4B4B4B]/70">Algunos de nuestros desarrollos más emblemáticos en Panamá</p>
+          <p className="text-lg text-[#4B4B4B]/80 max-w-3xl mx-auto">
+            Arquitectura comercial y corporativa diseñada para maximizar tráfico, rentabilidad y experiencia.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.slug}
@@ -23,14 +26,19 @@ const ProjectsGrid: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative bg-white rounded-3xl shadow-lg overflow-hidden group"
+              className="relative bg-white rounded-3xl shadow-lg overflow-hidden group focus-within:ring-2 focus-within:ring-brand"
             >
-              <Link to={`/proyectos/${project.slug}`} className="block">
+              <Link
+                to={`/proyectos/${project.slug}`}
+                className="block"
+                aria-label={`Ver detalles del proyecto ${project.title}`}
+              >
                 <div className="relative h-72 md:h-80 overflow-hidden">
                   <img
                     src={project.heroImage}
                     alt={project.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+                    loading="lazy"
                   />
 
                   <div
