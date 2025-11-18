@@ -1,94 +1,125 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import CounterEffect from './CounterEffect';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { projects } from '../data/projectsMap';
 
-const stats = [
-  {
-    value: 26,
-    suffix: '+',
-    label: 'años de experiencia',
-  },
-  {
-    value: 410000,
-    suffix: ' m²',
-    label: 'de proyectos construidos',
-  },
-  {
-    value: 150,
-    suffix: '+',
-    label: 'proyectos realizados',
-  },
-];
+const InteractiveMap: React.FC = () => {
+  const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-const numberFormatter = new Intl.NumberFormat('es-PA');
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setActiveProjectId(null);
+      }
+    };
 
-const Hero: React.FC = () => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveProjectId(null);
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const activeProject = useMemo(
+    () => projects.find((project) => project.id === activeProjectId),
+    [activeProjectId]
+  );
+
+  const handleActivate = (id: string) => {
+    setActiveProjectId(prev => (prev === id ? null : id));
+  };
+
   return (
-    <section id="hero" className="relative isolate overflow-hidden bg-neutral-900 text-white" aria-labelledby="hero-title">
-      <img
-        src="/images/portfolio/SBMP-3.jpg"
-        alt="Complejo corporativo diseñado por Arte y Dimensiones"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-        fetchPriority="high"
-      />
-      <div
-        className="absolute inset-0"
-        aria-hidden="true"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(15,15,15,0.6), rgba(15,15,15,0.8), rgba(15,15,15,0.95))',
-        }}
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32 flex flex-col gap-10">
-        <div className="max-w-3xl text-left space-y-6">
-          <p className="text-sm font-semibold tracking-[0.4em] text-brand uppercase">Arquitectura comercial & corporativa</p>
-          <h1 id="hero-title" className="text-[clamp(2.25rem,6vw,4.5rem)] font-bold leading-tight">
-            Diseñamos espacios que impulsan el rendimiento y maximizan el valor inmobiliario.
-          </h1>
-          <p className="text-lg sm:text-xl text-white/85 leading-relaxed">
-            +26 años asesorando a marcas líderes en Panamá con soluciones integrales para plazas comerciales, oficinas e instituciones.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <button
-              onClick={() => document.getElementById('formulario-cta')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-brand px-6 sm:px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+    <section
+      id="mapa-panama"
+      className="bg-[#F5F5F5] py-16 lg:py-24"
+      aria-labelledby="mapa-panama-heading"
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div
+          ref={containerRef}
+          className="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
+        >
+          {/* Texto izquierda */}
+          <div>
+            <h2
+              id="mapa-panama-heading"
+              className="text-[clamp(2rem,3vw,3.75rem)] font-bold uppercase tracking-tight text-[#1F1F1F]"
             >
-              <span className="inline-flex items-center gap-2">
-                Solicitar Propuesta
-                <ArrowRight className="h-5 w-5" aria-hidden="true" />
-              </span>
-            </button>
-            <button
-              onClick={() => document.getElementById('portafolio')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 sm:px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg border border-white/30 hover:border-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Ver nuestro trabajo
-            </button>
+              Somos la cara de la arquitectura comercial
+            </h2>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6" role="list">
-          {stats.map((stat) => (
+          {/* CARD DEL MAPA (mapa como BACKGROUND real) */}
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              src="/images/portfolio/mapa-panama-flat.png"
+              alt="Mapa de Panamá"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div
-              key={stat.label}
-              className="rounded-3xl bg-white/10 backdrop-blur px-6 py-5 text-center sm:text-left border border-white/15"
-              role="listitem"
+              className="
+                relative
+                w-full
+                aspect-[3.2/1]
+              "
+              aria-label="Mapa de Panamá con ubicaciones destacadas"
             >
-              <div className="text-4xl font-bold text-brand">
-                <CounterEffect
-                  targetValue={stat.value}
-                  suffix={stat.suffix}
-                  formatValue={(value) => numberFormatter.format(value)}
-                />
+              {/* Capa interactiva encima del background */}
+              <div className="pointer-events-none absolute inset-0">
+                {projects.map(project => {
+                  const isActive = project.id === activeProjectId;
+
+                  return (
+                    <button
+                      key={project.id}
+                      type="button"
+                      aria-label={`${project.name}, ${project.location}`}
+                      aria-pressed={isActive}
+                      style={{ left: `${project.x}%`, top: `${project.y}%` }}
+                      className="pointer-events-auto absolute z-10 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-red-600 shadow-md transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                      onClick={() => handleActivate(project.id)}
+                      onMouseEnter={() => setActiveProjectId(project.id)}
+                      onMouseLeave={() =>
+                        setActiveProjectId(prev => (prev === project.id ? null : prev))
+                      }
+                      onFocus={() => setActiveProjectId(project.id)}
+                      onBlur={() =>
+                        setActiveProjectId(prev => (prev === project.id ? null : prev))
+                      }
+                    />
+                  );
+                })}
+
+                {activeProject && (
+                  <div
+                    className="pointer-events-none absolute z-20 max-w-[180px] -translate-x-1/2 -translate-y-full rounded-lg bg-white px-3 py-2 text-xs text-gray-800 shadow-xl ring-1 ring-black/5 transition"
+                    style={{ left: `${activeProject.x}%`, top: `${activeProject.y}%` }}
+                  >
+                    <p className="text-sm font-semibold">{activeProject.name}</p>
+                    <p className="text-[11px] uppercase tracking-wide text-brand">
+                      {activeProject.location}
+                    </p>
+                    <p className="mt-1 text-[11px] text-gray-600">
+                      {activeProject.description}
+                    </p>
+                  </div>
+                )}
               </div>
-              <p className="mt-2 text-sm uppercase tracking-wide text-white/80">{stat.label}</p>
             </div>
-          ))}
+          </div>
+          {/* FIN CARD */}
         </div>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default InteractiveMap;
