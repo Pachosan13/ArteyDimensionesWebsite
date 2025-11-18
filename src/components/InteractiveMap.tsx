@@ -36,29 +36,14 @@ const InteractiveMap: React.FC = () => {
   return (
     <section id="mapa-panama" className="bg-[#F5F5F5] py-16 lg:py-24" aria-labelledby="mapa-panama-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_1.1fr] lg:items-center" ref={containerRef}>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_1.2fr] lg:items-center" ref={containerRef}>
           <div>
-            <p className="text-sm font-semibold tracking-[0.25em] text-brand mb-3 uppercase">
-              Somos la cara de la arquitectura comercial
-            </p>
             <h2
               id="mapa-panama-heading"
-              className="text-[clamp(1.75rem,3vw,3.2rem)] font-bold text-[#1F1F1F] leading-tight mb-4"
+              className="text-[clamp(2rem,3vw,3.75rem)] font-bold uppercase tracking-tight text-[#1F1F1F]"
             >
-              Presencia comprobada en las principales ciudades de Panamá.
+              Somos la cara de la arquitectura comercial
             </h2>
-            <p className="text-lg text-[#4B4B4B] leading-relaxed">
-              Cada punto rojo representa un proyecto que optimiza metros cuadrados para retail, corporativo o institucional.
-              Pasa el cursor o toca para conocer más detalles y ubicar la cobertura real del istmo.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <span className="px-4 py-2 rounded-full bg-white shadow text-sm font-medium text-[#1F1F1F]">
-                +150 proyectos realizados
-              </span>
-              <span className="px-4 py-2 rounded-full bg-white shadow text-sm font-medium text-[#1F1F1F]">
-                +410 000 m² construidos
-              </span>
-            </div>
           </div>
 
           <div className="relative">
