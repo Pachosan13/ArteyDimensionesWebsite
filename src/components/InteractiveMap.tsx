@@ -33,7 +33,7 @@ const InteractiveMap: React.FC = () => {
   );
 
   const handleActivate = (id: string) => {
-    setActiveProjectId((prev) => (prev === id ? null : id));
+    setActiveProjectId(prev => (prev === id ? null : id));
   };
 
   return (
@@ -57,27 +57,25 @@ const InteractiveMap: React.FC = () => {
             </h2>
           </div>
 
-          {/* Card del mapa con background “zoomeado” */}
+          {/* CARD DEL MAPA (mapa como BACKGROUND real) */}
           <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
             <div
               className="
                 relative
                 w-full
-                aspect-[2.8/1]
-                sm:aspect-[3/1]
+                aspect-[3.2/1]
                 bg-no-repeat
               "
               style={{
                 backgroundImage: "url('/images/portfolio/mapa-panama-flat.png')",
-                // 🔥 aquí el truco: zoom al mapa
-                backgroundSize: '170% auto',      // prueba 160–190% si quieres más zoom
+                backgroundSize: 'cover',          // 🔥 llena toda la card
                 backgroundPosition: 'center center',
               }}
               aria-label="Mapa de Panamá con ubicaciones destacadas"
             >
-              {/* Capa interactiva con los puntos */}
+              {/* Capa interactiva encima del background */}
               <div className="pointer-events-none absolute inset-0">
-                {projects.map((project) => {
+                {projects.map(project => {
                   const isActive = project.id === activeProjectId;
 
                   return (
@@ -91,11 +89,11 @@ const InteractiveMap: React.FC = () => {
                       onClick={() => handleActivate(project.id)}
                       onMouseEnter={() => setActiveProjectId(project.id)}
                       onMouseLeave={() =>
-                        setActiveProjectId((prev) => (prev === project.id ? null : prev))
+                        setActiveProjectId(prev => (prev === project.id ? null : prev))
                       }
                       onFocus={() => setActiveProjectId(project.id)}
                       onBlur={() =>
-                        setActiveProjectId((prev) => (prev === project.id ? null : prev))
+                        setActiveProjectId(prev => (prev === project.id ? null : prev))
                       }
                     />
                   );
@@ -118,7 +116,7 @@ const InteractiveMap: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* Fin card */}
+          {/* FIN CARD */}
         </div>
       </div>
     </section>
