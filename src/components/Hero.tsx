@@ -58,18 +58,19 @@ const InteractiveMap: React.FC = () => {
           </div>
 
           {/* CARD DEL MAPA (mapa como BACKGROUND real) */}
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-            <img
-              src="/images/portfolio/mapa-panama-flat.png"
-              alt="Mapa de Panamá"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+          <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
             <div
               className="
                 relative
                 w-full
                 aspect-[3.2/1]
+                bg-no-repeat
               "
+              style={{
+                backgroundImage: "url('/images/portfolio/mapa-panama-flat.png')",
+                backgroundSize: 'cover',          // 🔥 llena toda la card
+                backgroundPosition: 'center center',
+              }}
               aria-label="Mapa de Panamá con ubicaciones destacadas"
             >
               {/* Capa interactiva encima del background */}
