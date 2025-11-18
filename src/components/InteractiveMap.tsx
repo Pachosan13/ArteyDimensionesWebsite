@@ -29,7 +29,7 @@ const InteractiveMap: React.FC = () => {
 
   const activeProject = useMemo(
     () => projects.find((project) => project.id === activeProjectId),
-    [activeProjectId],
+    [activeProjectId]
   );
 
   const handleActivate = (id: string) => {
@@ -44,9 +44,10 @@ const InteractiveMap: React.FC = () => {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div
-          className="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
           ref={containerRef}
+          className="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
         >
+          {/* Lado izquierdo: título */}
           <div>
             <h2
               id="mapa-panama-heading"
@@ -56,17 +57,26 @@ const InteractiveMap: React.FC = () => {
             </h2>
           </div>
 
-          {/* CARD DEL MAPA: toda la tarjeta es el mapa de fondo */}
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+          {/* Card del mapa: el mapa ocupa TODO el card */}
+          <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
             <div
-              className="relative aspect-[5/3] w-full bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/portfolio/mapa-panama-flat.png')" }}
+              className="relative w-full aspect-[2.6/1] sm:aspect-[2.8/1] lg:aspect-[3/1]"
               aria-label="Mapa de Panamá con ubicaciones destacadas"
             >
-              {/* Capa de puntos + tooltip encima del mapa */}
+              {/* La imagen cubre todo el card */}
+              <img
+                src="/images/portfolio/mapa-panama-flat.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+
+              {/* Capa interactiva encima del mapa */}
               <div className="pointer-events-none absolute inset-0">
                 {projects.map((project) => {
                   const isActive = project.id === activeProjectId;
+
                   return (
                     <button
                       key={project.id}
@@ -105,7 +115,7 @@ const InteractiveMap: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* FIN CARD MAPA */}
+          {/* Fin card mapa */}
         </div>
       </div>
     </section>
