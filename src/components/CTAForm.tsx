@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Phone, Mail, MapPin } from 'lucide-react';
+import { Send, Mail, MapPin } from 'lucide-react';
 
 const CTAForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -61,55 +61,59 @@ const CTAForm: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-white"
+            className="text-white space-y-10"
           >
-            <h3 className="text-2xl font-bold mb-8">Contacta con Nosotros</h3>
-            
-            <div className="space-y-6">
-              {[
-                { icon: Phone, title: "Teléfono", info: "+507 6000-0000" },
-                { icon: Mail, title: "Email", info: "info@arteydimensiones.com" },
-                { icon: MapPin, title: "Oficina", info: "Obarrio, Ciudad de Panamá" }
-              ].map((contact, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, x: 10 }}
-                  className="flex items-center space-x-4"
-                >
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
-                  >
-                    <contact.icon className="h-6 w-6 text-white" />
-                  </motion.div>
-                  <div>
-                    <div className="font-semibold">{contact.title}</div>
-                    <div className="opacity-90">{contact.info}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.02 }}
-              className="mt-12 p-6 bg-white/10 rounded-xl hover:bg-white/15 transition-all duration-300"
+              className="p-6 bg-white/10 rounded-xl hover:bg-white/15 transition-all duration-300"
             >
-              <h4 className="font-bold mb-4">¿Por qué elegir Arte y Dimensiones?</h4>
-              <ul className="space-y-2 opacity-90">
+              <h3 className="font-bold text-2xl mb-4">¿Por qué elegir Arte y Dimensiones?</h3>
+              <ul className="space-y-2 opacity-90 text-base leading-relaxed">
                 <li>• 15+ años de experiencia en arquitectura corporativa</li>
                 <li>• Enfoque en ROI y rendimiento de espacios</li>
                 <li>• Especialistas en regulaciones panameñas</li>
                 <li>• Gestión integral de proyectos</li>
               </ul>
             </motion.div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Contacta con Nosotros</h3>
+              <div className="space-y-6">
+                {[
+                  { icon: Mail, title: "Email", info: "artedim@artedim.com" },
+                  {
+                    icon: MapPin,
+                    title: "Oficina",
+                    info: "Calle Alberto Navarro, Mandalay Apartments, Planta Baja"
+                  }
+                ].map((contact, index) => (
+                  <motion.div
+                    key={contact.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05, x: 10 }}
+                    className="flex items-center space-x-4"
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center"
+                    >
+                      <contact.icon className="h-6 w-6 text-white" />
+                    </motion.div>
+                    <div>
+                      <div className="font-semibold">{contact.title}</div>
+                      <div className="opacity-90">{contact.info}</div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Contact Form */}

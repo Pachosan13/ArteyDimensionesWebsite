@@ -159,8 +159,8 @@ const DesktopOverlayMenu: React.FC<DesktopOverlayMenuProps> = ({ isOpen, onClose
             {/* Contact Info */}
             <div className="mb-8">
               <div className="text-sm text-[#4B4B4B]/60 mb-2">Contacto</div>
-              <div className="text-neutral-900 font-medium">+507 6000-0000</div>
-              <div className="text-neutral-900">info@arteydimensiones.com</div>
+              <div className="text-neutral-900 font-medium">artedim@artedim.com</div>
+              <div className="text-neutral-900">Calle Alberto Navarro, Mandalay Apartments, Planta Baja</div>
             </div>
 
             {/* Social Icons */}

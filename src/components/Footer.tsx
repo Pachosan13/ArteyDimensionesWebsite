@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Phone, Mail, MapPin, Linkedin, Instagram } from 'lucide-react';
+import { Building2, Mail, MapPin, Linkedin, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -48,16 +48,12 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-6">Contacto</h3>
             <div className="space-y-4 text-gray-300">
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
-                <Phone className="h-5 w-5 text-brand mx-auto sm:mx-0" />
-                <span>+507 6000-0000</span>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
                 <Mail className="h-5 w-5 text-brand mx-auto sm:mx-0" />
-                <span>info@arteydimensiones.com</span>
+                <span>artedim@artedim.com</span>
               </div>
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
                 <MapPin className="h-5 w-5 text-brand mx-auto sm:mx-0" />
-                <span>Obarrio, Ciudad de Panamá</span>
+                <span>Calle Alberto Navarro, Mandalay Apartments, Planta Baja</span>
               </div>
             </div>
           </div>
