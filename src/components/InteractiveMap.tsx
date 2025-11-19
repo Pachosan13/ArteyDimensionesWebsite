@@ -9,20 +9,17 @@ const InteractiveMap: React.FC = () => {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl bg-neutral-100 shadow-2xl">
-          <div className="relative w-full aspect-[16/6]">
-            {/* BACKGROUND MAP */}
+          <div className="relative w-full aspect-[16/7]">
+            {/* BACKGROUND MAP – SIN OVERLAY BLANCO, MÁS ESPACIO VERTICAL */}
             <img
               src="/images/portfolio/mapa-panama-flat.png"
               alt="Mapa de Panamá con proyectos de Arte y Dimensiones"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-contain"
               loading="lazy"
             />
 
-            {/* OVERLAY PARA DAR LECTURA AL TEXTO */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/95 via-white/80 to-transparent" />
-
             {/* TEXTO SUPERPUESTO, COMO EN EL DISEÑO DEL CLIENTE */}
-            <div className="absolute left-6 top-5 max-w-xl text-left md:left-10 md:top-7">
+            <div className="absolute left-6 top-8 max-w-xl text-left md:left-10 md:top-10">
               <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
                 Somos la cara de la
               </p>
