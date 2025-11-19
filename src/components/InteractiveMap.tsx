@@ -10,7 +10,7 @@ const InteractiveMap: React.FC = () => {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl bg-white shadow-2xl relative">
           {/* MAPA COMO BACKGROUND */}
-          <div className="relative w-full aspect-[16/8]">
+          <div className="relative w-full aspect-[16/14]">
             <img
               src="/images/portfolio/mapa-panama-flat.png"
               alt="Mapa de Panamá con proyectos"
