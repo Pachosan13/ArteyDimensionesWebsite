@@ -4,32 +4,40 @@ const InteractiveMap: React.FC = () => {
   return (
     <section
       id="mapa-panama"
-      className="bg-[#F5F5F5] py-16 lg:py-24"
+      className="bg-[#F5F5F5] py-20 lg:py-28"
       aria-label="Mapa de Panamá con proyectos de Arte y Dimensiones"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-3xl bg-neutral-100 shadow-2xl">
-          {/* Wrapper del mapa */}
-          <div className="relative w-full aspect-[16/7]">
-            {/* MAPA FULL CARD */}
+        <div className="overflow-hidden rounded-3xl bg-white shadow-2xl relative">
+          {/* MAPA COMO BACKGROUND */}
+          <div className="relative w-full aspect-[16/6]">
             <img
               src="/images/portfolio/mapa-panama-flat.png"
-              alt="Mapa de Panamá con proyectos de Arte y Dimensiones"
-              className="absolute inset-0 h-full w-full object-contain object-center"
+              alt="Mapa de Panamá con proyectos"
+              className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />
 
-            {/* TEXTO SUPERPUESTO A LA DERECHA, SIN TOCAR EL MAPA */}
-            <div className="absolute right-6 top-6 max-w-xs text-right md:right-10 md:top-8">
-              <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
+            {/* BLOQUE DE TEXTO A LA IZQUIERDA (SIN TOCAR EL MAPA) */}
+            <div className="
+              absolute 
+              left-10 
+              top-10 
+              z-20 
+              max-w-sm 
+              text-left
+              md:left-14
+              md:top-12
+            ">
+              <p className="text-[12px] font-semibold tracking-[0.25em] text-neutral-700 uppercase">
                 Somos la cara de la
               </p>
 
-              <h2 className="mt-1 font-extrabold leading-tight">
-                <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F25C2A]">
+              <h2 className="mt-2 font-extrabold leading-[1.05]">
+                <span className="block text-[clamp(2.3rem,3vw,3rem)] text-[#F0472D]">
                   Arquitectura
                 </span>
-                <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F25C2A]">
+                <span className="block text-[clamp(2.3rem,3vw,3rem)] text-[#F0472D]">
                   Comercial
                 </span>
               </h2>
