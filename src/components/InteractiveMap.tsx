@@ -1,42 +1,45 @@
 import React from "react";
 
-const PanamaMapSection: React.FC = () => {
+const InteractiveMap: React.FC = () => {
   return (
     <section
       id="mapa-panama"
       className="bg-[#F5F5F5] py-16 lg:py-24"
-      aria-labelledby="mapa-panama-heading"
+      aria-label="Mapa de Panamá con proyectos de Arte y Dimensiones"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Título */}
-        <div className="mb-10 max-w-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#F25A33]">
-            Somos la cara de la arquitectura comercial
-          </p>
+        <div className="overflow-hidden rounded-3xl bg-neutral-100 shadow-2xl">
+          <div className="relative w-full aspect-[16/6]">
+            {/* BACKGROUND MAP */}
+            <img
+              src="/images/portfolio/mapa-panama-flat.png"
+              alt="Mapa de Panamá con proyectos de Arte y Dimensiones"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
 
-          <h2
-            id="mapa-panama-heading"
-            className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[#1F1F1F]"
-          >
-            Presencia comprobada en las principales ciudades de Panamá.
-          </h2>
+            {/* OVERLAY PARA DAR LECTURA AL TEXTO */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/95 via-white/80 to-transparent" />
 
-          <p className="mt-4 text-sm sm:text-base text-[#4B4B4B]">
-            Cada punto rojo representa un proyecto que optimiza metros cuadrados
-            para retail, corporativo o institucional.
-          </p>
-        </div>
+            {/* TEXTO SUPERPUESTO, COMO EN EL DISEÑO DEL CLIENTE */}
+            <div className="absolute left-6 top-5 max-w-xl text-left md:left-10 md:top-7">
+              <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
+                Somos la cara de la
+              </p>
 
-        {/* CARD 100% WIDTH CON BACKGROUND */}
-        <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl bg-neutral-100">
-          <div
-            className="relative w-full pb-[45%] bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                "url('/images/portfolio/mapa-panama-flat.png')",
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10" />
+              <h2 className="mt-1 font-extrabold leading-tight">
+                <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
+                  Arquitectura
+                </span>
+                <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
+                  Comercial
+                </span>
+              </h2>
+
+              <p className="mt-1 text-sm font-medium text-neutral-700">
+                en Panamá
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -44,4 +47,4 @@ const PanamaMapSection: React.FC = () => {
   );
 };
 
-export default PanamaMapSection;
+export default InteractiveMap;
