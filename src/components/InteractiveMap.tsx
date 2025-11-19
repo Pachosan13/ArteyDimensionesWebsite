@@ -4,7 +4,7 @@ const InteractiveMap: React.FC = () => {
   return (
     <section
       id="mapa-panama"
-      className="bg-[#F5F5F5] py-20 lg:py-28"
+      className="bg-[#F5F5F5] py-28 lg:py-40"
       aria-label="Mapa de Panamá con proyectos de Arte y Dimensiones"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
