@@ -13,7 +13,7 @@ const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
     description:
       "Boulevard comercial en Costa Verde, diseñado para flujo constante de visitantes y alta visibilidad de marcas.",
     image: "/images/portfolio/Boulevard.png",
-    url: "/images/portfolio/Boulevard.png",
+    url: "/proyectos/boulevard-penonome",
   },
   coronado: {
     title: "Terrazas de Coronado",
