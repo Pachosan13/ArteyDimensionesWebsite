@@ -12,8 +12,8 @@ const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
     title: "Boulevard Costa Verde",
     description:
       "Boulevard comercial en Costa Verde, diseñado para flujo constante de visitantes y alta visibilidad de marcas.",
-    image: "/images/portfolio/boulevard-costa-verde-thumb.jpg",
-    url: "/images/portafolio/boulevard.png",
+    image: "/images/portfolio/boulevard.png",
+    url: "/images/portfolio/boulevard.png",
   },
   coronado: {
     title: "Terrazas de Coronado",
@@ -26,8 +26,8 @@ const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
     title: "Boulevard Penonomé",
     description:
       "Boulevard de uso mixto en Penonomé, con enfoque en conveniencia diaria y tráfico vehicular.",
-    image: "/images/portfolio/boulevard-penonome-thumb.jpg",
-    url: "/proyectos/boulevard-penonome",
+    image: "/images/portfolio/Penonome/Boulevardpenonome.jpg",
+    url: "/images/boulevard-penonome",
   },
 };
 
