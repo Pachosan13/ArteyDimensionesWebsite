@@ -12,8 +12,8 @@ const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
     title: "Boulevard Costa Verde",
     description:
       "Boulevard comercial en Costa Verde, diseñado para flujo constante de visitantes y alta visibilidad de marcas.",
-    image: "/images/portfolio/boulevard.png",
-    url: "/images/portfolio/boulevard.png",
+    image: "/images/portfolio/Boulevard.png",
+    url: "/images/portfolio/Boulevard.png",
   },
   coronado: {
     title: "Terrazas de Coronado",
