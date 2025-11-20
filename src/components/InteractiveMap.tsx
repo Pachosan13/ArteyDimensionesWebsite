@@ -13,7 +13,7 @@ const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
     description:
       "Boulevard comercial en Costa Verde, diseñado para flujo constante de visitantes y alta visibilidad de marcas.",
     image: "/images/portfolio/boulevard-costa-verde-thumb.jpg",
-    url: "/proyectos/boulevard-costa-verde",
+    url: "/images/portafolio/boulevard.png",
   },
   coronado: {
     title: "Terrazas de Coronado",
@@ -86,7 +86,7 @@ const InteractiveMap: React.FC = () => {
                 className="absolute bg-transparent border-none p-0"
                 style={{
                   left: "50%", // X
-                  top: "62%",  // Y
+                  top: "58%",  // Y
                   width: "170px",
                   height: "34px",
                   cursor: "pointer",
