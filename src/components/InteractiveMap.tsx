@@ -20,7 +20,7 @@ const InteractiveMap: React.FC = () => {
             />
 
             {/* TEXTO SUPERPUESTO, SIN TAPAR EL MAPA DE LA DERECHA */}
-            <div className="absolute left-10 top-10 max-w-sm text-left">
+<div className="absolute left-20 top-10 max-w-sm text-left">
               <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
                 Somos la cara de la
               </p>
