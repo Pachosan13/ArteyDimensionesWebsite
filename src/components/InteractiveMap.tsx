@@ -43,21 +43,19 @@ const InteractiveMap: React.FC = () => {
               </div>
 
               {/* HOTSPOT SANTA MARÍA – PASTILLA SUTIL, SIN PUNTO FEO */}
-              <button
-                type="button"
-                onClick={() => setOpenProject("santa-maria")}
-                className="
-                  group absolute
-                  left-[60%] top-[52%]
-                  -translate-x-1/2 -translate-y-1/2
-                  rounded-full border border-[#F0472D]/60
-                  bg-white/75 px-3 py-1
-                  text-[11px] font-semibold tracking-wide text-[#F0472D]
-                  shadow-sm backdrop-blur-sm
-                  transition
-                  hover:bg-[#F0472D]
-                  hover:text-white
-                  hover:shadow-md
+             <button
+  type="button"
+  className="absolute"
+  style={{
+    left: '63%',   // ajustas a mano
+    top: '55%',    // justo encima del texto existente en la imagen
+    width: '140px',
+    height: '28px',
+  }}
+  onClick={openSantaMariaModal}
+  aria-label="Ver detalles de Santa María Business Park"
+/>
+
                 "
                 aria-label="Ver proyecto Santa María Business Park"
               >
