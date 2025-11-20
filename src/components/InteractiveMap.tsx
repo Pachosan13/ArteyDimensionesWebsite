@@ -85,7 +85,7 @@ const InteractiveMap: React.FC = () => {
                 aria-label="Ver detalles Boulevard Costa Verde"
                 className="absolute bg-transparent border-none p-0"
                 style={{
-                  left: "60%", // X
+                  left: "50%", // X
                   top: "64%",  // Y
                   width: "170px",
                   height: "34px",
@@ -102,7 +102,7 @@ const InteractiveMap: React.FC = () => {
                 aria-label="Ver detalles Terrazas de Coronado"
                 className="absolute bg-transparent border-none p-0"
                 style={{
-                  left: "57%", // un poco más a la izquierda
+                  left: "47%", // un poco más a la izquierda
                   top: "72%",
                   width: "180px",
                   height: "34px",
@@ -119,7 +119,7 @@ const InteractiveMap: React.FC = () => {
                 aria-label="Ver detalles Boulevard Penonomé"
                 className="absolute bg-transparent border-none p-0"
                 style={{
-                  left: "54%",
+                  left: "44%",
                   top: "82%",
                   width: "190px",
                   height: "34px",
