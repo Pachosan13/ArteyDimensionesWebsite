@@ -1,76 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-
-type Project = {
-  id: string;
-  name: string;
-  location: string;
-  x: number; // posición en % sobre el mapa
-  y: number; // posición en % sobre el mapa
-  image: string;
-  href: string;
-};
-
-const PROJECTS: Project[] = [
-  {
-    id: "santa-maria",
-    name: "Santa María Business Park",
-    location: "Santa María, Ciudad de Panamá",
-    x: 63, // AJUSTA estos valores en DevTools
-    y: 46,
-    image: "/images/portfolio/santa-maria.jpg", // pon aquí la ruta real
-    href: "/proyectos/santa-maria-business-park",
-  },
-  {
-    id: "boulevard-costa-verde",
-    name: "Boulevard Costa Verde",
-    location: "La Chorrera",
-    x: 48,
-    y: 70,
-    image: "/images/portfolio/boulevard-costa-verde.jpg",
-    href: "/proyectos/boulevard-costa-verde",
-  },
-  // agrega más proyectos aquí
-];
+import React, { useState } from "react";
 
 const InteractiveMap: React.FC = () => {
-  const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const modalRef = useRef<HTMLDivElement | null>(null);
-
-  const activeProject = useMemo(
-    () => PROJECTS.find((p) => p.id === activeProjectId) ?? null,
-    [activeProjectId]
-  );
-
-  // Cerrar al hacer click fuera o con Esc
-  useEffect(() => {
-    const handlePointerDown = (event: PointerEvent) => {
-      if (!activeProjectId) return;
-      const target = event.target as Node;
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(target) &&
-        containerRef.current &&
-        containerRef.current.contains(target)
-      ) {
-        setActiveProjectId(null);
-      }
-    };
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setActiveProjectId(null);
-      }
-    };
-
-    document.addEventListener("pointerdown", handlePointerDown);
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("pointerdown", handlePointerDown);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [activeProjectId]);
+  const [openProject, setOpenProject] = useState<"santa-maria" | null>(null);
 
   return (
     <section
@@ -79,109 +10,109 @@ const InteractiveMap: React.FC = () => {
       aria-label="Mapa de Panamá con proyectos de Arte y Dimensiones"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div
-          ref={containerRef}
-          className="overflow-hidden rounded-3xl bg-white shadow-2xl"
-        >
+        <div className="overflow-hidden rounded-3xl bg-white shadow-2xl">
           <div className="relative w-full aspect-[18/14]">
             {/* MAPA DE FONDO */}
             <img
               src="/images/portfolio/mapa-panama-flat.png"
               alt="Mapa de Panamá con proyectos de Arte y Dimensiones"
-              className="absolute inset-0 h-full w-full object-contain"
+              className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />
 
-            {/* HEADLINE SUPERPUESTO (centrado visualmente en el hueco blanco) */}
-            <div className="absolute top-10 left-[26%] -translate-x-1/2 text-center">
-              <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-700 uppercase">
-                Somos la cara de la
-              </p>
-
-              <h2 className="mt-1 font-extrabold leading-tight">
-                <span className="block text-[clamp(2.2rem,3.2vw,2.9rem)] text-[#F0472D]">
-                  Arquitectura
-                </span>
-                <span className="block text-[clamp(2.2rem,3.2vw,2.9rem)] text-[#F0472D]">
-                  Comercial
-                </span>
-              </h2>
-
-              <p className="mt-1 text-sm font-medium text-neutral-800">
-                en Panamá
-              </p>
-            </div>
-
-            {/* HOTSPOTS INTERACTIVOS */}
+            {/* CAPA PARA HEADLINE + HOTSPOTS */}
             <div className="absolute inset-0">
-              {PROJECTS.map((project) => (
-                <button
-                  key={project.id}
-                  type="button"
-                  aria-label={`${project.name}, ${project.location}`}
-                  aria-pressed={activeProjectId === project.id}
-                  onClick={() =>
-                    setActiveProjectId((prev) =>
-                      prev === project.id ? null : project.id
-                    )
-                  }
-                  className="absolute z-10 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-white bg-[#F0472D] shadow-md transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0472D]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                  style={{
-                    left: `${project.x}%`,
-                    top: `${project.y}%`,
-                  }}
-                />
-              ))}
+              {/* HEADLINE CENTRADO SOBRE EL HUECO BLANCO */}
+              <div className="absolute left-[22%] top-[14%] -translate-x-1/2 -translate-y-1/2 max-w-xs text-center">
+                <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
+                  Somos la cara de la
+                </p>
+
+                <h2 className="mt-1 font-extrabold leading-tight">
+                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
+                    Arquitectura
+                  </span>
+                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
+                    Comercial
+                  </span>
+                </h2>
+
+                <p className="mt-1 text-sm font-medium text-neutral-700">
+                  en Panamá
+                </p>
+              </div>
+
+              {/* HOTSPOT SANTA MARÍA – PASTILLA SUTIL, SIN PUNTO FEO */}
+              <button
+                type="button"
+                onClick={() => setOpenProject("santa-maria")}
+                className="
+                  group absolute
+                  left-[60%] top-[52%]
+                  -translate-x-1/2 -translate-y-1/2
+                  rounded-full border border-[#F0472D]/60
+                  bg-white/75 px-3 py-1
+                  text-[11px] font-semibold tracking-wide text-[#F0472D]
+                  shadow-sm backdrop-blur-sm
+                  transition
+                  hover:bg-[#F0472D]
+                  hover:text-white
+                  hover:shadow-md
+                "
+                aria-label="Ver proyecto Santa María Business Park"
+              >
+                <span className="hidden md:inline">Santa María Business Park</span>
+                <span className="inline md:hidden">Santa María</span>
+              </button>
             </div>
 
-            {/* MINI-MODAL / TOOLTIP CON FOTO + LINK */}
-            {activeProject && (
+            {/* MODAL DEL PROYECTO */}
+            {openProject === "santa-maria" && (
               <div
-                ref={modalRef}
-                className="absolute z-20 max-w-xs -translate-x-1/2 -translate-y-full rounded-2xl bg-white/95 p-3 text-left shadow-2xl ring-1 ring-black/5 backdrop-blur-sm"
-                style={{
-                  left: `${activeProject.x}%`,
-                  top: `${activeProject.y}%`,
-                }}
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
+                onClick={() => setOpenProject(null)}
               >
-                <div className="flex gap-3">
-                  <div className="h-16 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-neutral-200">
+                <div
+                  className="w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="h-40 w-full overflow-hidden">
+                    {/* pon aquí el thumb real de Santa María */}
                     <img
-                      src={activeProject.image}
-                      alt={activeProject.name}
+                      src="/images/portfolio/santa-maria-thumb.jpg"
+                      alt="Vista del proyecto Santa María Business Park"
                       className="h-full w-full object-cover"
-                      loading="lazy"
                     />
                   </div>
 
-                  <div className="min-w-0">
-                    <h3 className="text-sm font-semibold text-neutral-900">
-                      {activeProject.name}
+                  <div className="space-y-3 p-5">
+                    <h3 className="text-lg font-bold text-neutral-900">
+                      Santa María Business Park
                     </h3>
-                    <p className="mt-0.5 text-xs text-neutral-600">
-                      {activeProject.location}
+                    <p className="text-sm text-neutral-700">
+                      Complejo corporativo de uso mixto en Santa María, diseñado para maximizar
+                      visibilidad, flujo peatonal y valor inmobiliario.
                     </p>
 
-                    <a
-                      href={activeProject.href}
-                      className="mt-2 inline-flex items-center text-[11px] font-semibold uppercase tracking-wide text-[#F0472D] hover:text-[#d63a22]"
-                    >
-                      Ver proyecto
-                      <span aria-hidden="true" className="ml-1">
-                        →
-                      </span>
-                    </a>
+                    <div className="flex items-center justify-between pt-2">
+                      <button
+                        type="button"
+                        onClick={() => setOpenProject(null)}
+                        className="text-sm text-neutral-500 hover:text-neutral-700"
+                      >
+                        Cerrar
+                      </button>
+
+                      <a
+                        href="/proyectos/santa-maria-business-park"
+                        className="inline-flex items-center gap-1 rounded-full bg-[#F0472D] px-4 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-[#d63e25]"
+                      >
+                        Ver proyecto
+                        <span aria-hidden>↗</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveProjectId(null)}
-                  className="absolute right-1.5 top-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
-                  aria-label="Cerrar detalle de proyecto"
-                >
-                  ×
-                </button>
               </div>
             )}
           </div>
