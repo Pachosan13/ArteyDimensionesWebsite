@@ -1,9 +1,41 @@
 import React, { useState } from "react";
 
-const InteractiveMap: React.FC = () => {
-  const [openProject, setOpenProject] = useState<"santa-maria" | null>(null);
+type ProjectId = "costa-verde" | "coronado" | "penonome" | null;
 
-  const handleOpenSantaMaria = () => setOpenProject("santa-maria");
+const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+}> = {
+  "costa-verde": {
+    title: "Boulevard Costa Verde",
+    description:
+      "Boulevard comercial en Costa Verde, diseñado para flujo constante de visitantes y alta visibilidad de marcas.",
+    image: "/images/portfolio/boulevard-costa-verde-thumb.jpg",
+    url: "/proyectos/boulevard-costa-verde",
+  },
+  coronado: {
+    title: "Terrazas de Coronado",
+    description:
+      "Centro comercial abierto en Coronado, pensado para retail, restaurantes y experiencia de fin de semana.",
+    image: "/images/portfolio/terrazas-coronado-thumb.jpg",
+    url: "/proyectos/terrazas-de-coronado",
+  },
+  penonome: {
+    title: "Boulevard Penonomé",
+    description:
+      "Boulevard de uso mixto en Penonomé, con enfoque en conveniencia diaria y tráfico vehicular.",
+    image: "/images/portfolio/boulevard-penonome-thumb.jpg",
+    url: "/proyectos/boulevard-penonome",
+  },
+};
+
+const InteractiveMap: React.FC = () => {
+  const [openProject, setOpenProject] = useState<ProjectId>(null);
+
+  const currentProject =
+    openProject ? PROJECTS_INFO[openProject] : null;
 
   return (
     <section
@@ -24,7 +56,7 @@ const InteractiveMap: React.FC = () => {
 
             {/* CAPA PARA HEADLINE + HOTSPOTS */}
             <div className="absolute inset-0">
-              {/* HEADLINE CENTRADO SOBRE EL HUECO BLANCO */}
+              {/* HEADLINE EN EL HUECO BLANCO */}
               <div className="absolute left-[25%] top-[18%] -translate-x-1/2 -translate-y-1/2 max-w-xs text-center">
                 <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
                   Somos la cara de la
@@ -44,28 +76,62 @@ const InteractiveMap: React.FC = () => {
                 </p>
               </div>
 
-              {/* HOTSPOT INVISIBLE SANTA MARÍA */}
+              {/* HOTSPOTS INVISIBLES */}
+              {/* OJO: ajusta left/top hasta que queden EXACTAMENTE encima del texto de la imagen */}
+              {/* Boulevard Costa Verde */}
               <button
                 type="button"
-                onClick={handleOpenSantaMaria}
-                aria-label="Ver detalles de Santa María Business Park"
+                onClick={() => setOpenProject("costa-verde")}
+                aria-label="Ver detalles Boulevard Costa Verde"
                 className="absolute bg-transparent border-none p-0"
                 style={{
-                  // AJUSTA ESTOS POR OJO HASTA QUE QUEDE JUSTO ENCIMA DEL TEXTO
-                  left: "63%", // X
-                  top: "52%",  // Y
-                  width: "150px",
-                  height: "32px",
+                  left: "60%", // X
+                  top: "64%",  // Y
+                  width: "170px",
+                  height: "34px",
                   cursor: "pointer",
                 }}
               >
-                {/* Texto solo para lectores de pantalla, no se ve */}
-                <span className="sr-only">Santa María Business Park</span>
+                <span className="sr-only">Boulevard Costa Verde</span>
+              </button>
+
+              {/* Terrazas de Coronado */}
+              <button
+                type="button"
+                onClick={() => setOpenProject("coronado")}
+                aria-label="Ver detalles Terrazas de Coronado"
+                className="absolute bg-transparent border-none p-0"
+                style={{
+                  left: "57%", // un poco más a la izquierda
+                  top: "72%",
+                  width: "180px",
+                  height: "34px",
+                  cursor: "pointer",
+                }}
+              >
+                <span className="sr-only">Terrazas de Coronado</span>
+              </button>
+
+              {/* Boulevard Penonomé */}
+              <button
+                type="button"
+                onClick={() => setOpenProject("penonome")}
+                aria-label="Ver detalles Boulevard Penonomé"
+                className="absolute bg-transparent border-none p-0"
+                style={{
+                  left: "54%",
+                  top: "82%",
+                  width: "190px",
+                  height: "34px",
+                  cursor: "pointer",
+                }}
+              >
+                <span className="sr-only">Boulevard Penonomé</span>
               </button>
             </div>
 
-            {/* MODAL DEL PROYECTO */}
-            {openProject === "santa-maria" && (
+            {/* MODAL DEL PROYECTO (CENTRADO, MISMA UI PARA LOS 3) */}
+            {currentProject && (
               <div
                 className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
                 onClick={() => setOpenProject(null)}
@@ -76,20 +142,19 @@ const InteractiveMap: React.FC = () => {
                 >
                   <div className="h-40 w-full overflow-hidden">
                     <img
-                      src="/images/portfolio/santa-maria-thumb.jpg"
-                      alt="Vista del proyecto Santa María Business Park"
+                      src={currentProject.image}
+                      alt={`Vista del proyecto ${currentProject.title}`}
                       className="h-full w-full object-cover"
                     />
                   </div>
 
                   <div className="space-y-3 p-5">
                     <h3 className="text-lg font-bold text-neutral-900">
-                      Santa María Business Park
+                      {currentProject.title}
                     </h3>
+
                     <p className="text-sm text-neutral-700">
-                      Complejo corporativo de uso mixto en Santa María, diseñado
-                      para maximizar visibilidad, flujo peatonal y valor
-                      inmobiliario.
+                      {currentProject.description}
                     </p>
 
                     <div className="flex items-center justify-between pt-2">
@@ -102,7 +167,7 @@ const InteractiveMap: React.FC = () => {
                       </button>
 
                       <a
-                        href="/proyectos/santa-maria-business-park"
+                        href={currentProject.url}
                         className="inline-flex items-center gap-1 rounded-full bg-[#F0472D] px-4 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-[#d63e25]"
                       >
                         Ver proyecto
@@ -113,6 +178,7 @@ const InteractiveMap: React.FC = () => {
                 </div>
               </div>
             )}
+
           </div>
         </div>
       </div>
