@@ -4,7 +4,7 @@ const InteractiveMap: React.FC = () => {
   return (
     <section
       id="mapa-panama"
-      className="bg-[#F5F5F5] py-16 lg:py-24"
+      className="bg-[#F5F5F5] py-16 lg:py-20"
       aria-label="Mapa de Panamá con proyectos de Arte y Dimensiones"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ const InteractiveMap: React.FC = () => {
             />
 
             {/* TEXTO SUPERPUESTO, SIN TAPAR EL MAPA DE LA DERECHA */}
-         <div className="absolute left-50 top-10 max-w-sm text-left">
+         <div className="absolute left-40 top-10 max-w-sm text-left">
               <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
                 Somos la cara de la
               </p>
