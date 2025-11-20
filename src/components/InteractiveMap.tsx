@@ -12,7 +12,8 @@ const InteractiveMap: React.FC = () => {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl bg-white shadow-2xl">
           <div className="relative w-full aspect-[18/14]">
-            {/* MAPA DE FONDO */}
+
+            {/* MAPA */}
             <img
               src="/images/portfolio/mapa-panama-flat.png"
               alt="Mapa de Panamá con proyectos de Arte y Dimensiones"
@@ -20,19 +21,20 @@ const InteractiveMap: React.FC = () => {
               loading="lazy"
             />
 
-            {/* CAPA PARA HEADLINE + HOTSPOTS */}
+            {/* LAYER DE TEXTO + HOTSPOTS */}
             <div className="absolute inset-0">
-              {/* HEADLINE CENTRADO SOBRE EL HUECO BLANCO */}
-              <div className="absolute left-[22%] top-[14%] -translate-x-1/2 -translate-y-1/2 max-w-xs text-center">
+
+              {/* HEADLINE EN EL ESPACIO BLANCO */}
+              <div className="absolute left-[32%] top-[19%] -translate-x-1/2 -translate-y-1/2 max-w-xs text-center">
                 <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
                   Somos la cara de la
                 </p>
 
-                <h2 className="mt-1 font-extrabold leading-tight">
-                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
+                <h2 className="mt-1 font-extrabold leading-tight text-[#F0472D]">
+                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)]">
                     Arquitectura
                   </span>
-                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
+                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)]">
                     Comercial
                   </span>
                 </h2>
@@ -42,29 +44,24 @@ const InteractiveMap: React.FC = () => {
                 </p>
               </div>
 
-              {/* HOTSPOT SANTA MARÍA – PASTILLA SUTIL, SIN PUNTO FEO */}
-             <button
-  type="button"
-  className="absolute"
-  style={{
-    left: '63%',   // ajustas a mano
-    top: '55%',    // justo encima del texto existente en la imagen
-    width: '140px',
-    height: '28px',
-  }}
-  onClick={openSantaMariaModal}
-  aria-label="Ver detalles de Santa María Business Park"
-/>
-
-                "
-                aria-label="Ver proyecto Santa María Business Park"
-              >
-                <span className="hidden md:inline">Santa María Business Park</span>
-                <span className="inline md:hidden">Santa María</span>
-              </button>
+              {/* 🔥 HOTSPOT INVISIBLE – SANTA MARÍA 🔥 */}
+              <button
+                type="button"
+                onClick={() => setOpenProject("santa-maria")}
+                aria-label="Ver detalles de Santa María Business Park"
+                className="absolute"
+                style={{
+                  left: "62.5%", 
+                  top: "58%", 
+                  width: "150px",
+                  height: "34px",
+                  cursor: "pointer",
+                  background: "transparent",
+                }}
+              />
             </div>
 
-            {/* MODAL DEL PROYECTO */}
+            {/* MODAL */}
             {openProject === "santa-maria" && (
               <div
                 className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
@@ -75,10 +72,9 @@ const InteractiveMap: React.FC = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div className="h-40 w-full overflow-hidden">
-                    {/* pon aquí el thumb real de Santa María */}
                     <img
                       src="/images/portfolio/santa-maria-thumb.jpg"
-                      alt="Vista del proyecto Santa María Business Park"
+                      alt="Santa María Business Park"
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -87,6 +83,7 @@ const InteractiveMap: React.FC = () => {
                     <h3 className="text-lg font-bold text-neutral-900">
                       Santa María Business Park
                     </h3>
+
                     <p className="text-sm text-neutral-700">
                       Complejo corporativo de uso mixto en Santa María, diseñado para maximizar
                       visibilidad, flujo peatonal y valor inmobiliario.
@@ -113,6 +110,7 @@ const InteractiveMap: React.FC = () => {
                 </div>
               </div>
             )}
+
           </div>
         </div>
       </div>
