@@ -19,7 +19,7 @@ const InteractiveMap: React.FC = () => {
             />
 
             {/* TEXTO SUPERPUESTO, DESPLAZADO A LA DERECHA */}
-            <div className="absolute left-[18%] top-10 md:left-[22%] md:top-12 max-w-sm text-left">
+            <div className="absolute left-[18%] top-10 md:left-[22%] md:top-12 max-w-sm text-center">
               <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
                 Somos la cara de la
               </p>
