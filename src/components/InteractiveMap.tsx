@@ -86,7 +86,7 @@ const InteractiveMap: React.FC = () => {
                 className="absolute bg-transparent border-none p-0"
                 style={{
                   left: "50%", // X
-                  top: "60%",  // Y
+                  top: "62%",  // Y
                   width: "170px",
                   height: "34px",
                   cursor: "pointer",
@@ -103,7 +103,7 @@ const InteractiveMap: React.FC = () => {
                 className="absolute bg-transparent border-none p-0"
                 style={{
                   left: "47%", // un poco más a la izquierda
-                  top: "67%",
+                  top: "69%",
                   width: "180px",
                   height: "34px",
                   cursor: "pointer",
@@ -120,7 +120,7 @@ const InteractiveMap: React.FC = () => {
                 className="absolute bg-transparent border-none p-0"
                 style={{
                   left: "44%",
-                  top: "77%",
+                  top: "79%",
                   width: "190px",
                   height: "34px",
                   cursor: "pointer",
