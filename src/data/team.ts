@@ -56,7 +56,7 @@ export const teamMembers: TeamMember[] = [
       "Reconocimiento como líder en innovación arquitectónica",
       "Desarrollo de relaciones duraderas con clientes principales"
     ],
-    order: 0
+    order: -3
   },
 
   // 2) ALEJANDRA
@@ -94,7 +94,7 @@ export const teamMembers: TeamMember[] = [
       "Reconocimiento por innovación en arquitectura comercial",
       "Desarrollo de metodologías de trabajo eficientes"
     ],
-    order: 1
+    order: -2
   },
 
   // 3) JOSE ANTONIO
@@ -138,7 +138,7 @@ export const teamMembers: TeamMember[] = [
       "Optimización de recursos y maximización de rentabilidad",
       "Liderazgo en planificación estratégica empresarial"
     ],
-    order: 2
+    order: -1
   },
 
   // 4) MITZENIA
@@ -173,7 +173,7 @@ export const teamMembers: TeamMember[] = [
       "Reconocimiento por excelencia en servicio al cliente",
       "Soporte clave en la gestión operativa de la firma"
     ],
-    order: 3
+    order: 0
   },
 
   // 5) ROXANA
@@ -208,7 +208,7 @@ export const teamMembers: TeamMember[] = [
       "Reconocimiento por excelencia en gestión de proyectos",
       "Liderazgo en coordinación técnica y administrativa"
     ],
-    order: 4
+    order: 1
   },
 
   // 6) DAVID
@@ -243,7 +243,7 @@ export const teamMembers: TeamMember[] = [
       "Reconocimiento por excelencia en diseño arquitectónico",
       "Mentoría de nueva generación de arquitectos"
     ],
-    order: 5
+    order: 2
   },
 
   // 7) LUIS
@@ -278,7 +278,7 @@ export const teamMembers: TeamMember[] = [
       "Especialista en coordinación digital multidisciplinaria",
       "Optimización de procesos de documentación técnica"
     ],
-    order: 6
+    order: 3
   },
 
   // 8) CESAR
@@ -313,7 +313,7 @@ export const teamMembers: TeamMember[] = [
       "Reconocimiento por precisión técnica",
       "Liderazgo en producción de planos de alta complejidad"
     ],
-    order: 7
+    order: 4
   },
 
   // 9) SERGIO
@@ -360,7 +360,7 @@ export const teamMembers: TeamMember[] = [
       "Liderazgo en coordinación técnica y financiera",
       "Optimización de recursos en proyectos de gran escala"
     ],
-    order: 8
+    order: 5
   },
 
   // 10) MARIEN
@@ -431,7 +431,7 @@ export const teamMembers: TeamMember[] = [
       "Dominio de herramientas BIM y CAD avanzadas",
       "Contribución a proyectos comerciales importantes"
     ],
-    order: 10
+    order: 6
   },
 
   // 12) MARÍA SOMOZA
@@ -466,7 +466,7 @@ export const teamMembers: TeamMember[] = [
       "Reconocimiento por creatividad en diseño",
       "Contribución significativa en fase conceptual de proyectos"
     ],
-    order: 11
+    order: 7
   }
 ];
 
