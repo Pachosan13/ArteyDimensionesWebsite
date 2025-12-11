@@ -1,27 +1,5 @@
 [
   {
-    "name": "Arquitectura Corporativa",
-    "slug": "arquitectura-corporativa",
-    "tagline": "Oficinas que elevan la productividad y la marca.",
-    "heroImage": "/images/portfolio/BusinessPark/businesspark.jpg",
-    "keywords": ["arquitectura corporativa panamá","workplace strategy panamá","oficinas panamá"],
-    "valueCopy": "Diseñamos oficinas que impulsan la productividad, el bienestar y la identidad de marca. Desde la estrategia de espacio hasta la materialización, alineamos experiencia, flujo y tecnología para que tu equipo trabaje mejor. Medimos impacto con KPIs claros (colaboración, ocupación, NPS del espacio) y optimizamos cada m² para generar retorno.",
-    "faq": [
-      {"q":"¿Cómo miden el impacto en productividad?","a":"Definimos KPIs con el cliente (colaboración, ocupación, NPS del espacio) y comparamos pre vs. post."},
-      {"q":"¿Trabajan con espacios ocupados?","a":"Sí, planificamos por fases y horarios para minimizar interrupciones y garantizar seguridad."},
-      {"q":"¿Pueden alinear diseño con la marca?","a":"Integramos identidad visual y cultura en materiales, señalización y experiencia del espacio."}
-    ],
-    "testimonio": {"author":"Gerente General, Empresa Tech","quote":"Nuestro equipo trabaja mejor y los clientes perciben una marca más sólida. El proyecto superó expectativas."},
-    "gallery": [
-      "/images/services/arquitectura-corporativa/gallery-1.jpg",
-      "/images/services/arquitectura-corporativa/gallery-2.jpg",
-      "/images/services/arquitectura-corporativa/gallery-3.jpg",
-      "/images/services/arquitectura-corporativa/gallery-4.jpg",
-      "/images/services/arquitectura-corporativa/gallery-5.jpg",
-      "/images/services/arquitectura-corporativa/gallery-6.jpg"
-    ]
-  },
-  {
     "name": "Arquitectura Comercial",
     "slug": "arquitectura-comercial",
     "tagline": "Espacios que convierten visitas en ventas.",
@@ -41,6 +19,28 @@
       "/images/services/arquitectura-comercial/gallery-4.jpg",
       "/images/services/arquitectura-comercial/gallery-5.jpg",
       "/images/services/arquitectura-comercial/gallery-6.jpg"
+    ]
+  },
+  {
+    "name": "Arquitectura Corporativa",
+    "slug": "arquitectura-corporativa",
+    "tagline": "Oficinas que elevan la productividad y la marca.",
+    "heroImage": "/images/portfolio/BusinessPark/businesspark.jpg",
+    "keywords": ["arquitectura corporativa panamá","workplace strategy panamá","oficinas panamá"],
+    "valueCopy": "Diseñamos oficinas que impulsan la productividad, el bienestar y la identidad de marca. Desde la estrategia de espacio hasta la materialización, alineamos experiencia, flujo y tecnología para que tu equipo trabaje mejor. Medimos impacto con KPIs claros (colaboración, ocupación, NPS del espacio) y optimizamos cada m² para generar retorno.",
+    "faq": [
+      {"q":"¿Cómo miden el impacto en productividad?","a":"Definimos KPIs con el cliente (colaboración, ocupación, NPS del espacio) y comparamos pre vs. post."},
+      {"q":"¿Trabajan con espacios ocupados?","a":"Sí, planificamos por fases y horarios para minimizar interrupciones y garantizar seguridad."},
+      {"q":"¿Pueden alinear diseño con la marca?","a":"Integramos identidad visual y cultura en materiales, señalización y experiencia del espacio."}
+    ],
+    "testimonio": {"author":"Gerente General, Empresa Tech","quote":"Nuestro equipo trabaja mejor y los clientes perciben una marca más sólida. El proyecto superó expectativas."},
+    "gallery": [
+      "/images/services/arquitectura-corporativa/gallery-1.jpg",
+      "/images/services/arquitectura-corporativa/gallery-2.jpg",
+      "/images/services/arquitectura-corporativa/gallery-3.jpg",
+      "/images/services/arquitectura-corporativa/gallery-4.jpg",
+      "/images/services/arquitectura-corporativa/gallery-5.jpg",
+      "/images/services/arquitectura-corporativa/gallery-6.jpg"
     ]
   },
   {

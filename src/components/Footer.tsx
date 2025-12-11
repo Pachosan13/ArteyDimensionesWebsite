@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-bold">Arte y Dimensiones</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Estudio de arquitectura especializado en espacios corporativos, comerciales e institucionales que impulsan el rendimiento y la productividad.
+              Estudio de arquitectura especializado en espacios corporativos y comerciales que impulsan el rendimiento y la productividad.
             </p>
             <div className="flex items-center justify-center md:justify-start space-x-4">
               <a
@@ -38,8 +38,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li><Link to="/servicios/diseno-arquitectonico" className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors">Diseño Arquitectónico</Link></li>
               <li><Link to="/servicios/remodelaciones-comerciales" className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors">Remodelaciones Comerciales</Link></li>
-              <li><Link to="/servicios/construccion-general" className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors">Construcción General</Link></li>
-              <li><Link to="/servicios/diseno-interior" className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors">Diseño Interior</Link></li>
+              <li><Link to="/servicios/consultoria-y-gestipon-de-construccion" className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors">Construcción General</Link></li>
               <li><Link to="/servicios" className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors">Ver Todos los Servicios</Link></li>
             </ul>
           </div>
@@ -49,7 +48,7 @@ const Footer: React.FC = () => {
             <div className="space-y-4 text-gray-300">
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
                 <Mail className="h-5 w-5 text-brand mx-auto sm:mx-0" />
-                <span>artedim@artedim.com</span>
+                <span>info@artedim.com</span>
               </div>
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
                 <MapPin className="h-5 w-5 text-brand mx-auto sm:mx-0" />
@@ -60,7 +59,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400 text-sm">
-          © 2025 Arte y Dimensiones · Arquitectura que impulsa resultados
+          © 2026 Arte y Dimensiones · Arquitectura que impulsa resultados
         </div>
       </div>
     </footer>

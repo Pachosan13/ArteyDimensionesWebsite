@@ -1,8 +1,8 @@
 export const SITE = {
   brand: "Arte y Dimensiones",
   ciudad: "Panamá",
-  telefono_whatsapp: "+50760000000",
-  email_contacto: "info@arteydimensiones.com",
+  telefono_whatsapp: "+507 263-2109",
+  email_contacto: "info@artedim.com",
   cta_frase: "Agenda una evaluación sin costo",
   promesa_corta: "Resultados medibles en 60 días",
   prueba_social_breve: "Más de 150 proyectos entregados en Panamá"
