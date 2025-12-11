@@ -44,48 +44,6 @@
     ]
   },
   {
-    "name": "Arquitectura Institucional",
-    "slug": "arquitectura-institucional",
-    "tagline": "Diseño responsable para impacto social duradero.",
-    "heroImage": "/images/services/arquitectura-institucional/hero.jpg",
-    "keywords": ["arquitectura institucional panamá","edificios públicos panamá","infraestructura panamá"],
-    "valueCopy": "Desarrollamos proyectos institucionales con enfoque en funcionalidad, accesibilidad y sostenibilidad. Cumplimos normativa local e internacional, priorizando seguridad, mantenimiento y una experiencia digna para usuarios y colaboradores.",
-    "faq": [
-      {"q":"¿Cumplen normas locales e internacionales?","a":"Sí, diseñamos conforme a normativa local y buenas prácticas de accesibilidad y seguridad."},
-      {"q":"¿Cómo gestionan la durabilidad?","a":"Seleccionamos materiales y sistemas con bajo mantenimiento y alto desempeño a largo plazo."}
-    ],
-    "testimonio": {"author":"Coordinador de Infraestructura, Institución Pública","quote":"La obra es funcional, accesible y fácil de operar. El acompañamiento fue impecable."},
-    "gallery": [
-      "/images/services/arquitectura-institucional/gallery-1.jpg",
-      "/images/services/arquitectura-institucional/gallery-2.jpg",
-      "/images/services/arquitectura-institucional/gallery-3.jpg",
-      "/images/services/arquitectura-institucional/gallery-4.jpg",
-      "/images/services/arquitectura-institucional/gallery-5.jpg",
-      "/images/services/arquitectura-institucional/gallery-6.jpg"
-    ]
-  },
-  {
-    "name": "Diseño Interior",
-    "slug": "diseno-interior",
-    "tagline": "Materiales, luz y detalle al servicio de la experiencia.",
-    "heroImage": "/images/portfolio/BusinessPark/businesspark3.jpg",
-    "keywords": ["diseño interior panamá","interiorismo oficinas panamá","diseño espacios panamá"],
-    "valueCopy": "Combinamos materiales, iluminación y ergonomía para lograr atmósferas memorables. Curamos paletas, texturas y mobiliario con coherencia de marca y mantenimiento realista para tu operación.",
-    "faq": [
-      {"q":"¿Incluyen selección de materiales y mobiliario?","a":"Sí, curamos materiales y mobiliario con foco en durabilidad y coherencia con la marca."},
-      {"q":"¿Hacen renders y moodboards?","a":"Sí, usamos herramientas visuales para alinear expectativas y agilizar decisiones."}
-    ],
-    "testimonio": {"author":"Head of People, Empresa de Servicios","quote":"El ambiente se siente premium y funcional. El equipo está feliz y el cliente lo nota."},
-    "gallery": [
-      "/images/services/diseno-interior/gallery-1.jpg",
-      "/images/services/diseno-interior/gallery-2.jpg",
-      "/images/services/diseno-interior/gallery-3.jpg",
-      "/images/services/diseno-interior/gallery-4.jpg",
-      "/images/services/diseno-interior/gallery-5.jpg",
-      "/images/services/diseno-interior/gallery-6.jpg"
-    ]
-  },
-  {
     "name": "Space Planning & Workplace Strategy",
     "slug": "space-planning",
     "tagline": "Cada metro cuadrado cuenta.",

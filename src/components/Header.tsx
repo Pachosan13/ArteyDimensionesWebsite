@@ -18,6 +18,15 @@ type ProjectNavItem = {
 
 const serviceItems = servicesData as ServiceNavItem[];
 const projectItems = projectsData as ProjectNavItem[];
+const projectOrder = [
+  'brisas-capital',
+  'santa-maria-business-park',
+  'boulevard-penonome',
+  'terrazas-de-sabanitas'
+];
+const orderedProjectItems = projectItems
+  .slice()
+  .sort((a, b) => projectOrder.indexOf(a.slug) - projectOrder.indexOf(b.slug));
 
 interface HeaderProps {
   mobileMenuOpen: boolean;
@@ -111,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({
               </button>
               <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="px-4 py-2 text-sm font-semibold text-gray-500 border-b">Proyectos Destacados</div>
-                {projectItems.slice(0, 4).map((project) => (
+                {orderedProjectItems.slice(0, 4).map((project) => (
                   <Link
                     key={project.slug}
                     to={`/proyectos/${project.slug}`}
@@ -188,7 +197,7 @@ const Header: React.FC<HeaderProps> = ({
               {/* Mobile Proyectos */}
               <div className="space-y-2">
                 <div className="text-[#4B4B4B] font-semibold text-sm">PROYECTOS</div>
-                {projectItems.slice(0, 3).map((project) => (
+                {orderedProjectItems.slice(0, 3).map((project) => (
                   <Link
                     key={project.slug}
                     to={`/proyectos/${project.slug}`}

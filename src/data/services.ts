@@ -170,60 +170,6 @@ export const SERVICES = [
       "/images/portfolio/sabanitas.png",
       "/images/portfolio/business2.png"
     ]
-  },
-  {
-    nombre: "Diseño Interior",
-    slug: "diseno-interior",
-    keyword_principal: "diseño interior Panamá",
-    longtails: [
-      "diseño interior oficinas Panamá",
-      "interiorismo comercial Panamá",
-      "diseño interior corporativo"
-    ],
-    pains: [
-      "Espacios que no reflejan la identidad de marca",
-      "Ambientes que reducen la productividad",
-      "Inversión en mobiliario sin retorno"
-    ],
-    outcomes: [
-      "+35% mejora en satisfacción del equipo",
-      "Espacios que fortalecen la marca",
-      "Ambientes que impulsan la creatividad"
-    ],
-    features: [
-      "Diseño alineado con identidad corporativa",
-      "Mobiliario ergonómico y funcional",
-      "Iluminación optimizada para bienestar",
-      "Espacios flexibles y adaptables"
-    ],
-    testimonios: [
-      {
-        nombre: "Ana Sofía Herrera",
-        cargo: "Directora de RRHH, Banco General",
-        texto: "El nuevo diseño interior transformó completamente el ambiente laboral. Nuestros empleados están más motivados y productivos."
-      }
-    ],
-    faqs: [
-      { 
-        q: "¿Cuánto cuesta un proyecto de diseño interior en Panamá?", 
-        a: "El costo varía según el área y nivel de personalización. Ofrecemos paquetes desde diseño básico hasta proyectos completamente personalizados." 
-      },
-      { 
-        q: "¿Incluyen el mobiliario en el servicio?", 
-        a: "Sí, ofrecemos servicio completo que incluye selección, compra e instalación de mobiliario, o podemos trabajar solo con el diseño si prefieres." 
-      },
-      { 
-        q: "¿Cómo agendo una cita para diseño interior?", 
-        a: "Agenda una consulta gratuita donde evaluamos tu espacio actual y te presentamos propuestas de diseño personalizadas." 
-      }
-    ],
-    imagen_hero: "/images/services/interiores.png",
-    imagenes_galeria: [
-      "/images/portfolio/business2.png",
-      "/images/portfolio/santamaria.png",
-      "/images/services/consultoria.png",
-      "/images/services/serviciosparallax.png"
-    ]
   }
 ];
 
