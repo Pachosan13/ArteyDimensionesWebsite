@@ -27,16 +27,10 @@ export const teamMembers: TeamMember[] = [
     slug: "juan-manuel-rodriguez",
     name: "Arq. Juan Manuel Rodríguez Gotti",
     role: "Co-fundador y Arquitecto Superior",
-<<<<<<< HEAD
-    photo: "/images/team/JuanRodriguez.png",
-    shortBio: "Co-fundador de Arte y Dimensiones con más de 25 años liderando proyectos arquitectónicos innovadores que han transformado el paisaje comercial de Panamá.",
-    bio: "Juan Manuel Rodríguez Gotti es co-fundador y Arquitecto Superior de Arte y Dimensiones, una firma que nació en 1999 como una iniciativa para potenciar las habilidades arquitectónicas y el crecimiento profesional. Con más de 25 años de trayectoria, Juan Manuel ha sido el visionario detrás de proyectos emblemáticos que han redefinido la arquitectura comercial en Panamá y la región. Su liderazgo se caracteriza por un compromiso inquebrantable con la innovación, la excelencia técnica y la búsqueda constante de soluciones que superen las expectativas de los clientes. Como Arquitecto Superior, supervisa personalmente los proyectos más complejos y estratégicos, asegurando que cada diseño refleje los valores fundamentales de la firma: puntualidad, comunicación abierta y transparencia. Su experiencia abarca desde grandes centros comerciales hasta proyectos corporativos de alta complejidad, siempre manteniendo un enfoque en la funcionalidad, la estética contemporánea y la viabilidad económica.",
-=======
     photo: "/images/Team/JuanRodriguez.png",
     shortBio:
       "Co-fundador de Arte y Dimensiones con más de 25 años liderando proyectos arquitectónicos innovadores que han transformado el paisaje comercial de Panamá.",
     bio: "Juan Manuel Rodríguez Gotti es co-fundador y Arquitecto Superior ...",
->>>>>>> codex-update-menu
     linkedin: "",
     education: [
       {
@@ -71,16 +65,10 @@ export const teamMembers: TeamMember[] = [
     slug: "alejandra-arosemena",
     name: "Arq. Alejandra Arosemena de Rodríguez",
     role: "Co-fundadora y Arquitecta Asociada",
-<<<<<<< HEAD
-    photo: "/images/team/Alejandra.png",
-    shortBio: "Co-fundadora de Arte y Dimensiones, arquitecta asociada con más de 25 años de experiencia en diseño arquitectónico y gestión de proyectos complejos.",
-    bio: "Alejandra Arosemena de Rodríguez es co-fundadora y Arquitecta Asociada de Arte y Dimensiones, desempeñando un papel fundamental en el crecimiento y éxito de la firma desde su fundación en 1999. Con más de 25 años de experiencia, Alejandra combina una visión creativa excepcional con una rigurosa atención al detalle técnico y la gestión eficiente de proyectos. Su enfoque holístico del diseño arquitectónico integra las necesidades funcionales del cliente con soluciones estéticas innovadoras y sostenibles. Como Arquitecta Asociada, Alejandra supervisa el desarrollo conceptual y técnico de proyectos clave, coordinando equipos multidisciplinarios y asegurando que cada entrega cumpla con los más altos estándares de calidad. Su experiencia abarca proyectos comerciales, corporativos e institucionales, donde su capacidad para entender profundamente las necesidades del cliente y traducirlas en espacios arquitectónicos excepcionales ha sido reconocida consistentemente. Alejandra es también mentora de las nuevas generaciones de arquitectos en la firma, transmitiendo los valores y la filosofía que han hecho de Arte y Dimensiones un referente en la arquitectura comercial.",
-=======
     photo: "/images/Team/Alejandra copy.png",
     shortBio:
       "Co-fundadora de Arte y Dimensiones, arquitecta asociada con más de 25 años de experiencia en diseño arquitectónico y gestión de proyectos complejos.",
     bio: "Alejandra Arosemena de Rodríguez es co-fundadora ...",
->>>>>>> codex-update-menu
     linkedin: "",
     education: [
       {
@@ -115,16 +103,10 @@ export const teamMembers: TeamMember[] = [
     slug: "jose-antonio-rodriguez",
     name: "Lic. José Antonio Rodríguez Gotti",
     role: "Gerente Financiero",
-<<<<<<< HEAD
-    photo: "/images/team/JoseRodriguez.png",
-    shortBio: "Gerente Financiero con más de 25 años de experiencia en gestión financiera estratégica, asegurando la solidez económica y el crecimiento sostenible de Arte y Dimensiones.",
-    bio: "José Antonio Rodríguez Gotti es el Gerente Financiero de Arte y Dimensiones, un rol que ha desempeñado con excelencia desde la fundación de la firma en 1999. Con más de 25 años de experiencia en gestión financiera y administración de negocios, José Antonio ha sido el pilar económico que ha permitido el crecimiento sostenible y la estabilidad financiera de la empresa. Su expertise en finanzas corporativas, análisis de viabilidad de proyectos, gestión de presupuestos y planificación estratégica ha sido fundamental para el éxito de la firma. José Antonio trabaja en estrecha colaboración con el equipo de arquitectos para asegurar que cada proyecto sea no solo arquitectónicamente excepcional, sino también financieramente viable y rentable. Su visión estratégica ha permitido a Arte y Dimensiones expandir sus operaciones, invertir en tecnología de punta y mantener una posición sólida en el mercado. Como Gerente Financiero, supervisa todas las operaciones financieras, desde la gestión de flujo de caja hasta la planificación a largo plazo, asegurando que la firma mantenga su compromiso con la transparencia y la excelencia operativa que caracteriza cada aspecto de su trabajo.",
-=======
     photo: "/images/Team/JoseRodriguez.png",
     shortBio:
       "Gerente Financiero con más de 25 años de experiencia en gestión financiera estratégica, asegurando la solidez económica y el crecimiento sostenible de Arte y Dimensiones.",
     bio: "José Antonio Rodríguez Gotti es el Gerente Financiero ...",
->>>>>>> codex-update-menu
     linkedin: "",
     education: [
       {
