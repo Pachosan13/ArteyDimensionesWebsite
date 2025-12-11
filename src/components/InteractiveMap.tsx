@@ -27,7 +27,7 @@ const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
     description:
       "Boulevard de uso mixto en Penonomé, con enfoque en conveniencia diaria y tráfico vehicular.",
     image: "/images/portfolio/Penonome/Boulevardpenonome.jpg",
-    url: "/images/boulevard-penonome",
+    url: "/proyectos/boulevard-penonome",
   },
 };
 
