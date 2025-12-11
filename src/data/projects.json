@@ -90,23 +90,5 @@
       "/images/portfolio/BrisasCapitaldeleste/brisasdeleste9.png",
       "/images/portfolio/BrisasCapitaldeleste/brisasdeleste10.png"
     ]
-  },
-  {
-    "slug": "centro-corporativo-business",
-    "title": "Centro Corporativo Business",
-    "category": "Desarrollo Corporativo",
-    "heroImage": "/images/portfolio/BusinessPark/businesspark.jpg",
-    "roi": "+60% satisfacción de empleados",
-    "description": "Centro corporativo de alto estándar con enfoque en eficiencia operativa, confort y representatividad para marcas exigentes. El diseño integra tecnología de punta, espacios flexibles y amenidades que transforman el entorno laboral en una ventaja competitiva para atraer y retener talento de alto nivel.",
-    "keywords": ["oficinas", "centro corporativo", "arquitectura", "Panamá", "espacios de trabajo"],
-    "metaDescription": "Centro Corporativo Business: oficinas de alto estándar con eficiencia y representatividad.",
-    "gallery": [
-      "/images/portfolio/BusinessPark/businesspark1.jpg",
-      "/images/portfolio/BusinessPark/businesspark2.jpg",
-      "/images/portfolio/BusinessPark/businesspark3.jpg",
-      "/images/portfolio/BusinessPark/businesspark4.jpg",
-      "/images/portfolio/BusinessPark/businesspark5.jpg",
-      "/images/portfolio/BusinessPark/businesspark6.jpg"
-    ]
   }
 ]
