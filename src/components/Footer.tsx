@@ -7,6 +7,7 @@ const Footer: React.FC = () => {
     <footer className="bg-[#1f1f1f] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Columna 1: Brand + redes */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2 mb-6">
               <Building2 className="h-8 w-8 text-brand" />
@@ -33,6 +34,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
+          {/* Columna 2: Servicios */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-bold mb-6">Servicios</h3>
             <ul className="space-y-3">
@@ -57,7 +59,7 @@ const Footer: React.FC = () => {
                   to="/servicios/consultoria-y-gestipon-de-construccion"
                   className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
-                  Construcción General
+                  Consultoría y Gestión de Construcción
                 </Link>
               </li>
               <li>
@@ -71,6 +73,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Columna 3: Contacto */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-bold mb-6">Contacto</h3>
             <div className="space-y-4 text-gray-300">
