@@ -43,20 +43,20 @@ const Footer: React.FC = () => {
                   to="/servicios/diseno-arquitectonico"
                   className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
-                  Diseño Arquitectónico
+                  Arquitectura Comercial
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/servicios/remodelaciones-comerciales"
+                  to="/servicios/arquitectura-comercial"
                   className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
-                  Remodelaciones Comerciales
+                  Arquitectura Corporativa
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/servicios/consultoria-y-gestipon-de-construccion"
+                  to="/servicios/arquitectura-corporativa"
                   className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
                   Consultoría y Gestión de Construcción
