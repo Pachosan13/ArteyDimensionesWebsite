@@ -48,7 +48,7 @@ export const teamMembers: TeamMember[] = [
     ],
     achievements: [
       "Co-fundador de Arte y Dimensiones en 1999",
-      "Más de 200 proyectos arquitectónicos completados exitosamente",
+      "Más de 150 proyectos arquitectónicos completados exitosamente",
       "Liderazgo en proyectos emblemáticos de Panamá",
       "25+ años de excelencia en arquitectura comercial",
       "Reconocimiento como líder en innovación arquitectónica",
@@ -83,7 +83,7 @@ export const teamMembers: TeamMember[] = [
     ],
     achievements: [
       "Co-fundadora de Arte y Dimensiones en 1999",
-      "Gestión exitosa de más de 200 proyectos arquitectónicos",
+      "Gestión exitosa de más de 150 proyectos arquitectónicos",
       "Liderazgo en coordinación de proyectos de alta complejidad",
       "25+ años de excelencia en diseño y gestión",
       "Reconocimiento por innovación en arquitectura comercial",
@@ -124,7 +124,7 @@ export const teamMembers: TeamMember[] = [
     ],
     achievements: [
       "25+ años liderando la gestión financiera de Arte y Dimensiones",
-      "Gestión exitosa de más de 200 proyectos arquitectónicos",
+      "Gestión exitosa de más de 150 proyectos arquitectónicos",
       "Implementación de sistemas de control financiero eficientes",
       "Crecimiento sostenible y estabilidad financiera de la firma",
       "Optimización de recursos y maximización de rentabilidad",
@@ -438,7 +438,7 @@ export const teamMission = {
   title: "Nuestro Equipo",
   subtitle: "Líderes en Innovación Arquitectónica",
   description: "Arte y Dimensiones fue fundada en 1999 por un equipo visionario comprometido con potenciar las habilidades arquitectónicas y el crecimiento profesional. Este impulso constante por evolucionar y asumir nuevos desafíos nos ha llevado a desarrollar proyectos innovadores que nos diferencian en el campo de la arquitectura comercial.",
-  extendedDescription: "Durante más de 25 años, nuestra directiva ha guiado a la firma a través de obras, diseños, reuniones, seguimientos, visitas en campo, entrevistas y más; manteniendo como pilares de trabajo: la puntualidad, la comunicación abierta y constante con el equipo y los clientes, y la transparencia en cada etapa del diseño y desarrollo. Junto a nuestro equipo de profesionales expertos, hemos construido relaciones duraderas y entregado más de 200 proyectos exitosos."
+  extendedDescription: "Durante más de 25 años, nuestra directiva ha guiado a la firma a través de obras, diseños, reuniones, seguimientos, visitas en campo, entrevistas y más; manteniendo como pilares de trabajo: la puntualidad, la comunicación abierta y constante con el equipo y los clientes, y la transparencia en cada etapa del diseño y desarrollo. Junto a nuestro equipo de profesionales expertos, hemos construido relaciones duraderas y entregado más de 150 proyectos exitosos."
 };
 
 export const companyValues = [

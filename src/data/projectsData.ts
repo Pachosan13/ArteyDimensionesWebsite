@@ -47,13 +47,5 @@ export const projects: Project[] = [
     image: "/images/portfolio/brisasste.png",
     roi: "+35% valorización inmobiliaria",
     description: "Transformación arquitectónica que impulsa el valor inmobiliario y atrae marcas premium."
-  },
-  {
-    slug: "centro-corporativo-business",
-    title: "Centro Corporativo Business",
-    category: "Desarrollo Corporativo",
-    image: "/images/portfolio/business2.png",
-    roi: "+60% satisfacción de empleados",
-    description: "Espacios de trabajo modernos que fomentan la innovación y mejoran el bienestar laboral."
-  },
+  }
 ];

@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 md:mb-8 font-light leading-relaxed px-4">
-            Arquitectura Corporativa, Comercial e Institucional en Panamá
+            Arquitectura Corporativa, Comercial y Logística en Panamá
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
           <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center px-4">
             <div>
               <CounterEffect 
-                targetValue={50} 
+                targetValue={150} 
                 suffix="+" 
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
             </div>
             <div>
               <CounterEffect 
-                targetValue={15} 
+                targetValue={25} 
                 suffix="+" 
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
