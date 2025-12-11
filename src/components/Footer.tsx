@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/servicios/diseno-arquitectonico"
+                  to="/servicios/arquitectura-comercial"
                   className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
                   Arquitectura Comercial
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/servicios/arquitectura-comercial"
+                  to="/servicios/arquitectura-corporativa"
                   className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
                   Arquitectura Corporativa
@@ -56,10 +56,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/servicios/arquitectura-corporativa"
+                  to="/servicios/space-planning"
                   className="text-gray-300 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
-                  Consultoría y Gestión de Construcción
+                  Space Planning
                 </Link>
               </li>
               <li>
