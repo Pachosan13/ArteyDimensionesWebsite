@@ -47,7 +47,7 @@ const Equipo: React.FC = () => {
                 <div className="text-sm uppercase tracking-wider">Años de Experiencia</div>
               </div>
               <div className="bg-gradient-to-br from-brand to-red-600 p-8 rounded-xl text-white">
-                <div className="text-5xl font-bold mb-2">200+</div>
+                <div className="text-5xl font-bold mb-2">150+</div>
                 <div className="text-sm uppercase tracking-wider">Proyectos Completados</div>
               </div>
               <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-8 rounded-xl">
