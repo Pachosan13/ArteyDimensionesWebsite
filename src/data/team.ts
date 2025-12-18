@@ -27,7 +27,7 @@ export const teamMembers: TeamMember[] = [
     slug: "juan-manuel-rodriguez",
     name: "Arq. Juan Manuel Rodríguez Gotti",
     role: "Co-fundador y Arquitecto Superior",
-    photo: "/images/Team/JuanRodriguez.png",
+    photo: "/images/Team/juanfodriguez.jpg",
     shortBio:
       "Co-fundador de Arte y Dimensiones con más de 25 años liderando proyectos arquitectónicos innovadores que han transformado el paisaje comercial de Panamá.",
     bio: "Juan Manuel Rodríguez Gotti es co-fundador y Arquitecto Superior ...",
