@@ -121,9 +121,8 @@ const Equipo: React.FC = () => {
               .filter((member) => member.order < 1)
               .sort((a, b) => a.order - b.order)
               .map((member) => (
-                <Link
+                <div
                   key={member.id}
-                  to={`/equipo/${member.slug}`}
                   className="group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <div className="relative w-full aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
@@ -148,20 +147,17 @@ const Equipo: React.FC = () => {
                     <p className="text-brand font-bold mb-4 text-sm uppercase tracking-wide">
                       {member.role}
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {member.shortBio}
                     </p>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                      <span className="text-sm font-medium text-brand group-hover:underline">
-                        Ver perfil completo →
-                      </span>
-                      {member.linkedin && (
-                        <Linkedin className="h-5 w-5 text-gray-400 group-hover:text-[#0077B5] transition-colors" />
-                      )}
-                    </div>
+                    {member.linkedin && (
+                      <div className="pt-4 mt-4 border-t border-gray-200 flex justify-end">
+                        <Linkedin className="h-5 w-5 text-gray-400" />
+                      </div>
+                    )}
                   </div>
-                </Link>
+                </div>
               ))}
           </div>
 
@@ -180,9 +176,8 @@ const Equipo: React.FC = () => {
               .filter((member) => member.order >= 1)
               .sort((a, b) => a.order - b.order)
               .map((member) => (
-                <Link
+                <div
                   key={member.id}
-                  to={`/equipo/${member.slug}`}
                   className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <div className="relative w-full aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
@@ -207,20 +202,17 @@ const Equipo: React.FC = () => {
                     <p className="text-brand font-semibold mb-3 text-sm uppercase tracking-wide">
                       {member.role}
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {member.shortBio}
                     </p>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                      <span className="text-sm font-medium text-brand group-hover:underline">
-                        Ver perfil completo →
-                      </span>
-                      {member.linkedin && (
-                        <Linkedin className="h-5 w-5 text-gray-400 group-hover:text-[#0077B5] transition-colors" />
-                      )}
-                    </div>
+                    {member.linkedin && (
+                      <div className="pt-4 mt-4 border-t border-gray-200 flex justify-end">
+                        <Linkedin className="h-5 w-5 text-gray-400" />
+                      </div>
+                    )}
                   </div>
-                </Link>
+                </div>
               ))}
           </div>
         </div>
