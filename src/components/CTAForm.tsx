@@ -84,7 +84,7 @@ const CTAForm: React.FC = () => {
               <h3 className="text-2xl font-bold mb-6">Contacta con Nosotros</h3>
               <div className="space-y-6">
                 {[
-                  { icon: Mail, title: "Email", info: "artedim@artedim.com" },
+                  { icon: Mail, title: "Email", info: "info@artedim.com" },
                   {
                     icon: MapPin,
                     title: "Oficina",

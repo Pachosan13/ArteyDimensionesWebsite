@@ -225,11 +225,11 @@ const TeamMemberPage: React.FC = () => {
 
             <div className="mt-12 text-center">
               <a
-                href="mailto:artedim@artedim.com"
+                href="mailto:info@artedim.com"
                 className="inline-flex items-center text-gray-300 hover:text-white transition-colors"
               >
                 <Mail className="h-5 w-5 mr-2" />
-                <span>artedim@artedim.com</span>
+                <span>info@artedim.com</span>
               </a>
             </div>
           </div>
