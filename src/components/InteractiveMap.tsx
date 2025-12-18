@@ -2,12 +2,15 @@ import React, { useState } from "react";
 
 type ProjectId = "costa-verde" | "coronado" | "penonome" | null;
 
-const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
-  title: string;
-  description: string;
-  image: string;
-  url: string;
-}> = {
+const PROJECTS_INFO: Record<
+  Exclude<ProjectId, null>,
+  {
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+  }
+> = {
   "costa-verde": {
     title: "Boulevard Costa Verde",
     description:
@@ -32,10 +35,10 @@ const PROJECTS_INFO: Record<Exclude<ProjectId, null>, {
 };
 
 const InteractiveMap: React.FC = () => {
+  // Solo permitimos abrir modal para Penonomé
   const [openProject, setOpenProject] = useState<ProjectId>(null);
 
-  const currentProject =
-    openProject ? PROJECTS_INFO[openProject] : null;
+  const currentProject = openProject ? PROJECTS_INFO[openProject] : null;
 
   return (
     <section
@@ -77,42 +80,9 @@ const InteractiveMap: React.FC = () => {
               </div>
 
               {/* HOTSPOTS INVISIBLES */}
-              {/* OJO: ajusta left/top hasta que queden EXACTAMENTE encima del texto de la imagen */}
-              {/* Boulevard Costa Verde */}
-              <button
-                type="button"
-                onClick={() => setOpenProject("costa-verde")}
-                aria-label="Ver detalles Boulevard Costa Verde"
-                className="absolute bg-transparent border-none p-0"
-                style={{
-                  left: "50%", // X
-                  top: "58%",  // Y
-                  width: "170px",
-                  height: "34px",
-                  cursor: "pointer",
-                }}
-              >
-                <span className="sr-only">Boulevard Costa Verde</span>
-              </button>
+              {/* Costa Verde y Coronado: REMOVIDOS (no modal) */}
 
-              {/* Terrazas de Coronado */}
-              <button
-                type="button"
-                onClick={() => setOpenProject("coronado")}
-                aria-label="Ver detalles Terrazas de Coronado"
-                className="absolute bg-transparent border-none p-0"
-                style={{
-                  left: "47%", // un poco más a la izquierda
-                  top: "69%",
-                  width: "180px",
-                  height: "34px",
-                  cursor: "pointer",
-                }}
-              >
-                <span className="sr-only">Terrazas de Coronado</span>
-              </button>
-
-              {/* Boulevard Penonomé */}
+              {/* Boulevard Penonomé (ÚNICO con modal) */}
               <button
                 type="button"
                 onClick={() => setOpenProject("penonome")}
@@ -130,7 +100,7 @@ const InteractiveMap: React.FC = () => {
               </button>
             </div>
 
-            {/* MODAL DEL PROYECTO (CENTRADO, MISMA UI PARA LOS 3) */}
+            {/* MODAL DEL PROYECTO (SOLO PENONOMÉ) */}
             {currentProject && (
               <div
                 className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
@@ -178,7 +148,6 @@ const InteractiveMap: React.FC = () => {
                 </div>
               </div>
             )}
-
           </div>
         </div>
       </div>
