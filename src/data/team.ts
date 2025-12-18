@@ -182,7 +182,7 @@ export const teamMembers: TeamMember[] = [
     slug: "roxana-castillo",
     name: "Arq. Roxana Castillo",
     role: "Coordinadora de Proyectos",
-    photo: "/images/Team/roxanacastillo.jpg",
+    photo: "/images/team/roxanacastillo.jpg",
     shortBio:
       "Arquitecta coordinadora especializada en gestión integral de proyectos, garantizando la excelencia en cada fase del desarrollo arquitectónico.",
     bio: "Roxana Castillo es una arquitecta comprometida ...",
