@@ -65,7 +65,7 @@ export const teamMembers: TeamMember[] = [
     slug: "alejandra-arosemena",
     name: "Arq. Alejandra Arosemena de Rodríguez",
     role: "Co-fundadora y Arquitecta Asociada",
-    photo: "/images/Team/Alejandra copy.png",
+    photo: "/images/team/Alejandra.png",
     shortBio:
       "Co-fundadora de Arte y Dimensiones, arquitecta asociada con más de 25 años de experiencia en diseño arquitectónico y gestión de proyectos complejos.",
     bio: "Alejandra Arosemena de Rodríguez es co-fundadora ...",
@@ -103,7 +103,7 @@ export const teamMembers: TeamMember[] = [
     slug: "jose-antonio-rodriguez",
     name: "Lic. José Antonio Rodríguez Gotti",
     role: "Gerente Financiero",
-    photo: "/images/Team/JoseRodriguez.png",
+    photo: "/images/team/Jose.png",
     shortBio:
       "Gerente Financiero con más de 25 años de experiencia en gestión financiera estratégica, asegurando la solidez económica y el crecimiento sostenible de Arte y Dimensiones.",
     bio: "José Antonio Rodríguez Gotti es el Gerente Financiero ...",
