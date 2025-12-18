@@ -126,14 +126,16 @@ const Equipo: React.FC = () => {
                   to={`/equipo/${member.slug}`}
                   className="group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="relative h-96 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                  <div className="relative w-full aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                     <img
                       src={member.photo}
                       alt={member.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2UwZTBlMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Gb3RvIGRlIFBlcmZpbDwvdGV4dD48L3N2Zz4=';
+                        target.src =
+                          'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2UwZTBlMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Gb3RvIGRlIFBlcmZpbDwvdGV4dD48L3N2Zz4=';
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-300"></div>
@@ -178,46 +180,48 @@ const Equipo: React.FC = () => {
               .filter((member) => member.order >= 1)
               .sort((a, b) => a.order - b.order)
               .map((member) => (
-              <Link
-                key={member.id}
-                to={`/equipo/${member.slug}`}
-                className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div className="relative h-80 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2UwZTBlMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Gb3RvIGRlIFBlcmZpbDwvdGV4dD48L3N2Zz4=';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-brand transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-brand font-semibold mb-3 text-sm uppercase tracking-wide">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {member.shortBio}
-                  </p>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                    <span className="text-sm font-medium text-brand group-hover:underline">
-                      Ver perfil completo →
-                    </span>
-                    {member.linkedin && (
-                      <Linkedin className="h-5 w-5 text-gray-400 group-hover:text-[#0077B5] transition-colors" />
-                    )}
+                <Link
+                  key={member.id}
+                  to={`/equipo/${member.slug}`}
+                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <div className="relative w-full aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src =
+                          'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2UwZTBlMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Gb3RvIGRlIFBlcmZpbDwvdGV4dD48L3N2Zz4=';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                   </div>
-                </div>
-              </Link>
-            ))}
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-brand transition-colors">
+                      {member.name}
+                    </h3>
+                    <p className="text-brand font-semibold mb-3 text-sm uppercase tracking-wide">
+                      {member.role}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {member.shortBio}
+                    </p>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                      <span className="text-sm font-medium text-brand group-hover:underline">
+                        Ver perfil completo →
+                      </span>
+                      {member.linkedin && (
+                        <Linkedin className="h-5 w-5 text-gray-400 group-hover:text-[#0077B5] transition-colors" />
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
           </div>
         </div>
       </section>
