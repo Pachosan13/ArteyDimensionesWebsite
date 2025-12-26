@@ -147,7 +147,7 @@ export const teamMembers: TeamMember[] = [
     slug: "mitzenia-ortega",
     name: "Lic. Mitzenia Ortega",
     role: "Asistente Administrativa",
-    photo: "/images/Team/mitzenia-ortega.jpg",
+    photo: "/images/team/mitzeniaortega.jpg",
     shortBio:
       "Profesional administrativa encargada de la gestión operativa y soporte estratégico en Arte y Dimensiones.",
     bio: "Mitzenia Ortega es el pilar administrativo ...",
@@ -217,7 +217,7 @@ export const teamMembers: TeamMember[] = [
     slug: "david-frias",
     name: "Arq. David Frías",
     role: "Arquitecto Senior",
-    photo: "/images/Team/david-frias.jpg",
+    photo: "/images/team/davidfrias.jpg",
     shortBio:
       "Arquitecto senior con más de 20 años de experiencia en diseño y desarrollo de proyectos comerciales y corporativos de gran escala.",
     bio: "David Frías es un arquitecto experimentado ...",
@@ -252,7 +252,7 @@ export const teamMembers: TeamMember[] = [
     slug: "luis-morales",
     name: "Luis Morales",
     role: "Modelador BIM y Desarrollador de Planos",
-    photo: "/images/Team/luis-morales.jpg",
+    photo: "/images/team/luisemilio.jpg",
     shortBio:
       "Experto en modelado BIM y desarrollo de planos técnicos, especializado en la implementación de tecnologías de vanguardia en proyectos arquitectónicos.",
     bio: "Luis Morales es un especialista en tecnologías BIM ...",
@@ -287,7 +287,7 @@ export const teamMembers: TeamMember[] = [
     slug: "cesar-rodriguez",
     name: "César Rodríguez",
     role: "Desarrollador de Planos - Coordinador",
-    photo: "/images/Team/cesar-rodriguez.jpg",
+    photo: "/images/team/cesarrodriguez.jpg",
     shortBio:
       "Especialista en desarrollo y coordinación técnica de planos arquitectónicos, garantizando precisión y calidad en la documentación de proyectos.",
     bio: "César Rodríguez lidera el equipo de desarrollo de planos ...",
@@ -322,7 +322,7 @@ export const teamMembers: TeamMember[] = [
     slug: "sergio-cardenas",
     name: "Ing. Sergio Cárdenas",
     role: "Gerente de Proyectos",
-    photo: "/images/Team/sergio-cardenas.jpg",
+    photo: "/images/team/sergiocardenas.jpg",
     shortBio:
       "Ingeniero civil y gerente de proyectos con amplia formación en alta gerencia y finanzas, especializado en liderazgo técnico y administrativo.",
     bio: "Sergio Cárdenas combina una sólida formación ...",
@@ -369,7 +369,7 @@ export const teamMembers: TeamMember[] = [
     slug: "marien-rojas",
     name: "Arq. Marien Rojas",
     role: "Arquitecta - Líder de Proyectos y Coordinación Técnica",
-    photo: "/images/Team/marien-rojas.jpg",
+    photo: "/images/team/marienrojas.jpg",
     shortBio:
       "Arquitecta con talento en liderazgo de proyectos y coordinación técnica, destacando por su compromiso con la calidad y atención al detalle.",
     bio: "Marien Rojas es una arquitecta talentosa ...",
@@ -404,7 +404,7 @@ export const teamMembers: TeamMember[] = [
     slug: "arnel-perez",
     name: "Arq. Arnel Pérez",
     role: "Arquitecto - Líder de Proyectos y Coordinación Técnica",
-    photo: "/images/Team/arnel-perez.jpg",
+    photo: "/images/team/arnelperez.jpg",
     shortBio:
       "Arquitecto especializado en liderazgo de proyectos y coordinación técnica, aportando visión fresca y dominio de tecnologías contemporáneas.",
     bio: "Arnel Pérez representa la nueva generación ...",
@@ -440,7 +440,7 @@ export const teamMembers: TeamMember[] = [
     slug: "maria-somoza",
     name: "Arq. María Somoza",
     role: "Arquitecta - Diseño y Conceptualización de Proyectos",
-    photo: "/images/Team/maria-somoza.jpg",
+    photo: "/images/team/mariasomoza.jpg",
     shortBio:
       "Arquitecta creativa especializada en diseño conceptual y desarrollo de propuestas arquitectónicas innovadoras y funcionales.",
     bio: "María Somoza es una arquitecta creativa ...",
