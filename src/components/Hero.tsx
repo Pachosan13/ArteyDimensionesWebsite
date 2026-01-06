@@ -13,18 +13,20 @@ const Hero: React.FC = () => {
       />
 
       {/* 30% Dark Overlay for text readability */}
-<div className="absolute inset-0 bg-gradient-to-b z-10"
-     style={{
-       background: "linear-gradient(to bottom, rgba(15,15,15,0.6), rgba(15,15,15,0.8), rgba(15,15,15,0.95))"
-     }}
-></div>
+      <div
+        className="absolute inset-0 bg-gradient-to-b z-10"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(226, 43, 43, 0.6), rgba(15,15,15,0.8), rgba(15,15,15,0.95))",
+        }}
+      />
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
         <div className="relative z-20 text-center text-white w-full md:max-w-3xl md:mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-5 leading-snug px-2">
-            Diseñamos Espacios que 
-            <span className="text-brand block sm:inline"> Impulsan el Rendimiento</span>
+            Convertimos Conceptos En Espacios Que 
+            <span className="text-brand block sm:inline"> Cobran Vida</span>
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 md:mb-8 font-light leading-relaxed px-4">
@@ -51,16 +53,7 @@ const Hero: React.FC = () => {
           <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center px-4">
             <div>
               <CounterEffect 
-                targetValue={150} 
-                suffix="+" 
-                duration={2000}
-                className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
-              />
-              <div className="text-sm sm:text-base text-white/90 font-medium">Proyectos Completados</div>
-            </div>
-            <div>
-              <CounterEffect 
-                targetValue={25} 
+                targetValue={26} 
                 suffix="+" 
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
@@ -69,12 +62,21 @@ const Hero: React.FC = () => {
             </div>
             <div>
               <CounterEffect 
-                targetValue={100} 
+                targetValue={410_000} 
+                suffix="+" 
+                duration={2000}
+                className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
+              />
+              <div className="text-sm sm:text-base text-white/90 font-medium">M2 de Proyectos Comerciales</div>
+            </div>
+            <div>
+              <CounterEffect 
+                targetValue={150} 
                 suffix="%" 
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
               />
-              <div className="text-sm sm:text-base text-white/90 font-medium">Satisfacción del Cliente</div>
+              <div className="text-sm sm:text-base text-white/90 font-medium">Proyectos Construidos</div>
             </div>
           </div>
         </div>

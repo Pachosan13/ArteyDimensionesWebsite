@@ -77,20 +77,25 @@ const Footer: React.FC = () => {
           <div className="text-center md:text-left">
             <h3 className="text-lg font-bold mb-6">Contacto</h3>
             <div className="space-y-4 text-gray-300">
+              {/* Correo */}
+              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
+                <Mail className="h-5 w-5 text-brand mx-auto sm:mx-0" />
+                <a
+                  href="mailto:info@artedim.com"
+                  className="hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
+                >
+                  info@artedim.com
+                </a>
+              </div>
               {/* Teléfono */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
                 <Phone className="h-5 w-5 text-brand mx-auto sm:mx-0" />
                 <a
                   href="tel:+5072632109"
-                  className="hover:text-brand transition-colors"
+                  className="hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand transition-colors"
                 >
                   +507 263 2109
                 </a>
-              </div>
-              {/* Correo */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
-                <Mail className="h-5 w-5 text-brand mx-auto sm:mx-0" />
-                <span>info@artedim.com</span>
               </div>
               {/* Dirección */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3">
