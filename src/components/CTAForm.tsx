@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin } from 'lucide-react';
+import { Send, Mail, MapPin, Phone } from 'lucide-react';
 
 const CTAForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -85,6 +85,18 @@ const CTAForm: React.FC = () => {
               <div className="space-y-6">
                 {[
                   { icon: Mail, title: "Email", info: "info@artedim.com" },
+                  {
+                    icon: Phone,
+                    title: "Teléfono",
+                    info: (
+                      <a
+                        href="tel:+5072632109"
+                        className="hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                      >
+                        +507 263 2109
+                      </a>
+                    )
+                  },
                   {
                     icon: MapPin,
                     title: "Oficina",
