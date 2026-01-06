@@ -88,9 +88,13 @@ const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* LOGO */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="/images/general/logoarteydim.jpg" alt="Arte y Dimensiones Logo" className="h-8 w-8 object-contain" />
-            <span className="text-xl font-bold text-[#4B4B4B]">Arte y Dimensiones</span>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/images/general/ADLOGO_HORIZONTALmenu@250x.png"
+              alt="Arte y Dimensiones"
+              className="h-8 sm:h-9 w-auto object-contain"
+              loading="eager"
+            />
           </Link>
 
           {/* DESKTOP NAV */}

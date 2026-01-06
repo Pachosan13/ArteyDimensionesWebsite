@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Mail, MapPin, Linkedin, Instagram, Phone } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Instagram, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,8 +10,18 @@ const Footer: React.FC = () => {
           {/* Columna 1: Brand + redes */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2 mb-6">
-              <Building2 className="h-8 w-8 text-brand" />
-              <span className="text-xl font-bold">Arte y Dimensiones</span>
+              <Link
+                to="/"
+                className="inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                aria-label="Ir al inicio"
+              >
+                <img
+                  src="/images/general/ADLOGO_HORIZONTALfooter@250x.png"
+                  alt="Arte y Dimensiones"
+                  className="h-10 w-auto object-contain"
+                  loading="lazy"
+                />
+              </Link>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Estudio de arquitectura especializado en espacios corporativos y comerciales que impulsan el rendimiento y la productividad.
