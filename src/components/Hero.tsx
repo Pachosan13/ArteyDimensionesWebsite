@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
             <div>
               <CounterEffect 
                 targetValue={150} 
-                suffix="%" 
+                suffix="+" 
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
               />

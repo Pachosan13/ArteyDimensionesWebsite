@@ -27,17 +27,37 @@ const Equipo: React.FC = () => {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero image (equipo) */}
+          <div className="w-full mb-16">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-neutral-900">
+              <img
+                src="/images/team/fotoequipo.jpeg"
+                alt="Equipo Arte y Dimensiones"
+                className="w-full h-[52vh] md:h-[62vh] object-cover"
+                loading="lazy"
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, rgba(15,15,15,0.15), rgba(15,15,15,0.45), rgba(15,15,15,0.75))",
+                }}
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
+            <div className="text-center">
               <h2 className="text-4xl font-bold text-neutral-900 mb-6">
                 Nuestra Historia
               </h2>
-              <div className="h-1 w-16 bg-brand mb-6"></div>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <div className="h-1 w-16 bg-brand mx-auto mb-6"></div>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-xl mx-auto">
                 {teamMission.description}
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {teamMission.extendedDescription}
+              <p className="text-lg text-gray-700 leading-relaxed max-w-xl mx-auto">
+                Durante más de 25 años, nuestro equipo directivo ha guiado a la firma a través de obras, diseños, reuniones, seguimientos, visitas en campo, entrevistas y más; manteniendo como pilares de trabajo: la puntualidad, la comunicación abierta y constante con el equipo y los clientes, y la transparencia en cada etapa del diseño y desarrollo.
               </p>
             </div>
 
@@ -112,7 +132,7 @@ const Equipo: React.FC = () => {
             </p>
             <div className="h-1 w-16 bg-brand mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Arte y Dimensiones nació en 1999 como una iniciativa para potenciar las habilidades de nuestros arquitectos y su crecimiento profesional. Este impulso constante por evolucionar y asumir nuevos desafíos nos ha llevado a desarrollar proyectos innovadores que nos diferencian en el campo de la arquitectura comercial.
+              Arte y Dimensiones nació como una iniciativa para potenciar las habilidades de nuestros arquitectos y su crecimiento profesional. Este impulso constante por evolucionar y asumir nuevos desafíos nos ha llevado a desarrollar proyectos innovadores que nos diferencian en el campo de la arquitectura comercial.
             </p>
           </div>
 
