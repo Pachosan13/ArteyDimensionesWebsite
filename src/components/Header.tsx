@@ -22,6 +22,7 @@ const projectItems = projectsData as ProjectNavItem[];
 // ORDEN CORRECTO SEGÚN ARTES Y DIMENSIONES
 const projectOrder = [
   'brisas-capital',
+  'brisas-capital-este',
   'santa-maria-business-park',
   'boulevard-penonome',
   'terrazas-de-sabanitas'
