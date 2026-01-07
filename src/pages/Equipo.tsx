@@ -6,25 +6,6 @@ import { teamMembers, teamMission, companyValues } from '../data/team';
 const Equipo: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-brand rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand rounded-full filter blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              {teamMission.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 font-light mb-8">
-              {teamMission.subtitle}
-            </p>
-            <div className="h-1 w-24 bg-brand mx-auto mb-8"></div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero image (equipo) */}
@@ -44,6 +25,17 @@ const Equipo: React.FC = () => {
                 }}
                 aria-hidden="true"
               />
+              <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-10">
+                <div className="text-center text-white max-w-4xl">
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
+                    Nuestro <span className="text-brand">Equipo</span>
+                  </h1>
+                  <p className="mt-4 text-base sm:text-lg md:text-2xl text-white/90 font-light leading-relaxed">
+                    Más de 25 años guiando proyectos con puntualidad, comunicación abierta y transparencia.
+                  </p>
+                  <div className="h-1 w-24 bg-brand mx-auto mt-7" />
+                </div>
+              </div>
             </div>
           </div>
 
