@@ -86,18 +86,18 @@
     ]
   },
   {
-    "name": "Arquitectura Industrial",
+    "name": "Arquitectura Industrial & Logística",
     "slug": "arquitectura-industrial",
-    "tagline": "Diseño de plantas eficientes para producir, almacenar y crecer.",
+    "tagline": "Espacios industriales y logísticos diseñados para operar con eficiencia.",
     "heroImage": "/images/portfolio/BusinessPark/businesspark5.jpg",
-    "keywords": ["arquitectura industrial panamá","diseño de plantas industriales panamá","naves industriales panamá","almacenamiento industrial panamá"],
-    "valueCopy": "La arquitectura industrial se enfoca en el diseño y construcción de edificaciones destinadas a la producción, almacenamiento y distribución de bienes. Optimizamos la funcionalidad y la eficiencia del espacio (flujos, accesos, alturas, iluminación y seguridad) para soportar tu operación hoy y escalarla mañana, con una visión integral que reduce fricción y acelera la toma de decisiones.",
+    "keywords": ["arquitectura industrial panamá","arquitectura logística panamá","centros de distribución panamá","diseño de bodegas panamá","naves industriales panamá"],
+    "valueCopy": "La arquitectura industrial se refiere al diseño y construcción de edificaciones destinadas a la producción, almacenamiento y distribución de bienes. Este enfoque se caracteriza por priorizar la funcionalidad y la eficiencia, optimizando los espacios para fines industriales.\n\nLa logística se centra en la planificación y organización de procesos de transporte, almacenamiento y distribución de mercancías. La arquitectura logística juega un papel clave en este proceso, diseñando espacios funcionales y adaptados a las necesidades específicas del sector.\n\nAmbos conceptos son fundamentales para el éxito operativo de las empresas, ya que la arquitectura industrial proporciona las estructuras necesarias para la producción y almacenamiento, mientras que la logística asegura que las mercancías se transporten y distribuyan de manera eficiente.",
     "faq": [
-      {"q":"¿Diseñan naves, plantas y bodegas?","a":"Sí. Diseñamos y coordinamos proyectos industriales enfocados en producción, almacenamiento y distribución, priorizando flujos y eficiencia operativa."},
-      {"q":"¿Cómo garantizan funcionalidad y seguridad?","a":"Partimos del proceso (personas, equipos y rutas) y lo traducimos a layout, accesos, zonificación, iluminación y criterios de seguridad."},
-      {"q":"¿Pueden integrarlo con un plan de logística?","a":"Sí. Alineamos el diseño industrial con necesidades logísticas (cargas/descargas, staging, picking y almacenamiento) para mejorar tiempos de ciclo."}
+      {"q":"¿Diseñan naves, plantas, bodegas y centros de distribución?","a":"Sí. Diseñamos espacios industriales y logísticos enfocados en producción, almacenamiento, preparación y despacho, priorizando flujos y eficiencia operativa."},
+      {"q":"¿Cómo mejoran la eficiencia logística?","a":"Optimizamos el flujo recepción → almacenamiento → preparación → despacho para reducir recorridos, cruces, tiempos de ciclo y riesgos operativos."},
+      {"q":"¿Pueden diseñar para operación 24/7 y crecimiento futuro?","a":"Sí. Consideramos turnos, iluminación, seguridad, mantenimiento, accesos y flexibilidad para adaptar el espacio a cambios de operación."}
     ],
-    "testimonio": {"author":"Gerente de Operaciones, Sector Industrial","quote":"El nuevo layout mejoró el flujo y eliminó cuellos de botella. Ganamos capacidad sin aumentar metros."},
+    "testimonio": {"author":"Director de Operaciones, Sector Industrial y Logístico","quote":"El nuevo layout mejoró el flujo, redujo recorridos y eliminó cuellos de botella. Ganamos capacidad sin aumentar metros."},
     "gallery": [
       "/images/portfolio/BusinessPark/businesspark1.jpg",
       "/images/portfolio/BusinessPark/businesspark2.jpg",
@@ -105,28 +105,6 @@
       "/images/portfolio/BusinessPark/businesspark4.jpg",
       "/images/portfolio/BusinessPark/businesspark5.jpg",
       "/images/portfolio/BusinessPark/businesspark6.jpg"
-    ]
-  },
-  {
-    "name": "Arquitectura Logística",
-    "slug": "arquitectura-logistica",
-    "tagline": "Centros y bodegas diseñados para mover mercancía con precisión.",
-    "heroImage": "/images/portfolio/SBMP-15.jpg",
-    "keywords": ["arquitectura logística panamá","centros de distribución panamá","diseño de bodegas panamá","logística y almacenamiento panamá"],
-    "valueCopy": "La logística se centra en la planificación y organización de procesos de transporte, almacenamiento y distribución de mercancías. La arquitectura logística juega un papel clave al diseñar espacios funcionales y adaptados a necesidades específicas: docks, staging, zonas de picking, rutas segregadas y capacidad de crecimiento. El resultado es una operación más ágil, segura y eficiente, donde la arquitectura habilita el desempeño.",
-    "faq": [
-      {"q":"¿Qué incluye un diseño logístico bien resuelto?","a":"Zonificación por procesos, docks y áreas de staging, recorridos claros, seguridad, y flexibilidad para cambios de operación."},
-      {"q":"¿Pueden diseñar para operación 24/7?","a":"Sí. Consideramos turnos, iluminación, seguridad, mantenimiento y accesos para sostener operación continua."},
-      {"q":"¿Cómo mejoran tiempos y eficiencia?","a":"Optimizamos flujos (recepción → almacenamiento → preparación → despacho) para reducir recorridos, cruces y tiempos de ciclo."}
-    ],
-    "testimonio": {"author":"Director Logístico, Empresa de Distribución","quote":"Redujimos recorridos internos y mejoramos tiempos de despacho. El espacio ahora responde a la operación."},
-    "gallery": [
-      "/images/portfolio/SBMP-3.jpg",
-      "/images/portfolio/SBMP-5.jpg",
-      "/images/portfolio/SBMP-15.jpg",
-      "/images/portfolio/business2.png",
-      "/images/portfolio/mapa-panama-flat.png",
-      "/images/services/serviciosparallax.png"
     ]
   }
 ]

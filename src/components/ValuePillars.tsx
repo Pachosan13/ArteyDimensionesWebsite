@@ -13,7 +13,7 @@ const pillars = [
     title: 'Atención Personalizada',
     icon: Handshake,
     description:
-      'Asignamos un equipo senior por cuenta que resuelve dudas en menos de 24 horas y anticipa necesidades con visitas recurrentes a sitio.',
+      'Acompañamiento personalizado y continuo en todo el proceso, con soluciones de diseño adaptadas a las necesidades, expectativas y presupuesto del cliente.',
   },
   {
     title: 'Confianza Ganada',

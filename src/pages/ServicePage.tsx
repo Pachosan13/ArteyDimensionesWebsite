@@ -24,6 +24,10 @@ const services = servicesData as Service[];
 
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
+  // Backward-compatible redirect: "Arquitectura Logística" fue consolidado dentro de "Arquitectura Industrial & Logística"
+  if (slug === "arquitectura-logistica") {
+    return <Navigate to="/servicios/arquitectura-industrial" replace />;
+  }
   const svc = useMemo(() => services.find((service) => service.slug === slug), [slug]);
 
   useEffect(() => {
