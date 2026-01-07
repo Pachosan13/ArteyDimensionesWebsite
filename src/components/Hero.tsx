@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import CounterEffect from './CounterEffect';
 
 const Hero: React.FC = () => {
+  const formatWithSpaces = (value: number) => String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
   return (
     <section className="relative h-screen md:min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       {/* Hero Background Image */}
@@ -25,12 +27,19 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
         <div className="relative z-20 text-center text-white w-full md:max-w-3xl md:mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-5 leading-snug px-2">
-            Convertimos Conceptos En Espacios Que 
-            <span className="text-brand block sm:inline"> Cobran Vida</span>
+            Convertimos conceptos en espacios que{' '}
+            <span className="relative inline-block text-brand italic">
+              cobran vida
+              <span
+                className="absolute left-0 right-0 -bottom-1 h-[3px] bg-brand rounded-full"
+                style={{ transform: 'rotate(-2deg)' }}
+                aria-hidden="true"
+              />
+            </span>
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 md:mb-8 font-light leading-relaxed px-4">
-            Arquitectura Corporativa, Comercial y Logística en Panamá
+            Arquitectura Comercial, Corporativa e Industrial en Panamá
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
@@ -54,29 +63,33 @@ const Hero: React.FC = () => {
             <div>
               <CounterEffect 
                 targetValue={26} 
-                suffix="+" 
+                prefix="+" 
+                suffix=" años"
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
               />
-              <div className="text-sm sm:text-base text-white/90 font-medium">Años de Experiencia</div>
+              <div className="text-sm sm:text-base text-white/90 font-medium">de experiencia</div>
             </div>
             <div>
               <CounterEffect 
                 targetValue={410_000} 
-                suffix="+" 
+                prefix="+" 
+                suffix=" m²"
+                formatValue={formatWithSpaces}
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
               />
-              <div className="text-sm sm:text-base text-white/90 font-medium">M2 de Proyectos Comerciales</div>
+              <div className="text-sm sm:text-base text-white/90 font-medium">de proyectos comerciales</div>
             </div>
             <div>
               <CounterEffect 
                 targetValue={150} 
-                suffix="+" 
+                prefix="+" 
+                suffix=" proyectos"
                 duration={2000}
                 className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
               />
-              <div className="text-sm sm:text-base text-white/90 font-medium">Proyectos Construidos</div>
+              <div className="text-sm sm:text-base text-white/90 font-medium">construidos</div>
             </div>
           </div>
         </div>

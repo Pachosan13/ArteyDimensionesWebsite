@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 interface CounterEffectProps {
   targetValue: number;
   duration?: number;
+  prefix?: string;
   suffix?: string;
   className?: string;
   formatValue?: (value: number) => string;
@@ -11,6 +12,7 @@ interface CounterEffectProps {
 const CounterEffect: React.FC<CounterEffectProps> = ({
   targetValue,
   duration = 2000,
+  prefix = '',
   suffix = '',
   className = '',
   formatValue,
@@ -105,7 +107,9 @@ const CounterEffect: React.FC<CounterEffectProps> = ({
 
   return (
     <div ref={counterRef} className={className}>
-      {formatValue ? formatValue(currentValue) : currentValue}{suffix}
+      {prefix}
+      {formatValue ? formatValue(currentValue) : currentValue}
+      {suffix}
     </div>
   );
 };
