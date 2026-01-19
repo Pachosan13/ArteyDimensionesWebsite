@@ -6,6 +6,7 @@ import ValuePillars from './components/ValuePillars';
 import AboutUsSection from './components/AboutUsSection';
 import InteractiveMap from './components/InteractiveMap';
 import ProjectsGrid from './components/ProjectsGrid';
+import GallerySection from './components/GallerySection';
 import InteractiveServices from './components/InteractiveServices';
 import CaseStudy from './components/CaseStudy';
 import Clients from './components/Clients';
@@ -27,6 +28,7 @@ const HomePage: React.FC = () => {
       <AboutUsSection />
       <InteractiveMap />
       <ProjectsGrid />
+      <GallerySection />
       <InteractiveServices />
       <CaseStudy />
       <Clients />

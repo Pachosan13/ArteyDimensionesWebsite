@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             </button>
 
             <button 
-              onClick={() => document.getElementById('portafolio')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('galeria')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:text-brand transition-colors border border-white/30 hover:border-brand w-full sm:w-auto"
             >
               Ver Nuestro Trabajo
