@@ -93,12 +93,6 @@ const GallerySection: React.FC<GallerySectionProps> = ({ showFullGalleryButton =
                   aria-hidden="true"
                 />
               </div>
-
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <div className="text-white/95 font-semibold drop-shadow">
-                  {img.label}
-                </div>
-              </div>
             </motion.a>
           ))}
         </div>
