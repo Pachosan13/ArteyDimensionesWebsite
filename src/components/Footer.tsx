@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/artedimpty"
                 aria-label="Instagram"
                 className="w-10 h-10 bg-brand rounded-full flex items-center justify-center hover:bg-brand/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
