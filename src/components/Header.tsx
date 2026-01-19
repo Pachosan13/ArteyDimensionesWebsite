@@ -163,12 +163,9 @@ const Header: React.FC<HeaderProps> = ({
               Equipo
             </Link>
 
-            <button
-              onClick={() => handleLinkClick('galeria')}
-              className="text-[#4B4B4B] hover:text-brand font-medium"
-            >
+            <Link to="/galeria" className="text-[#4B4B4B] hover:text-brand font-medium">
               Galería
-            </button>
+            </Link>
 
             <button
               onClick={() => handleLinkClick('formulario-cta')}
@@ -237,9 +234,13 @@ const Header: React.FC<HeaderProps> = ({
                 Equipo
               </Link>
 
-              <button onClick={() => handleLinkClick('galeria')} className="text-left hover:text-brand">
+              <Link
+                to="/galeria"
+                className="hover:text-brand"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Galería
-              </button>
+              </Link>
 
               <button onClick={() => handleLinkClick('formulario-cta')} className="text-left hover:text-brand">
                 Contáctenos

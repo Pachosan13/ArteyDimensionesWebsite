@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 type GalleryImage = {
   src: string;
@@ -14,7 +16,12 @@ function getFileLabel(pathOrUrl: string) {
   return decoded.replace(/\.[^.]+$/, '');
 }
 
-const GallerySection: React.FC = () => {
+interface GallerySectionProps {
+  /** Show CTA button that goes to the full gallery page. Intended for Home. */
+  showFullGalleryButton?: boolean;
+}
+
+const GallerySection: React.FC<GallerySectionProps> = ({ showFullGalleryButton = true }) => {
   const imageModules = import.meta.glob(
     '/public/images/portfolio/DISEÑOCONCEPTUAL/*.{png,jpg,jpeg,webp}',
     { eager: true, query: '?url', import: 'default' }
@@ -39,6 +46,18 @@ const GallerySection: React.FC = () => {
           >
             Trabajo desde la idea hasta el <span className="border-b-4 border-brand">Proyecto</span>
           </h2>
+
+          {showFullGalleryButton && (
+            <div className="mt-7 flex justify-center">
+              <Link
+                to="/galeria"
+                className="btn-brand px-7 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 inline-flex items-center space-x-2 shadow-lg"
+              >
+                <span>Ver galería completa</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

@@ -17,6 +17,7 @@ import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
 import Equipo from './pages/Equipo';
 import TeamMemberPage from './pages/TeamMemberPage';
+import Galeria from './pages/Galeria';
 import './styles/globals.css';
 
 // Home Page Component
@@ -73,6 +74,7 @@ function App() {
             <Route path="/proyectos/:slug" element={<ProjectPage />} />
             <Route path="/equipo" element={<Equipo />} />
             <Route path="/equipo/:slug" element={<TeamMemberPage />} />
+            <Route path="/galeria" element={<Galeria />} />
             <Route path="/agenda" element={<Agenda />} />
           </Routes>
         </main>
