@@ -51,7 +51,7 @@ const InteractiveMap: React.FC = () => {
           <div className="relative w-full aspect-[18/14]">
             {/* MAPA DE FONDO */}
             <img
-              src="/images/portfolio/mapa-panama-flat.png"
+              src="/images/portfolio/mapa-panama-flat.jpg"
               alt="Mapa de Panamá con proyectos de Arte y Dimensiones"
               className="absolute inset-0 h-full w-full object-contain"
               loading="lazy"

@@ -12,7 +12,7 @@ const Equipo: React.FC = () => {
           <div className="w-full mb-16">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-neutral-900">
               <img
-                src="/images/team/fotoequipo.jpeg"
+                src="/images/team/fotoequipo.jpg"
                 alt="Equipo Arte y Dimensiones"
                 className="w-full h-[52vh] md:h-[62vh] object-cover"
                 loading="lazy"
