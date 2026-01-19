@@ -23,7 +23,9 @@ interface GallerySectionProps {
 
 const GallerySection: React.FC<GallerySectionProps> = ({ showFullGalleryButton = true }) => {
   const imageModules = import.meta.glob(
-    '/public/images/portfolio/DISEÑOCONCEPTUAL/*.{png,jpg,jpeg,webp}',
+    // Use wildcard to avoid Unicode normalization issues with "ñ" in folder names on macOS,
+    // and include nested folders if they get added later.
+    '/public/images/portfolio/DISE*CONCEPTUAL/**/*.{png,jpg,jpeg,webp}',
     { eager: true, query: '?url', import: 'default' }
   ) as Record<string, string>;
 
