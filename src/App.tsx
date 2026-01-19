@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
       <AboutUsSection />
       <InteractiveMap />
       <ProjectsGrid />
-      <GallerySection />
+      <GallerySection showImages={false} />
       <InteractiveServices />
       <CaseStudy />
       <Clients />

@@ -19,9 +19,14 @@ function getFileLabel(pathOrUrl: string) {
 interface GallerySectionProps {
   /** Show CTA button that goes to the full gallery page. Intended for Home. */
   showFullGalleryButton?: boolean;
+  /** When false, do not render the images grid (useful for a minimal homepage section). */
+  showImages?: boolean;
 }
 
-const GallerySection: React.FC<GallerySectionProps> = ({ showFullGalleryButton = true }) => {
+const GallerySection: React.FC<GallerySectionProps> = ({
+  showFullGalleryButton = true,
+  showImages = true,
+}) => {
   const imageModules = import.meta.glob(
     // Use wildcard to avoid Unicode normalization issues with "ñ" in folder names on macOS,
     // and include nested folders if they get added later.
@@ -62,40 +67,42 @@ const GallerySection: React.FC<GallerySectionProps> = ({ showFullGalleryButton =
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {images.map((img, index) => (
-            <motion.a
-              key={img.key}
-              href={img.src}
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: Math.min(index * 0.05, 0.3) }}
-              className="group relative bg-[#F5F5F5] rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-              aria-label={`Abrir imagen: ${img.label}`}
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={img.src}
-                  alt={img.label}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
-                />
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background:
-                      'linear-gradient(to bottom, rgba(15,15,15,0.05), rgba(15,15,15,0.5) 75%, rgba(15,15,15,0.7))',
-                  }}
-                  aria-hidden="true"
-                />
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        {showImages && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {images.map((img, index) => (
+              <motion.a
+                key={img.key}
+                href={img.src}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: Math.min(index * 0.05, 0.3) }}
+                className="group relative bg-[#F5F5F5] rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                aria-label={`Abrir imagen: ${img.label}`}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={img.src}
+                    alt={img.label}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                  />
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background:
+                        'linear-gradient(to bottom, rgba(15,15,15,0.05), rgba(15,15,15,0.5) 75%, rgba(15,15,15,0.7))',
+                    }}
+                    aria-hidden="true"
+                  />
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
