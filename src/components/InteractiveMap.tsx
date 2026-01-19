@@ -59,26 +59,6 @@ const InteractiveMap: React.FC = () => {
 
             {/* CAPA PARA HEADLINE + HOTSPOTS */}
             <div className="absolute inset-0">
-              {/* HEADLINE EN EL HUECO BLANCO */}
-              <div className="absolute left-[25%] top-[18%] -translate-x-1/2 -translate-y-1/2 max-w-xs text-center">
-                <p className="text-[11px] font-semibold tracking-[0.25em] text-neutral-600 uppercase">
-                  Somos la cara de la
-                </p>
-
-                <h2 className="mt-1 font-extrabold leading-tight">
-                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
-                    Arquitectura
-                  </span>
-                  <span className="block text-[clamp(2.1rem,3.1vw,2.8rem)] text-[#F0472D]">
-                    Comercial
-                  </span>
-                </h2>
-
-                <p className="mt-1 text-sm font-medium text-neutral-700">
-                  en Panamá
-                </p>
-              </div>
-
               {/* HOTSPOTS INVISIBLES */}
               {/* Costa Verde y Coronado: REMOVIDOS (no modal) */}
 
