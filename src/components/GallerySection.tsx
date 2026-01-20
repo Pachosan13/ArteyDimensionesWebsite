@@ -51,7 +51,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({
             id="galeria-title"
             className="text-[clamp(2rem,4vw,3.5rem)] font-bold text-[#1F1F1F] mb-4"
           >
-            Trabajo desde la idea hasta el <span className="border-b-4 border-brand">Proyecto</span>
+            Arquitectura desde la idea hasta el <span className="border-b-4 border-brand">Proyecto</span>
           </h2>
 
           {showFullGalleryButton && (
