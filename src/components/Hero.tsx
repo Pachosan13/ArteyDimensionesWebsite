@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         className="absolute inset-0 bg-gradient-to-b z-10"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(226, 43, 43, 0.6), rgba(15,15,15,0.8), rgba(15,15,15,0.95))",
+            "linear-gradient(to bottom, rgba(15,15,15,0.35), rgba(15,15,15,0.8), rgba(15,15,15,0.95))",
         }}
       />
 
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
               onClick={() => document.getElementById('galeria')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:text-brand transition-colors border border-white/30 hover:border-brand w-full sm:w-auto"
             >
-              Ver Nuestro Trabajo
+              Ver Nuestros Proyectos
             </button>
           </div>
 
