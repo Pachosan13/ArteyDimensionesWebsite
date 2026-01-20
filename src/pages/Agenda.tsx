@@ -115,7 +115,7 @@ const Agenda: React.FC = () => {
                     </li>
                     <li className="flex items-start">
                       <Shield className="h-5 w-5 text-brand mr-2 mt-0.5 flex-shrink-0" />
-                      Especialistas en regulaciones panameñas
+                      Especialistas en normativas panameñas
                     </li>
                     <li className="flex items-start">
                       <Shield className="h-5 w-5 text-brand mr-2 mt-0.5 flex-shrink-0" />

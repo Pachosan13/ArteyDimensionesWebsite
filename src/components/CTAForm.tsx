@@ -73,9 +73,9 @@ const CTAForm: React.FC = () => {
             >
               <h3 className="font-bold text-2xl mb-4">¿Por qué elegir Arte y Dimensiones?</h3>
               <ul className="space-y-2 opacity-90 text-base leading-relaxed">
-                <li>• 15+ años de experiencia en arquitectura corporativa</li>
+                <li>• 26+ años de experiencia en arquitectura corporativa</li>
                 <li>• Enfoque en ROI y rendimiento de espacios</li>
-                <li>• Especialistas en regulaciones panameñas</li>
+                <li>• Especialistas en normativas panameñas</li>
                 <li>• Gestión integral de proyectos</li>
               </ul>
             </motion.div>
