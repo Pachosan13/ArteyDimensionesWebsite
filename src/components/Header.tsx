@@ -190,25 +190,38 @@ const Header: React.FC<HeaderProps> = ({
 
         {/* MOBILE MENU */}
         {mobileMenuOpen && (
-          <div ref={mobileMenuRef} className="md:hidden bg-white border-t border-gray-200 py-4 rounded-b-3xl shadow-xl">
-            {/* SECCIONES (HOME) */}
-            <div className="space-y-2 mb-6">
-              <div className="text-[#4B4B4B] font-semibold text-sm">SECCIONES</div>
-              {[
-                { label: 'Portafolio', id: 'portafolio' },
-                { label: 'Caso de Éxito', id: 'caso-estudio' },
-                { label: 'Clientes', id: 'clientes' },
-                { label: 'Contacto', id: 'formulario-cta' },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleLinkClick(item.id)}
-                  className="block w-full text-left pl-4 py-2 hover:text-brand"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+          <>
+            {/* Backdrop (must stay behind the menu panel) */}
+            <button
+              type="button"
+              aria-label="Cerrar menú"
+              className="md:hidden fixed inset-0 bg-black/40 z-40"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+
+            {/* Menu panel */}
+            <div
+              ref={mobileMenuRef}
+              className="md:hidden fixed top-16 left-0 right-0 z-50 bg-white border-t border-gray-200 rounded-b-3xl shadow-xl py-4 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain"
+            >
+              {/* SECCIONES (HOME) */}
+              <div className="space-y-2 mb-6">
+                <div className="text-[#4B4B4B] font-semibold text-sm">SECCIONES</div>
+                {[
+                  { label: 'Portafolio', id: 'portafolio' },
+                  { label: 'Caso de Éxito', id: 'caso-estudio' },
+                  { label: 'Clientes', id: 'clientes' },
+                  { label: 'Contacto', id: 'formulario-cta' },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => handleLinkClick(item.id)}
+                    className="block w-full text-left pl-4 py-2 hover:text-brand"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
 
             {/* SERVICIOS */}
             <div className="space-y-2 mb-4">
@@ -253,13 +266,9 @@ const Header: React.FC<HeaderProps> = ({
                 Equipo
               </Link>
 
-              <Link
-                to="/galeria"
-                className="hover:text-brand"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Galería
-              </Link>
+                <Link to="/galeria" className="hover:text-brand" onClick={() => setMobileMenuOpen(false)}>
+                  Galería
+                </Link>
 
               <button onClick={() => handleLinkClick('formulario-cta')} className="text-left hover:text-brand">
                 Contáctenos
@@ -274,15 +283,9 @@ const Header: React.FC<HeaderProps> = ({
               </Link>
             </div>
           </div>
+          </>
         )}
       </div>
-
-      {mobileMenuOpen && (
-        <button
-          className="md:hidden fixed inset-0 bg-black/40"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
     </header>
   );
 };
