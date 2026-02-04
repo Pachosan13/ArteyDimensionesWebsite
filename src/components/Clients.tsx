@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
 
 const Clients: React.FC = () => {
   const clientLogos = [
@@ -19,23 +18,6 @@ const Clients: React.FC = () => {
     { name: 'Do It Center',    imageUrl: '/images/Clientes/doitcenter.png' },
     { name: 'Estampa',         imageUrl: '/images/Clientes/estampa.png' },
     { name: 'Xtra',            imageUrl: '/images/Clientes/xtra.png' },
-  ];
-
-  const testimonios = [
-    {
-      nombre: 'Carlos Mendoza',
-      cargo: 'CEO, Grupo Inmobiliario Del Istmo',
-      testimonio:
-        'Arte y Dimensiones transformó completamente nuestro concepto de espacios corporativos. Los resultados en productividad y satisfacción han superado todas las expectativas.',
-      rating: 5,
-    },
-    {
-      nombre: 'María Elena Vásquez',
-      cargo: 'Directora de Desarrollo, Panamá Bay',
-      testimonio:
-        'Su enfoque estratégico y atención al detalle resultó en un 40% de aumento en el valor de nuestros espacios comerciales. Profesionales excepcionales.',
-      rating: 5,
-    },
   ];
 
   return (
@@ -89,7 +71,7 @@ const Clients: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white/95 p-6 sm:p-8 rounded-3xl shadow-2xl mb-16"
+              className="bg-white/95 p-6 sm:p-8 rounded-3xl shadow-2xl"
             >
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 justify-items-center">
                 {clientLogos.map((client, index) => (
@@ -116,33 +98,6 @@ const Clients: React.FC = () => {
                 ))}
               </div>
             </motion.div>
-
-            {/* Testimonios */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonios.map((t, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.2 }}
-                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition"
-                >
-                  <div className="flex mb-4">
-                    {[...Array(t.rating)].map((_, j) => (
-                      <Star key={j} className="h-5 w-5 text-brand" />
-                    ))}
-                  </div>
-                  <blockquote className="text-[#4B4B4B]/80 text-lg mb-6 italic">
-                    “{t.testimonio}”
-                  </blockquote>
-                  <div>
-                    <div className="font-bold text-[#4B4B4B]">{t.nombre}</div>
-                    <div className="text-[#4B4B4B]/60">{t.cargo}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
