@@ -23,7 +23,7 @@ const CaseStudy: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-[#4B4B4B]/80 max-w-3xl mx-auto"
           >
-            Cómo transformamos el Business Park de Santa Maria en un hub de productividad y rentabilidad
+            Santa María Business Park – Nueva Sede Prival Bank
           </motion.p>
         </div>
 
@@ -41,7 +41,7 @@ const CaseStudy: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
                 src="/images/portfolio/business2.png"
-                alt="Centro Corporativo Multiplaza - Caso de éxito de arquitectura corporativa en Panamá"
+                alt="Santa María Business Park – Nueva Sede Prival Bank"
                 className="w-full h-64 md:h-full object-cover"
                 loading="lazy"
               />
@@ -49,7 +49,7 @@ const CaseStudy: React.FC = () => {
             <div className="md:w-1/2 p-8 lg:p-12">
               <div className="text-sm text-brand font-semibold mb-2">CASO DE ÉXITO</div>
               <h3 className="text-3xl font-bold text-[#4B4B4B] mb-6">
-                Santa Maria Business Park
+                Santa María Business Park – Nueva Sede Prival Bank
               </h3>
               
               <div className="space-y-8">
@@ -61,10 +61,10 @@ const CaseStudy: React.FC = () => {
                 >
                   <h4 className="text-lg font-bold text-[#4B4B4B] mb-3 flex items-center">
                     <span className="w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
-                    Problema
+                    El reto
                   </h4>
                   <p className="text-[#4B4B4B]/80">
-                    Espacios de oficina subutilizados con alta rotación de inquilinos (45%) y baja satisfacción por diseño obsoleto y falta de áreas colaborativas.
+                    Nos encontramos la excavación y muros de un sótano de un proyecto anterior, el desafío fue adaptar un nuevo diseño a las condiciones del sitio, cumpliendo plazos contractuales y un presupuesto controlado, mientras se desarrollaban planos y avanzaba la construcción.
                   </p>
                 </motion.div>
 
@@ -84,10 +84,10 @@ const CaseStudy: React.FC = () => {
                 >
                   <h4 className="text-lg font-bold text-[#4B4B4B] mb-3 flex items-center">
                     <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
-                    Solución
+                    La solución
                   </h4>
                   <p className="text-[#4B4B4B]/80">
-                    Rediseño integral con espacios flexibles, áreas de coworking, tecnología integrada y zonas de bienestar que fomentan la productividad y colaboración.
+                    Implementamos un enfoque integral de arquitectura y project management: levantamiento técnico de lo existente, diseño adaptable y construible, planificación por etapas y coordinación constante con cliente y contratistas, asegurando viabilidad técnica y económica.
                   </p>
                 </motion.div>
 
@@ -109,31 +109,17 @@ const CaseStudy: React.FC = () => {
                     <span className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
                     Resultados
                   </h4>
-                  <div className="grid grid-cols-3 gap-4 mt-4">
-                    <motion.div 
-                      className="text-center"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <div className="text-2xl font-bold text-brand mb-1">+65%</div>
-                      <div className="text-sm text-[#4B4B4B]">Retención</div>
-                    </motion.div>
-                    <motion.div 
-                      className="text-center"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <div className="text-2xl font-bold text-brand mb-1">+40%</div>
-                      <div className="text-sm text-[#4B4B4B]">Productividad</div>
-                    </motion.div>
-                    <motion.div 
-                      className="text-center"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <div className="text-2xl font-bold text-brand mb-1">+55%</div>
-                      <div className="text-sm text-[#4B4B4B]">ROI</div>
-                    </motion.div>
+                  <ul className="space-y-2 text-[#4B4B4B]/80">
+                    <li>✅ Cumplimiento de los tiempos establecidos</li>
+                    <li>✅ Integración eficiente del diseño con la obra existente</li>
+                    <li>✅ Proyecto ejecutable y alineado al presupuesto</li>
+                    <li>✅ Cliente satisfecho, hoy operando en su nueva sede</li>
+                  </ul>
+                  <div className="mt-6">
+                    <h4 className="text-lg font-bold text-[#4B4B4B] mb-2">Valor</h4>
+                    <p className="text-[#4B4B4B]/80">
+                      Diseño que se construye, se ejecuta a tiempo y funciona para quien lo habita.
+                    </p>
                   </div>
                 </motion.div>
               </div>
