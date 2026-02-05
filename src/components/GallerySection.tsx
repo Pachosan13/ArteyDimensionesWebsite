@@ -16,6 +16,12 @@ function getFileLabel(pathOrUrl: string) {
   return decoded.replace(/\.[^.]+$/, '');
 }
 
+function getFileNumber(pathOrUrl: string) {
+  const label = getFileLabel(pathOrUrl);
+  const match = label.match(/\d+/);
+  return match ? Number(match[0]) : null;
+}
+
 interface GallerySectionProps {
   /** Show CTA button that goes to the full gallery page. Intended for Home. */
   showFullGalleryButton?: boolean;
@@ -40,7 +46,24 @@ const GallerySection: React.FC<GallerySectionProps> = ({
       src,
       label: getFileLabel(key),
     }))
-    .sort((a, b) => a.key.localeCompare(b.key, 'es'));
+    .sort((a, b) => {
+      const aNum = getFileNumber(a.key);
+      const bNum = getFileNumber(b.key);
+
+      if (aNum !== null && bNum !== null) {
+        return aNum - bNum;
+      }
+
+      if (aNum !== null) {
+        return -1;
+      }
+
+      if (bNum !== null) {
+        return 1;
+      }
+
+      return a.key.localeCompare(b.key, 'es');
+    });
 
   return (
     <section id="galeria" className="py-20 bg-white" aria-labelledby="galeria-title">
