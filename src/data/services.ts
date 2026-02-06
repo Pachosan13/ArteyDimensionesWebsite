@@ -34,13 +34,6 @@ export const SERVICES = [
       "Cumplimiento normativo garantizado",
       "Diseño centrado en el usuario final"
     ],
-    testimonios: [
-      {
-        nombre: "Carlos Mendoza",
-        cargo: "CEO Grupo Inmobiliario Del Istmo",
-        texto: "Gracias a Arte y Dimensiones aprobamos en 45 días, antes tardaba 6 meses. Su atención al detalle es excepcional."
-      }
-    ],
     faqs: [
       { 
         q: "¿Cuánto cuesta un diseño arquitectónico en Panamá?", 
@@ -88,13 +81,6 @@ export const SERVICES = [
       "Materiales de alta durabilidad",
       "Gestión integral del proyecto"
     ],
-    testimonios: [
-      {
-        nombre: "María Elena Vásquez",
-        cargo: "Directora Comercial, Plaza Concordia",
-        texto: "Transformaron nuestro centro comercial completamente. Las ventas aumentaron 45% en los primeros 6 meses después de la remodelación."
-      }
-    ],
     faqs: [
       { 
         q: "¿Cuánto tiempo toma una remodelación comercial?", 
@@ -141,13 +127,6 @@ export const SERVICES = [
       "Tecnología BIM para control de obra",
       "Materiales de proveedores certificados",
       "Supervisión técnica especializada"
-    ],
-    testimonios: [
-      {
-        nombre: "Roberto Castillo",
-        cargo: "Gerente de Proyectos, Grupo Roble",
-        texto: "Arte y Dimensiones entregó nuestro edificio corporativo 2 semanas antes del plazo. La calidad superó nuestras expectativas."
-      }
     ],
     faqs: [
       { 

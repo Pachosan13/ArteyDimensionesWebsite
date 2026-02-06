@@ -11,7 +11,6 @@
       {"q":"¿Trabajan con cadenas?","a":"Sí, documentamos lineamientos para escalar con consistencia entre locales."},
       {"q":"¿Pueden coordinar con operador o franquicia?","a":"Sí, trabajamos con manuales de franquicia, proveedores y cronogramas exigentes."}
     ],
-    "testimonio": {"author":"Director Retail, Cadena Regional","quote":"El rediseño incrementó el tráfico y mejoró el tiempo de permanencia. Un antes y después en nuestras tiendas."},
     "gallery": [
       "/images/services/arquitectura-comercial/gallery-1.jpg",
       "/images/services/arquitectura-comercial/gallery-2.jpg",
@@ -33,7 +32,6 @@
       {"q":"¿Trabajan con espacios ocupados?","a":"Sí, planificamos por fases y horarios para minimizar interrupciones y garantizar seguridad."},
       {"q":"¿Pueden alinear diseño con la marca?","a":"Integramos identidad visual y cultura en materiales, señalización y experiencia del espacio."}
     ],
-    "testimonio": {"author":"Gerente General, Empresa Tech","quote":"Nuestro equipo trabaja mejor y los clientes perciben una marca más sólida. El proyecto superó expectativas."},
     "gallery": [
       "/images/services/arquitectura-corporativa/gallery-1.jpg",
       "/images/services/arquitectura-corporativa/gallery-2.jpg",
@@ -54,7 +52,6 @@
       {"q":"¿Cómo definen el layout ideal?","a":"Levantamos datos de ocupación, entrevistas y tipos de trabajo para asignar áreas por necesidad real."},
       {"q":"¿Miden utilización de salas y puestos?","a":"Sí, proponemos métricas de ocupación y herramientas para seguimiento."}
     ],
-    "testimonio": {"author":"Gerente de Operaciones, Firma de Servicios","quote":"Reducimos metros sin perder capacidad. El flujo es natural y el equipo más productivo."},
     "gallery": [
       "/images/services/space-planning/gallery-1.jpg",
       "/images/services/space-planning/gallery-2.jpg",
@@ -62,49 +59,6 @@
       "/images/services/space-planning/gallery-4.jpg",
       "/images/services/space-planning/gallery-5.jpg",
       "/images/services/space-planning/gallery-6.jpg"
-    ]
-  },
-  {
-    "name": "Remodelaciones & Fit-Out",
-    "slug": "remodelaciones-fitout",
-    "tagline": "Renovamos sin detener tu operación.",
-    "heroImage": "/images/services/remodelaciones-fitout/hero.jpg",
-    "keywords": ["remodelaciones oficinas panamá","fit out panamá","adecuaciones panamá"],
-    "valueCopy": "Planificamos por fases y coordinamos contratistas para ejecutar con seguridad, calidad y velocidad. Hacemos gestión fina para minimizar tiempos muertos y entregas con cero sorpresas.",
-    "faq": [
-      {"q":"¿Cómo minimizan tiempos muertos?","a":"Planificamos por fases, horarios extendidos y coordinación con proveedores."},
-      {"q":"¿Pueden trabajar de noche o fines de semana?","a":"Sí, nos adaptamos al plan operativo del cliente para no interrumpir."}
-    ],
-    "testimonio": {"author":"Administrador de Facility, Multinacional","quote":"La obra se ejecutó en tiempo récord y quedó impecable. Operamos sin pausas."},
-    "gallery": [
-      "/images/services/remodelaciones-fitout/gallery-1.jpg",
-      "/images/services/remodelaciones-fitout/gallery-2.jpg",
-      "/images/services/remodelaciones-fitout/gallery-3.jpg",
-      "/images/services/remodelaciones-fitout/gallery-4.jpg",
-      "/images/services/remodelaciones-fitout/gallery-5.jpg",
-      "/images/services/remodelaciones-fitout/gallery-6.jpg"
-    ]
-  },
-  {
-    "name": "Arquitectura Industrial & Logística",
-    "slug": "arquitectura-industrial",
-    "tagline": "Espacios industriales y logísticos diseñados para operar con eficiencia.",
-    "heroImage": "/images/portfolio/BusinessPark/businesspark5.jpg",
-    "keywords": ["arquitectura industrial panamá","arquitectura logística panamá","centros de distribución panamá","diseño de bodegas panamá","naves industriales panamá"],
-    "valueCopy": "La arquitectura industrial se refiere al diseño y construcción de edificaciones destinadas a la producción, almacenamiento y distribución de bienes. Este enfoque se caracteriza por priorizar la funcionalidad y la eficiencia, optimizando los espacios para fines industriales.\n\nLa logística se centra en la planificación y organización de procesos de transporte, almacenamiento y distribución de mercancías. La arquitectura logística juega un papel clave en este proceso, diseñando espacios funcionales y adaptados a las necesidades específicas del sector.\n\nAmbos conceptos son fundamentales para el éxito operativo de las empresas, ya que la arquitectura industrial proporciona las estructuras necesarias para la producción y almacenamiento, mientras que la logística asegura que las mercancías se transporten y distribuyan de manera eficiente.",
-    "faq": [
-      {"q":"¿Diseñan naves, plantas, bodegas y centros de distribución?","a":"Sí. Diseñamos espacios industriales y logísticos enfocados en producción, almacenamiento, preparación y despacho, priorizando flujos y eficiencia operativa."},
-      {"q":"¿Cómo mejoran la eficiencia logística?","a":"Optimizamos el flujo recepción → almacenamiento → preparación → despacho para reducir recorridos, cruces, tiempos de ciclo y riesgos operativos."},
-      {"q":"¿Pueden diseñar para operación 24/7 y crecimiento futuro?","a":"Sí. Consideramos turnos, iluminación, seguridad, mantenimiento, accesos y flexibilidad para adaptar el espacio a cambios de operación."}
-    ],
-    "testimonio": {"author":"Director de Operaciones, Sector Industrial y Logístico","quote":"El nuevo layout mejoró el flujo, redujo recorridos y eliminó cuellos de botella. Ganamos capacidad sin aumentar metros."},
-    "gallery": [
-      "/images/portfolio/BusinessPark/businesspark1.jpg",
-      "/images/portfolio/BusinessPark/businesspark2.jpg",
-      "/images/portfolio/BusinessPark/businesspark3.jpg",
-      "/images/portfolio/BusinessPark/businesspark4.jpg",
-      "/images/portfolio/BusinessPark/businesspark5.jpg",
-      "/images/portfolio/BusinessPark/businesspark6.jpg"
     ]
   }
 ]

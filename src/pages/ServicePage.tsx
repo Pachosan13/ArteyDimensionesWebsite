@@ -17,17 +17,12 @@ type Service = {
   keywords: string[];
   valueCopy: string;
   faq: { q: string; a: string }[];
-  testimonio?: { quote: string; author: string };
 };
 
 const services = servicesData as Service[];
 
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
-  // Backward-compatible redirect: "Arquitectura Logística" fue consolidado dentro de "Arquitectura Industrial & Logística"
-  if (slug === "arquitectura-logistica") {
-    return <Navigate to="/servicios/arquitectura-industrial" replace />;
-  }
   const svc = useMemo(() => services.find((service) => service.slug === slug), [slug]);
 
   useEffect(() => {
@@ -90,17 +85,6 @@ export default function ServicePage() {
       </section>
 
       <ServiceProcess />
-
-      {svc.testimonio && (
-        <section className="py-16 md:py-24 bg-[var(--neutral-100)]">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <blockquote className="text-xl md:text-2xl text-neutral-800 italic leading-relaxed">
-              "{svc.testimonio.quote}"
-            </blockquote>
-            <div className="mt-3 text-neutral-600">— {svc.testimonio.author}</div>
-          </div>
-        </section>
-      )}
 
       <FeaturedProjectsSection />
       <ServiceFAQ items={svc.faq} />

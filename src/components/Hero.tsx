@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 md:mb-8 font-light leading-relaxed px-4">
-            Arquitectura Comercial, Corporativa e Industrial en Panamá
+            Arquitectura Comercial y Corporativa en Panamá
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
