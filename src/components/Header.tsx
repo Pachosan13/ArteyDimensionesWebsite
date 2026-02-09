@@ -261,16 +261,27 @@ const Header: React.FC<HeaderProps> = ({
               </button>
             </div>
 
-            <div className="border-t pt-4 space-y-4">
-              <Link to="/equipo" className="hover:text-brand" onClick={() => setMobileMenuOpen(false)}>
+            <div className="border-t pt-4 px-4 pb-4 flex flex-col gap-3">
+              <Link
+                to="/equipo"
+                className="block w-full text-left py-2 hover:text-brand"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Equipo
               </Link>
 
-                <Link to="/galeria" className="hover:text-brand" onClick={() => setMobileMenuOpen(false)}>
-                  Galería
-                </Link>
+              <Link
+                to="/galeria"
+                className="block w-full text-left py-2 hover:text-brand"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Galería
+              </Link>
 
-              <button onClick={() => handleLinkClick('formulario-cta')} className="text-left hover:text-brand">
+              <button
+                onClick={() => handleLinkClick('formulario-cta')}
+                className="block w-full text-left py-2 hover:text-brand"
+              >
                 Contáctenos
               </button>
 
