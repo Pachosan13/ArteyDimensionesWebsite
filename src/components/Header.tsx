@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import servicesData from '../data/services.json';
 import projectsData from '../data/projects.json';
@@ -43,6 +43,7 @@ const Header: React.FC<HeaderProps> = ({
   setMobileMenuOpen
 }) => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -65,6 +66,20 @@ const Header: React.FC<HeaderProps> = ({
       document.removeEventListener('keydown', handleEsc);
     };
   }, [mobileMenuOpen, setMobileMenuOpen]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('overflow-hidden');
+      return () => {
+        document.body.classList.remove('overflow-hidden');
+      };
+    }
+    document.body.classList.remove('overflow-hidden');
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname, setMobileMenuOpen]);
 
   const handleLinkClick = (sectionId: string) => {
     setMobileMenuOpen(false);
@@ -181,8 +196,12 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* BOTÓN MOBILE */}
           <button
+            type="button"
+            aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu-panel"
             className="md:hidden text-neutral-900 p-2 rounded-full"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen((open) => !open)}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -202,6 +221,7 @@ const Header: React.FC<HeaderProps> = ({
             {/* Menu panel */}
             <div
               ref={mobileMenuRef}
+              id="mobile-menu-panel"
               className="md:hidden fixed top-16 left-0 right-0 z-50 bg-white border-t border-gray-200 rounded-b-3xl shadow-xl py-4 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain"
             >
               {/* SECCIONES (HOME) */}
