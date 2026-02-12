@@ -33,7 +33,7 @@ export default function Servicios() {
             transition={{ duration: 0.8 }}
             className="text-[clamp(2rem,4vw,3.5rem)] font-bold"
           >
-            Servicios enfocadas en ROI
+            Servicios enfocados en ROI
           </motion.h2>
           <p className="mt-4 text-lg text-white/85">
             Aplicamos metodología integral para garantizar trazabilidad en cada fase, desde masterplan hasta construcción.
