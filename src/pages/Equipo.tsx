@@ -67,8 +67,8 @@ const Equipo: React.FC = () => {
                 <div className="text-sm uppercase tracking-wider text-gray-700">Profesionales Expertos</div>
               </div>
               <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 p-8 rounded-xl text-white">
-                <div className="text-5xl font-bold text-brand mb-2">15+</div>
-                <div className="text-sm uppercase tracking-wider">Países Atendidos</div>
+                <div className="text-5xl font-bold text-brand mb-2">100+</div>
+                <div className="text-sm uppercase tracking-wider">Clientes Atendidos</div>
               </div>
             </div>
           </div>
