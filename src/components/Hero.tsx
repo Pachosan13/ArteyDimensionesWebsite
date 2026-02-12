@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
                 prefix="+" 
                 suffix=" proyectos"
                 duration={2000}
-                className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2"
+                className="text-2xl sm:text-3xl font-bold text-brand mb-1 sm:mb-2 whitespace-nowrap"
               />
               <div className="text-sm sm:text-base text-white/90 font-medium">construidos</div>
             </div>
