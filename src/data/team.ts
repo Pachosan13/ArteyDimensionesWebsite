@@ -251,10 +251,10 @@ export const teamMembers: TeamMember[] = [
     id: "luis-morales",
     slug: "luis-morales",
     name: "Luis Morales",
-    role: "Modelador BIM y Desarrollador de Planos",
+    role: "LIDER DE PROYECTOS Y COORDINACIÓN TÉCNICA",
     photo: "/images/team/luisemilio.jpg",
     shortBio:
-      "Experto en modelado BIM y desarrollo de planos técnicos, especializado en la implementación de tecnologías de vanguardia en proyectos arquitectónicos.",
+      "Profesional con más de 14 años de experiencia en la coordinación integral de proyectos desde la arquitectura, estructura y sistemas. Experto en modelado BIM y desarrollo de planos técnicos, especializado en la implementación de tecnologías de vanguardia en proyectos arquitectónicos.",
     bio: "Luis Morales es un especialista en tecnologías BIM ...",
     linkedin: "",
     education: [
