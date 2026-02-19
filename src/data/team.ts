@@ -253,7 +253,7 @@ export const teamMembers: TeamMember[] = [
     name: "Luis Morales",
     role: "LIDER DE PROYECTOS Y COORDINACIÓN TÉCNICA",
     photo: "/images/team/luisemilio.jpg",
-    shortBio: "Profesional con más de 14 años de experiencia en la coordinación integral de proyectos desde la arquitectura, estructura y sistemas.  Especializado en modelado BIM y desarrollo de planos técnicos. Destaca por su compromiso con la calidad, precisión técnica y alta atención al detalle en cada proyecto."
+    shortBio: "Profesional con más de 14 años de experiencia en la coordinación integral de proyectos desde arquitectura, estructura y sistemas. Especialista en modelado BIM y planos técnicos, destacado por su compromiso con la calidad, precisión técnica y atención al detalle."
     bio: "Luis Morales es un especialista en tecnologías BIM ...",
     linkedin: "",
     education: [
