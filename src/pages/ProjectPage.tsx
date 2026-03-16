@@ -4,7 +4,7 @@ import data from "../data/projects.json";
 import ProjectHero from "../components/ProjectHero";
 import ProjectInfo from "../components/ProjectInfo";
 import ProjectGallery from "../components/ProjectGallery";
-import ProjectSEO from "../components/ProjectSEO";
+import SEOHead from "../components/SEOHead";
 
 type Project = {
   slug: string;
@@ -23,18 +23,44 @@ export default function ProjectPage() {
   const { slug } = useParams<{ slug: string }>();
   const project = useMemo(() => projects.find((p) => p.slug === slug), [slug]);
 
+  const jsonLd = useMemo(() => {
+    if (!project) return undefined;
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": project.title,
+        "description": project.metaDescription,
+        "image": `https://artedim.com${project.heroImage}`,
+        "creator": { "@type": "Organization", "@id": "https://artedim.com/#organization", "name": "Arte y Dimensiones" },
+        "url": `https://artedim.com/proyectos/${project.slug}`
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Proyectos", "item": "https://artedim.com/" },
+          { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://artedim.com/proyectos/${project.slug}` }
+        ]
+      }
+    ];
+  }, [project]);
+
   if (!project) return <Navigate to="/" replace />;
 
   return (
     <>
-      <ProjectSEO
+      <SEOHead
         title={project.title}
-        metaDescription={project.metaDescription}
-        keywords={project.keywords}
+        description={project.metaDescription}
+        keywords={project.keywords.join(", ")}
+        ogImage={project.heroImage}
+        jsonLd={jsonLd}
       />
       <ProjectHero title={project.title} category={project.category} image={project.heroImage} />
       <ProjectInfo description={project.description} />
-      <ProjectGallery images={project.gallery} />
+      <ProjectGallery images={project.gallery} projectTitle={project.title} />
 
       <section className="py-14 md:py-20 bg-[#F5F5F5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

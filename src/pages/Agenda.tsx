@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { CheckCircle, Shield, Clock } from 'lucide-react';
 import { SITE } from '../data/services';
+import SEOHead from '../components/SEOHead';
 
 const Agenda: React.FC = () => {
-  React.useEffect(() => {
-    document.title = `Agenda tu Evaluación | ${SITE.brand}`;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 
-        `Agenda una evaluación gratuita de tu proyecto arquitectónico en ${SITE.ciudad}. ${SITE.promesa_corta}. Sin costo ni compromiso.`
-      );
-    }
-  }, []);
+  const jsonLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Agenda", "item": "https://artedim.com/agenda" }
+    ]
+  }), []);
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Agenda tu Evaluación"
+        description={`Agenda una evaluación gratuita de tu proyecto arquitectónico en ${SITE.ciudad}. ${SITE.promesa_corta}. Sin costo ni compromiso.`}
+        keywords="evaluación arquitectónica Panamá, consulta arquitectura gratis Panamá, cita arquitecto Panamá"
+        jsonLd={jsonLd}
+      />
       {/* Hero Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-[#4B4B4B] to-[#2A2A2A] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/
+Disallow: /dist/
+
+Sitemap: https://artedim.com/sitemap.xml

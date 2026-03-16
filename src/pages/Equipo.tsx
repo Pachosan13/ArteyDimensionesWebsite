@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Award, Target, Users, Lightbulb, Clock, Leaf } from 'lucide-react';
 import { teamMembers, teamMission, companyValues } from '../data/team';
+import SEOHead from '../components/SEOHead';
 
 const Equipo: React.FC = () => {
+  const jsonLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Equipo", "item": "https://artedim.com/equipo" }
+    ]
+  }), []);
+
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Nuestro Equipo"
+        description="Conozca al equipo de Arte y Dimensiones: 12 profesionales con más de 25 años de experiencia en arquitectura corporativa y comercial en Panamá."
+        keywords="equipo arquitectos Panamá, Arte y Dimensiones equipo, arquitectos corporativos Panamá"
+        ogImage="/images/team/fotoequipo.jpg"
+        jsonLd={jsonLd}
+      />
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero image (equipo) */}

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import servicesData from "../data/services.json";
 import ServiceHero from "../components/ServiceHero";
@@ -8,6 +8,7 @@ import RelatedServices from "../components/RelatedServices";
 import CTASection from "../components/CTASection";
 import ContactServiceForm from "../components/ContactServiceForm";
 import FeaturedProjectsSection from "../components/FeaturedProjectsSection";
+import SEOHead from "../components/SEOHead";
 
 type Service = {
   name: string;
@@ -25,18 +26,50 @@ export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const svc = useMemo(() => services.find((service) => service.slug === slug), [slug]);
 
-  useEffect(() => {
-    if (svc) {
-      document.title = `${svc.name} en Panamá | Arte y Dimensiones`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute("content", `${svc.tagline} — ${svc.keywords.slice(0,2).join(", ")}`);
-    }
+  const jsonLd = useMemo(() => {
+    if (!svc) return undefined;
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": svc.name,
+        "description": `${svc.tagline} ${svc.valueCopy}`,
+        "provider": { "@type": "Organization", "@id": "https://artedim.com/#organization", "name": "Arte y Dimensiones" },
+        "areaServed": { "@type": "Country", "name": "Panamá" },
+        "url": `https://artedim.com/servicios/${svc.slug}`
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": svc.faq.map((item) => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": { "@type": "Answer", "text": item.a }
+        }))
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://artedim.com/servicios/arquitectura-corporativa" },
+          { "@type": "ListItem", "position": 3, "name": svc.name, "item": `https://artedim.com/servicios/${svc.slug}` }
+        ]
+      }
+    ];
   }, [svc]);
 
   if (!svc) return <Navigate to="/servicios/arquitectura-corporativa" replace />;
 
   return (
     <>
+      <SEOHead
+        title={`${svc.name} en Panamá`}
+        description={`${svc.tagline} — ${svc.keywords.slice(0, 2).join(", ")}`}
+        keywords={svc.keywords.join(", ")}
+        ogImage={svc.heroImage}
+        jsonLd={jsonLd}
+      />
       <ServiceHero
         imageSrc={svc.heroImage}
         imageAlt={svc.name}

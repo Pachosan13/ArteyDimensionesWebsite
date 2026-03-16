@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -12,6 +12,7 @@ import CaseStudy from './components/CaseStudy';
 import Clients from './components/Clients';
 import CTAForm from './components/CTAForm';
 import Footer from './components/Footer';
+import SEOHead from './components/SEOHead';
 import Agenda from './pages/Agenda';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
@@ -22,8 +23,22 @@ import './styles/globals.css';
 
 // Home Page Component
 const HomePage: React.FC = () => {
+  const jsonLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" }
+    ]
+  }), []);
+
   return (
     <>
+      <SEOHead
+        title="Arte y Dimensiones - Arquitectura Corporativa e Institucional en Panamá"
+        description="Estudio de arquitectura especializado en diseño corporativo, comercial e institucional en Panamá. Oficinas que elevan la productividad y la marca."
+        keywords="arquitectura corporativa Panamá, diseño de espacios comerciales Panamá, arquitectura institucional Panamá, estudio arquitectura Panama"
+        jsonLd={jsonLd}
+      />
       <Hero />
       <ValuePillars />
       <AboutUsSection />

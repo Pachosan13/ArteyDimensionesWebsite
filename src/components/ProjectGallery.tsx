@@ -1,6 +1,14 @@
 import React from "react";
 
-export default function ProjectGallery({ images }: { images: string[] }) {
+function getImageAlt(src: string, index: number, projectTitle?: string): string {
+  const filename = src.split('/').pop()?.replace(/\.[^.]+$/, '') ?? '';
+  const decoded = decodeURIComponent(filename).replace(/[-_]/g, ' ').replace(/\d+/g, '').trim();
+  const prefix = projectTitle || 'Proyecto arquitectónico';
+  if (decoded && decoded.length > 2) return `${prefix} — ${decoded}`;
+  return `${prefix} — vista ${index + 1} del diseño arquitectónico`;
+}
+
+export default function ProjectGallery({ images, projectTitle }: { images: string[]; projectTitle?: string }) {
   if (!images?.length) return null;
   return (
     <section className="py-16 md:py-24 bg-[#F5F5F5]">
@@ -11,7 +19,7 @@ export default function ProjectGallery({ images }: { images: string[] }) {
             <div key={src} className="overflow-hidden rounded-2xl shadow-lg bg-neutral-100">
               <img
                 src={src}
-                alt={`Foto ${i + 1}`}
+                alt={getImageAlt(src, i, projectTitle)}
                 className="w-full aspect-[4/3] object-cover transition-transform duration-500 hover:scale-105"
                 loading="lazy"
               />

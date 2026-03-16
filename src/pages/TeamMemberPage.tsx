@@ -1,14 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Linkedin, Mail, ChevronDown, ChevronUp, ArrowLeft, Award, Briefcase, GraduationCap } from 'lucide-react';
 import { teamMembers } from '../data/team';
-import TeamMemberSEO from '../components/TeamMemberSEO';
+import SEOHead from '../components/SEOHead';
 
 const TeamMemberPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [expandedEducation, setExpandedEducation] = useState<boolean>(true);
 
   const member = teamMembers.find((m) => m.slug === slug);
+
+  const jsonLd = useMemo(() => {
+    if (!member) return undefined;
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": member.name,
+        "jobTitle": member.role,
+        "description": member.shortBio,
+        "image": `https://artedim.com${member.photo}`,
+        "worksFor": { "@type": "Organization", "@id": "https://artedim.com/#organization", "name": "Arte y Dimensiones" },
+        "knowsAbout": member.specializations,
+        "url": `https://artedim.com/equipo/${member.slug}`,
+        ...(member.linkedin ? { "sameAs": [member.linkedin] } : {})
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Equipo", "item": "https://artedim.com/equipo" },
+          { "@type": "ListItem", "position": 3, "name": member.name, "item": `https://artedim.com/equipo/${member.slug}` }
+        ]
+      }
+    ];
+  }, [member]);
 
   if (!member) {
     return <Navigate to="/equipo" replace />;
@@ -20,7 +47,14 @@ const TeamMemberPage: React.FC = () => {
 
   return (
     <>
-      <TeamMemberSEO member={member} />
+      <SEOHead
+        title={`${member.name} - ${member.role}`}
+        description={`Conozca a ${member.name}, ${member.role} en Arte y Dimensiones. ${member.shortBio}`}
+        keywords={`${member.name}, arquitecto Panama, ${member.role}, ${member.specializations.join(', ')}, Arte y Dimensiones`}
+        ogImage={member.photo}
+        ogType="profile"
+        jsonLd={jsonLd}
+      />
 
       <div className="min-h-screen bg-white">
         <section className="relative bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white py-16 overflow-hidden">
