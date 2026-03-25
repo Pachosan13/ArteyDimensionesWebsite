@@ -174,6 +174,10 @@ const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
+            <Link to="/nosotros" className="text-[#4B4B4B] hover:text-brand font-medium">
+              Nosotros
+            </Link>
+
             <Link to="/equipo" className="text-[#4B4B4B] hover:text-brand font-medium">
               Equipo
             </Link>
@@ -282,6 +286,14 @@ const Header: React.FC<HeaderProps> = ({
             </div>
 
             <div className="border-t pt-4 px-4 pb-4 flex flex-col gap-3">
+              <Link
+                to="/nosotros"
+                className="block w-full text-left py-2 hover:text-brand"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Nosotros
+              </Link>
+
               <Link
                 to="/equipo"
                 className="block w-full text-left py-2 hover:text-brand"

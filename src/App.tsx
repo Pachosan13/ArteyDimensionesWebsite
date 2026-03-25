@@ -19,6 +19,7 @@ import ProjectPage from './pages/ProjectPage';
 import Equipo from './pages/Equipo';
 import TeamMemberPage from './pages/TeamMemberPage';
 import Galeria from './pages/Galeria';
+import Nosotros from './pages/Nosotros';
 import './styles/globals.css';
 
 // Home Page Component
@@ -98,6 +99,7 @@ function App() {
             <Route path="/servicios" element={<Navigate to="/servicios/arquitectura-corporativa" replace />} />
             <Route path="/servicios/:slug" element={<ServicePage />} />
             <Route path="/proyectos/:slug" element={<ProjectPage />} />
+            <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/equipo" element={<Equipo />} />
             <Route path="/equipo/:slug" element={<TeamMemberPage />} />
             <Route path="/galeria" element={<Galeria />} />

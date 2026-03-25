@@ -18,6 +18,7 @@ type Service = {
   keywords: string[];
   valueCopy: string;
   faq: { q: string; a: string }[];
+  relatedProjects?: string[];
 };
 
 const services = servicesData as Service[];
@@ -119,7 +120,7 @@ export default function ServicePage() {
 
       <ServiceProcess />
 
-      <FeaturedProjectsSection />
+      <FeaturedProjectsSection filterSlugs={svc.relatedProjects} />
       <ServiceFAQ items={svc.faq} />
       <RelatedServices currentSlug={svc.slug} all={services} />
       <CTASection />

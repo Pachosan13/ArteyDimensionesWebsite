@@ -4,7 +4,15 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import projectsData from '../data/projects.json';
 
-const FeaturedProjectsSection: React.FC = () => {
+interface FeaturedProjectsSectionProps {
+  filterSlugs?: string[];
+}
+
+const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({ filterSlugs }) => {
+  const projects = filterSlugs
+    ? projectsData.filter((p) => filterSlugs.includes(p.slug))
+    : projectsData;
+
   return (
     <section id="portafolio" className="py-20 bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +24,7 @@ const FeaturedProjectsSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projectsData.map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.slug}
               initial={{ opacity: 0, y: 30 }}
