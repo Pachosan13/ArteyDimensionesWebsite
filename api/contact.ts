@@ -140,7 +140,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (!ghlRes.ok) {
       console.error('GHL error:', ghlRes.status, JSON.stringify(ghlData));
-      return res.status(502).json({ error: 'Failed to create contact' });
+      return res.status(502).json({ error: 'Failed to create contact', detail: ghlData.message || ghlData.error || 'Unknown GHL error' });
     }
 
     return res.status(200).json({
