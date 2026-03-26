@@ -1,9 +1,21 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { CheckCircle, Shield, Clock } from 'lucide-react';
 import { SITE } from '../data/services';
 import SEOHead from '../components/SEOHead';
 
+const CALENDAR_ID = '4OUvSD3PGw6uj7ORSBkS';
+
 const Agenda: React.FC = () => {
+  useEffect(() => {
+    // Load GHL booking widget script
+    const existing = document.querySelector('script[src*="leadconnectorhq.com/js/form_embed.js"]');
+    if (!existing) {
+      const script = document.createElement('script');
+      script.src = 'https://link.msgsndr.com/js/form_embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
   const jsonLd = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -62,24 +74,15 @@ const Agenda: React.FC = () => {
               </p>
             </div>
 
-            {/* Calendar Embed Container */}
-            <div id="calendar-embed" className="min-h-[600px] bg-gray-50 rounded-xl flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-16 h-16 bg-brand rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-[#4B4B4B] mb-2">
-                  Integra tu Calendario Aquí
-                </h3>
-                <p className="text-[#4B4B4B]/60 mb-4">
-                  Pega aquí el código de tu calendario (Calendly, Google Calendar, etc.)
-                </p>
-                <div className="bg-white p-4 rounded-lg border-2 border-dashed border-gray-300">
-                  <code className="text-sm text-gray-500">
-                    {`<!-- Pega aquí tu script o iframe del calendario -->`}
-                  </code>
-                </div>
-              </div>
+            {/* GHL Calendar Booking Widget */}
+            <div id="calendar-embed" className="min-h-[600px] rounded-xl overflow-hidden">
+              <iframe
+                src={`https://api.leadconnectorhq.com/widget/booking/${CALENDAR_ID}`}
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
+                scrolling="no"
+                id="ghl-booking-iframe"
+                title="Agenda tu cita con Arte y Dimensiones"
+              />
             </div>
 
             {/* Trust Indicators */}

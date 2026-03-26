@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, Loader2 } from 'lucide-react';
 
 const CTAForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -9,13 +9,29 @@ const CTAForm: React.FC = () => {
     tipoProyecto: '',
     mensaje: ''
   });
-  const [formStatus, setFormStatus] = useState<'idle' | 'success'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormStatus('success');
-    setFormData({ nombre: '', email: '', tipoProyecto: '', mensaje: '' });
+    setFormStatus('loading');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          source: 'cta-homepage',
+          pageUrl: window.location.href,
+        }),
+      });
+
+      if (!res.ok) throw new Error('Failed');
+      setFormStatus('success');
+      setFormData({ nombre: '', email: '', tipoProyecto: '', mensaje: '' });
+    } catch {
+      setFormStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -220,21 +236,33 @@ const CTAForm: React.FC = () => {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                disabled={formStatus === 'loading'}
+                whileHover={formStatus !== 'loading' ? { scale: 1.05 } : {}}
+                whileTap={formStatus !== 'loading' ? { scale: 0.95 } : {}}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="w-full btn-brand py-4 px-6 rounded-2xl font-semibold transition-all flex items-center justify-center space-x-2 shadow-lg"
+                className="w-full btn-brand py-4 px-6 rounded-2xl font-semibold transition-all flex items-center justify-center space-x-2 shadow-lg disabled:opacity-70"
               >
-                <span>Solicitar Propuesta Gratuita</span>
-                <Send className="h-5 w-5" />
+                {formStatus === 'loading' ? (
+                  <>
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                    <span>Enviando...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Solicitar Propuesta Gratuita</span>
+                    <Send className="h-5 w-5" />
+                  </>
+                )}
               </motion.button>
             </form>
 
             <div className="mt-4 text-center text-sm text-[#4B4B4B]/70" role="status" aria-live="polite">
-              {formStatus === 'success' ? '¡Gracias! Respondemos en menos de 24 horas.' : '* Respuesta garantizada en menos de 24 horas'}
+              {formStatus === 'success' && '¡Gracias! Respondemos en menos de 24 horas.'}
+              {formStatus === 'error' && 'Hubo un error. Intenta de nuevo o contáctanos directamente.'}
+              {(formStatus === 'idle' || formStatus === 'loading') && '* Respuesta garantizada en menos de 24 horas'}
             </div>
           </motion.div>
         </div>

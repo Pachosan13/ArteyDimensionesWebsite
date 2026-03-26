@@ -124,7 +124,7 @@ export default function ServicePage() {
       <ServiceFAQ items={svc.faq} />
       <RelatedServices currentSlug={svc.slug} all={services} />
       <CTASection />
-      <ContactServiceForm />
+      <ContactServiceForm serviceSlug={svc.slug} />
     </>
   );
 }
