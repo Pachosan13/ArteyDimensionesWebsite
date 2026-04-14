@@ -186,6 +186,10 @@ const Header: React.FC<HeaderProps> = ({
               Galería
             </Link>
 
+            <Link to="/blog" className="text-[#4B4B4B] hover:text-brand font-medium">
+              Blog
+            </Link>
+
             <button
               onClick={() => handleLinkClick('formulario-cta')}
               className="text-[#4B4B4B] hover:text-brand font-medium"
@@ -308,6 +312,14 @@ const Header: React.FC<HeaderProps> = ({
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Galería
+              </Link>
+
+              <Link
+                to="/blog"
+                className="block w-full text-left py-2 hover:text-brand"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
               </Link>
 
               <button

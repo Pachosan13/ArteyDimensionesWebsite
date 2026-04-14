@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -20,6 +21,8 @@ import Equipo from './pages/Equipo';
 import TeamMemberPage from './pages/TeamMemberPage';
 import Galeria from './pages/Galeria';
 import Nosotros from './pages/Nosotros';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import './styles/globals.css';
 
 // Home Page Component
@@ -87,6 +90,7 @@ function App() {
 
   return (
     <Router>
+      <Analytics />
       <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Header
@@ -103,6 +107,8 @@ function App() {
             <Route path="/equipo" element={<Equipo />} />
             <Route path="/equipo/:slug" element={<TeamMemberPage />} />
             <Route path="/galeria" element={<Galeria />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/agenda" element={<Agenda />} />
           </Routes>
         </main>
