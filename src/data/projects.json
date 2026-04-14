@@ -86,5 +86,39 @@
       "/images/portfolio/BrisasCapitaldeleste/BCE-6.png",
       "/images/portfolio/BrisasCapitaldeleste/BCE-9.png"
     ]
+  },
+  {
+    "slug": "industrias-correagua-fase-2",
+    "title": "Industrias Correagua — Fase 2",
+    "category": "Industrial",
+    "heroImage": "/images/portfolio/Correagua/correagua-hero.jpg",
+    "roi": "24,000 m² construidos",
+    "description": "La galera de la Fase 2 de Industrias Correagua, ubicada en el Parque Logístico Las Américas en Pacora, cuenta con 24,000 m² y destaca por su funcionalidad y diseño. Alberga oficinas corporativas, áreas administrativas, zonas operativas y salones de reuniones, con estacionamientos estratégicamente situados. En la zona industrial, se ofrecen espacios amplios y ventilados para la fabricación de productos metálicos, optimizando la productividad y seguridad. El proyecto integra eficiencia energética mediante paneles solares en la cubierta, reduciendo el consumo eléctrico y promoviendo sostenibilidad. La circulación de camiones fue cuidadosamente diseñada para garantizar fluidez logística y seguridad, minimizando interferencias con las áreas administrativas y operativas.",
+    "keywords": ["diseño industrial", "galera industrial", "Pacora", "Panamá", "paneles solares", "parque logístico"],
+    "metaDescription": "Industrias Correagua Fase 2: galera industrial de 24,000 m² con paneles solares y diseño logístico optimizado en Pacora, Panamá.",
+    "gallery": [
+      "/images/portfolio/Correagua/correagua1.jpg",
+      "/images/portfolio/Correagua/correagua2.jpg",
+      "/images/portfolio/Correagua/correagua3.jpg",
+      "/images/portfolio/Correagua/correagua4.jpg",
+      "/images/portfolio/Correagua/correagua5.jpg"
+    ]
+  },
+  {
+    "slug": "cemento-chagres",
+    "title": "Cemento Chagres",
+    "category": "Industrial",
+    "heroImage": "/images/portfolio/Chagres/chagres-hero.jpg",
+    "roi": "85 estacionamientos",
+    "description": "Cemento Chagres se ubica estratégicamente en el Parque Industrial Las Américas, a la orilla de la Carretera Panamericana, en Pacora. Su diseño arquitectónico destaca por la integración de dos galeras funcionales y un edificio de oficinas para veinte personas, optimizando la distribución de espacios y la operación industrial. La zonificación incluye dos plazas de estacionamiento con 85 espacios. El edificio administrativo, independiente de las galeras, tiene su propia plaza, tinaquera y cuartos técnicos, garantizando eficiencia y seguridad. Galera 1 está destinada al ensacado y despacho de cemento, mientras que Galera 2 almacena clinker como materia prima para la fabricación del cemento. Áreas verdes y recorridos internos mejoran la circulación y el entorno.",
+    "keywords": ["planta de cemento", "diseño industrial", "galera", "Pacora", "Panamá", "logística industrial"],
+    "metaDescription": "Cemento Chagres: planta industrial con dos galeras funcionales y diseño logístico eficiente en Pacora, Panamá.",
+    "gallery": [
+      "/images/portfolio/Chagres/chagres1.jpg",
+      "/images/portfolio/Chagres/chagres2.jpg",
+      "/images/portfolio/Chagres/chagres3.jpg",
+      "/images/portfolio/Chagres/chagres4.jpg",
+      "/images/portfolio/Chagres/chagres5.jpg"
+    ]
   }
 ]
