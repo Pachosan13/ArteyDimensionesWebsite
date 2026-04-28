@@ -22,6 +22,34 @@ const DEFAULT_OG_IMAGE = `${BASE_URL}/images/general/logoarteydim.jpg`;
 const services = JSON.parse(readFileSync(join(__dirname, "..", "src", "data", "services.json"), "utf8"));
 const projects = JSON.parse(readFileSync(join(__dirname, "..", "src", "data", "projects.json"), "utf8"));
 
+// Blog posts metadata — kept in sync with src/data/blogs.ts (only meta fields needed for prerender)
+const blogPosts = [
+  {
+    slug: "arquitecto-comercial-panama",
+    title: "Que Hace un Arquitecto Comercial en Panama y Por Que Tu Negocio lo Necesita",
+    metaDescription: "Descubre que hace un arquitecto comercial en Panama, como transforma tu negocio y por que contratar un estudio de arquitectura es la mejor inversion para tu empresa.",
+    keywords: ["arquitecto Panama", "arquitecto corporativo", "estudio de arquitectura Panama", "arquitecto comercial Panama"],
+  },
+  {
+    slug: "diseno-locales-comerciales-panama",
+    title: "Diseno de Locales Comerciales en Panama: Cuanto Cuesta y Que Debes Exigirle a tu Arquitecto",
+    metaDescription: "Conoce cuanto cuesta disenar un local comercial en Panama, que incluye el servicio de un arquitecto y que debes exigir para proteger tu inversion.",
+    keywords: ["locales comerciales Panama", "diseno comercial Panama", "costo arquitecto Panama", "remodelacion local comercial"],
+  },
+  {
+    slug: "oficina-productividad-panama",
+    title: "5 Senales de que tu Oficina en Panama Esta Frenando la Productividad de tu Empresa",
+    metaDescription: "Descubre las 5 senales de que el diseno de tu oficina en Panama esta afectando la productividad de tu equipo y como solucionarlo con un rediseno inteligente.",
+    keywords: ["diseno de oficinas", "remodelacion oficinas Panama", "diseno interior oficinas", "oficinas modernas Panama"],
+  },
+  {
+    slug: "arquitectura-corporativa-panama",
+    title: "Arquitectura Corporativa en Panama: Como un Espacio Bien Disenado Construye tu Marca y Aumenta tus Ventas",
+    metaDescription: "Descubre como la arquitectura corporativa en Panama transforma tu espacio en una herramienta de branding y ventas. Casos reales y estrategia de diseno para empresas.",
+    keywords: ["arquitectura comercial", "arquitectura institucional", "diseno corporativo Panama", "arquitectura empresarial"],
+  },
+];
+
 // ── Route definitions ──
 const routes = [
   // Static pages
@@ -72,6 +100,20 @@ const routes = [
     description: proj.metaDescription,
     keywords: proj.keywords.join(", "),
     ogImage: proj.heroImage,
+  })),
+  // Blog index page
+  {
+    path: "/blog",
+    title: `Blog de Arquitectura Comercial y Corporativa en Panama | ${SITE_NAME}`,
+    description: "Articulos sobre arquitectura comercial, corporativa e institucional en Panama. Disenos de oficinas, locales comerciales y espacios productivos por Arte y Dimensiones.",
+    keywords: "blog arquitectura panama, articulos arquitectura comercial, diseno corporativo panama, blog arte y dimensiones",
+  },
+  // Blog posts
+  ...blogPosts.map((post) => ({
+    path: `/blog/${post.slug}`,
+    title: post.title,
+    description: post.metaDescription,
+    keywords: post.keywords.join(", "),
   })),
   // Team members (we generate stubs — the actual name/role comes from JS but at least canonical + basic meta are correct)
   ...["juan-manuel-rodriguez","alejandra-arosemena","jose-antonio-rodriguez","mitzenia-ortega","roxana-castillo","david-frias","luis-morales","cesar-rodriguez","sergio-cardenas","marien-rojas","arnel-perez","maria-somoza"].map((slug) => {
