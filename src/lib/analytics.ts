@@ -9,8 +9,8 @@
  * Carga async después de window.load para no afectar LCP.
  */
 
-const GA4_ID = import.meta.env.VITE_GA4_ID as string | undefined;
-const FB_PIXEL_ID = import.meta.env.VITE_FB_PIXEL_ID as string | undefined;
+const GA4_ID = ((import.meta.env.VITE_GA4_ID as string) || '').trim() || undefined;
+const FB_PIXEL_ID = ((import.meta.env.VITE_FB_PIXEL_ID as string) || '').trim() || undefined;
 
 declare global {
   interface Window {
