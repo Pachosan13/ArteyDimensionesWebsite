@@ -118,6 +118,9 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400 text-sm">
           © 2026 Arte y Dimensiones · Arquitectura que impulsa resultados
+          <div className="mt-1 text-gray-500">
+            Diseño y desarrollo por <a href="https://www.agencylevel5.com" target="_blank" rel="noopener" className="hover:text-brand transition-colors">Agency Level 5</a>
+          </div>
         </div>
       </div>
     </footer>
