@@ -211,9 +211,13 @@ for (const route of routes) {
   written++;
 }
 
-// 404 page. Vercel serves this (with a real 404 status) for any path that misses the
-// filesystem — which, since every valid route above is a real file, means exactly the
-// paths that should 404. `noindex` keeps Google from cataloguing junk URLs.
+// 404 page.
+//
+// Because every valid route above is emitted as a real file, vercel.json carries no SPA
+// catch-all rewrite — so an unknown path misses the filesystem and Vercel answers with
+// this file at a real 404 status. Previously the catch-all returned the homepage at HTTP
+// 200 for literally any URL, which Google logs as a soft 404 and keeps re-crawling.
+// `noindex` keeps junk URLs out of the index if one is ever linked.
 const notFound = template
   .replace(/<html lang="[^"]*"/, '<html lang="es"')
   .replace(/<title>[\s\S]*?<\/title>/, "<title>Página no encontrada | Arte y Dimensiones</title>")
