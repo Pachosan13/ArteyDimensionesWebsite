@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -20,11 +20,16 @@ import './styles/globals.css';
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    // 'instant', not 'auto'. globals.css sets `html { scroll-behavior: smooth }` for the
-    // in-page section links, and per the CSSOM spec 'auto' defers to that CSS value — so
-    // a route change was animating ~1.4s up to the top while the new page's images loaded
-    // and shifted the layout under it. 'instant' snaps, and leaves anchor links smooth.
+  // useLayoutEffect, not useEffect: passive effects are scheduled after paint, and on the
+  // image-heavy home page they were starved for up to 2.6s in production — the new page
+  // rendered at the previous page's scroll offset and only jumped to the top afterwards.
+  // This runs before paint, so the offset is never visible.
+  //
+  // 'instant', not 'auto'. globals.css sets `html { scroll-behavior: smooth }` for the
+  // in-page section links, and per the CSSOM spec 'auto' defers to that CSS value — which
+  // turned every route change into a ~1.4s animated scroll. 'instant' snaps; the anchor
+  // links stay smooth.
+  useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
 
