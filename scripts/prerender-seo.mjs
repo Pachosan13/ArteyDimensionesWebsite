@@ -211,6 +211,15 @@ for (const route of routes) {
   written++;
 }
 
+// 404 page. Vercel serves this (with a real 404 status) for any path that misses the
+// filesystem — which, since every valid route above is a real file, means exactly the
+// paths that should 404. `noindex` keeps Google from cataloguing junk URLs.
+const notFound = template
+  .replace(/<html lang="[^"]*"/, '<html lang="es"')
+  .replace(/<title>[\s\S]*?<\/title>/, "<title>Página no encontrada | Arte y Dimensiones</title>")
+  .replace("</head>", '    <meta name="robots" content="noindex, follow" />\n  </head>');
+writeFileSync(join(DIST, "404.html"), notFound, "utf8");
+
 writeFileSync(join(DIST, "sitemap.xml"), renderSitemap(routes), "utf8");
 
 const es = routes.filter((r) => r.locale === "es").length;

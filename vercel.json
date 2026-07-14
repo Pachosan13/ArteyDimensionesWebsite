@@ -1,8 +1,16 @@
 {
-  "rewrites": [
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*\\..*)", "destination": "/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "//": "Every valid route is pre-rendered as a real file (see scripts/prerender-seo.mjs), so there is no SPA catch-all rewrite. Without one, an unknown path misses the filesystem and Vercel serves 404.html with a real 404 status — instead of the old behaviour, where /anything-at-all returned the homepage at 200 and Google logged it as a soft 404.",
+  "redirects": [
+    {
+      "source": "/servicios",
+      "destination": "/servicios/arquitectura-corporativa",
+      "permanent": true
+    },
+    {
+      "source": "/en/services",
+      "destination": "/en/services/corporate-architecture",
+      "permanent": true
+    }
+  ],
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
 }
