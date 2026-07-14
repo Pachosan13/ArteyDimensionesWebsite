@@ -33,6 +33,16 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
 
   const homePath = path('home');
 
+  // The logo always points at the home page of the current locale ("/" in Spanish, "/en"
+  // in English). When we are already there, React Router keeps the pathname unchanged, so
+  // the global ScrollToTop effect never fires — scroll to the top ourselves.
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    setMobileMenuOpen(false);
+    if ((pathname.replace(/\/$/, '') || '/') !== homePath) return;
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
@@ -91,7 +101,9 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to={homePath} className="flex items-center">
+          {/* `relative z-50` keeps the logo above the mobile menu's z-40 backdrop, which is
+              fixed inset-0 and would otherwise swallow the tap while the menu is open. */}
+          <Link to={homePath} onClick={handleLogoClick} aria-label={t.nav.goHome} className="relative z-50 flex items-center">
             <img
               src="/images/general/ADLOGO_HORIZONTALmenu@250x.png"
               alt="Arte y Dimensiones"

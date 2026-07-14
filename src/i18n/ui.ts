@@ -25,6 +25,7 @@ const es = {
   },
 
   nav: {
+    goHome: "Arte y Dimensiones — ir al inicio",
     services: "Servicios",
     ourServices: "Nuestros Servicios",
     projects: "Proyectos",
@@ -450,6 +451,7 @@ const en: UIStrings = {
   },
 
   nav: {
+    goHome: "Arte y Dimensiones — go to homepage",
     services: "Services",
     ourServices: "Our Services",
     projects: "Projects",

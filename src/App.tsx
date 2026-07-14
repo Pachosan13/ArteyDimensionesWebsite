@@ -21,7 +21,11 @@ const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    // 'instant', not 'auto'. globals.css sets `html { scroll-behavior: smooth }` for the
+    // in-page section links, and per the CSSOM spec 'auto' defers to that CSS value — so
+    // a route change was animating ~1.4s up to the top while the new page's images loaded
+    // and shifted the layout under it. 'instant' snaps, and leaves anchor links smooth.
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
 
   return null;
