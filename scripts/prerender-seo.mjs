@@ -1,218 +1,221 @@
 #!/usr/bin/env node
 /**
- * Pre-render SEO: Generates per-route HTML files with unique meta tags
- * baked into the <head> so Googlebot sees correct title/description/canonical
- * without needing to execute JavaScript.
+ * Pre-render SEO.
  *
- * Runs after `vite build` — reads dist/index.html as template,
- * creates dist/{route}/index.html for each route.
+ * For every route in both locales, writes a `dist/{route}/index.html` whose <head> is
+ * fully baked: title, description, canonical, hreflang, Open Graph, `<html lang>` and
+ * the page's JSON-LD. Then regenerates `dist/sitemap.xml` with hreflang alternates.
+ *
+ * Two things this buys us that a client-only SPA cannot:
+ *
+ *   1. Googlebot gets correct per-page meta without executing JavaScript.
+ *   2. AI crawlers (GPTBot, ClaudeBot, PerplexityBot) generally do NOT run JavaScript,
+ *      so schema injected by React is invisible to them. Baking it in is what makes the
+ *      site legible to the engines that AEO is actually about.
+ *
+ * The route list comes from `src/i18n/manifest.ts` — the same module the React app reads
+ * its <head> from. This script does not restate any metadata of its own, which is what
+ * the previous version did (a hand-copied blog list "kept in sync with blogs.ts") and it
+ * had already drifted.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import { build } from "esbuild";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DIST = join(__dirname, "..", "dist");
+const ROOT = join(__dirname, "..");
+const DIST = join(ROOT, "dist");
 const BASE_URL = "https://artedim.com";
-const SITE_NAME = "Arte y Dimensiones";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/images/general/logoarteydim.jpg`;
 
-// ── Load data sources ──
-const services = JSON.parse(readFileSync(join(__dirname, "..", "src", "data", "services.json"), "utf8"));
-const projects = JSON.parse(readFileSync(join(__dirname, "..", "src", "data", "projects.json"), "utf8"));
+const HTML_LANG = { es: "es", en: "en" };
+const OG_LOCALE = { es: "es_PA", en: "en_US" };
 
-// Blog posts metadata — kept in sync with src/data/blogs.ts (only meta fields needed for prerender)
-const blogPosts = [
-  {
-    slug: "arquitecto-comercial-panama",
-    title: "Que Hace un Arquitecto Comercial en Panama y Por Que Tu Negocio lo Necesita",
-    metaDescription: "Descubre que hace un arquitecto comercial en Panama, como transforma tu negocio y por que contratar un estudio de arquitectura es la mejor inversion para tu empresa.",
-    keywords: ["arquitecto Panama", "arquitecto corporativo", "estudio de arquitectura Panama", "arquitecto comercial Panama"],
-  },
-  {
-    slug: "diseno-locales-comerciales-panama",
-    title: "Diseno de Locales Comerciales en Panama: Cuanto Cuesta y Que Debes Exigirle a tu Arquitecto",
-    metaDescription: "Conoce cuanto cuesta disenar un local comercial en Panama, que incluye el servicio de un arquitecto y que debes exigir para proteger tu inversion.",
-    keywords: ["locales comerciales Panama", "diseno comercial Panama", "costo arquitecto Panama", "remodelacion local comercial"],
-  },
-  {
-    slug: "oficina-productividad-panama",
-    title: "5 Senales de que tu Oficina en Panama Esta Frenando la Productividad de tu Empresa",
-    metaDescription: "Descubre las 5 senales de que el diseno de tu oficina en Panama esta afectando la productividad de tu equipo y como solucionarlo con un rediseno inteligente.",
-    keywords: ["diseno de oficinas", "remodelacion oficinas Panama", "diseno interior oficinas", "oficinas modernas Panama"],
-  },
-  {
-    slug: "arquitectura-corporativa-panama",
-    title: "Arquitectura Corporativa en Panama: Como un Espacio Bien Disenado Construye tu Marca y Aumenta tus Ventas",
-    metaDescription: "Descubre como la arquitectura corporativa en Panama transforma tu espacio en una herramienta de branding y ventas. Casos reales y estrategia de diseno para empresas.",
-    keywords: ["arquitectura comercial", "arquitectura institucional", "diseno corporativo Panama", "arquitectura empresarial"],
-  },
-];
+// ── Load the route manifest from TypeScript ──
+// Bundling it here (rather than maintaining a parallel JS copy) is what guarantees the
+// pre-rendered <head> and the client-rendered <head> cannot disagree.
+async function loadManifest() {
+  const tmp = join(ROOT, "node_modules", ".cache", "seo-manifest.mjs");
+  mkdirSync(dirname(tmp), { recursive: true });
 
-// ── Route definitions ──
-const routes = [
-  // Static pages
-  {
-    path: "/",
-    title: "Arte y Dimensiones - Arquitectura Corporativa e Institucional en Panamá",
-    description: "Estudio de arquitectura especializado en diseño corporativo, comercial e institucional en Panamá. Oficinas que elevan la productividad y la marca.",
-    keywords: "arquitectura corporativa Panamá, diseño de espacios comerciales Panamá, arquitectura institucional Panamá, estudio arquitectura Panama",
-  },
-  {
-    path: "/nosotros",
-    title: "Firma de Arquitectura Comercial y Corporativa en Panamá | Arte y Dimensiones",
-    description: "Arte y Dimensiones: firma de arquitectura y arquitectos comerciales en Panamá con más de 26 años de experiencia. 150+ proyectos y 410,000+ m² diseñados.",
-    keywords: "firma de arquitectura panamá, arquitectos comerciales panamá, estudio de arquitectura panamá, arquitectos corporativos panamá",
-    ogImage: "/images/portfolio/SBMP-15.jpg",
-  },
-  {
-    path: "/equipo",
-    title: "Nuestro Equipo | Arte y Dimensiones",
-    description: "Conozca al equipo de Arte y Dimensiones: 12 profesionales con más de 25 años de experiencia en arquitectura comercial y corporativa en Panamá.",
-    keywords: "equipo arquitectos Panamá, Arte y Dimensiones equipo, arquitectos corporativos Panamá",
-    ogImage: "/images/team/fotoequipo.jpg",
-  },
-  {
-    path: "/galeria",
-    title: "Galería de Proyectos | Arte y Dimensiones",
-    description: "Galería de diseños conceptuales y proyectos de arquitectura corporativa y comercial en Panamá por Arte y Dimensiones.",
-    keywords: "galería arquitectura Panamá, proyectos arquitectónicos Panamá, diseño conceptual arquitectura",
-  },
-  {
-    path: "/agenda",
-    title: "Agenda tu Evaluación | Arte y Dimensiones",
-    description: "Agenda una evaluación gratuita de tu proyecto arquitectónico en Ciudad de Panamá. Sin costo ni compromiso.",
-    keywords: "evaluación arquitectónica Panamá, consulta arquitectura gratis Panamá, cita arquitecto Panamá",
-  },
-  // Services
-  ...services.map((svc) => ({
-    path: `/servicios/${svc.slug}`,
-    title: `${svc.name} en Panamá | ${SITE_NAME}`,
-    description: `${svc.tagline} — ${svc.keywords.slice(0, 2).join(", ")}`,
-    keywords: svc.keywords.join(", "),
-    ogImage: svc.heroImage,
-  })),
-  // Projects
-  ...projects.map((proj) => ({
-    path: `/proyectos/${proj.slug}`,
-    title: `${proj.title} | ${SITE_NAME}`,
-    description: proj.metaDescription,
-    keywords: proj.keywords.join(", "),
-    ogImage: proj.heroImage,
-  })),
-  // Blog index page
-  {
-    path: "/blog",
-    title: `Blog de Arquitectura Comercial y Corporativa en Panama | ${SITE_NAME}`,
-    description: "Articulos sobre arquitectura comercial, corporativa e institucional en Panama. Disenos de oficinas, locales comerciales y espacios productivos por Arte y Dimensiones.",
-    keywords: "blog arquitectura panama, articulos arquitectura comercial, diseno corporativo panama, blog arte y dimensiones",
-  },
-  // Blog posts
-  ...blogPosts.map((post) => ({
-    path: `/blog/${post.slug}`,
-    title: post.title,
-    description: post.metaDescription,
-    keywords: post.keywords.join(", "),
-  })),
-  // Team members (we generate stubs — the actual name/role comes from JS but at least canonical + basic meta are correct)
-  ...["juan-manuel-rodriguez","alejandra-arosemena","jose-antonio-rodriguez","mitzenia-ortega","roxana-castillo","david-frias","luis-morales","cesar-rodriguez","sergio-cardenas","marien-rojas","arnel-perez","maria-somoza"].map((slug) => {
-    const name = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-    return {
-      path: `/equipo/${slug}`,
-      title: `${name} | Equipo ${SITE_NAME}`,
-      description: `Conozca a ${name}, profesional del equipo de Arte y Dimensiones. Arquitectura corporativa y comercial en Panamá.`,
-      keywords: `${name}, arquitecto Panama, Arte y Dimensiones`,
-    };
-  }),
-];
+  await build({
+    entryPoints: [join(ROOT, "src", "i18n", "manifest.ts")],
+    outfile: tmp,
+    bundle: true,
+    format: "esm",
+    platform: "node",
+    target: "node18",
+    loader: { ".json": "json" },
+    logLevel: "silent",
+  });
 
-// ── Read template ──
+  const mod = await import(`file://${tmp}?t=${Date.now()}`);
+  rmSync(tmp, { force: true });
+  return mod.buildRouteManifest();
+}
+
+// ── HTML helpers ──
+const escapeAttr = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+const escapeText = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+/** Replace an existing tag, or append before </head> if the template lacks it. */
+function upsert(html, pattern, replacement) {
+  return pattern.test(html) ? html.replace(pattern, replacement) : html.replace("</head>", `    ${replacement}\n  </head>`);
+}
+
+function renderRoute(template, route) {
+  const canonical = `${BASE_URL}${route.path === "/" ? "/" : route.path}`;
+  const ogImage = route.ogImage
+    ? route.ogImage.startsWith("http")
+      ? route.ogImage
+      : `${BASE_URL}${route.ogImage}`
+    : DEFAULT_OG_IMAGE;
+
+  let html = template;
+
+  html = html.replace(/<html lang="[^"]*"/, `<html lang="${HTML_LANG[route.locale]}"`);
+  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeText(route.title)}</title>`);
+
+  html = upsert(
+    html,
+    /<meta name="description" content="[^"]*"\s*\/?>/,
+    `<meta name="description" content="${escapeAttr(route.description)}" />`,
+  );
+  html = upsert(
+    html,
+    /<meta name="keywords" content="[^"]*"\s*\/?>/,
+    `<meta name="keywords" content="${escapeAttr(route.keywords)}" />`,
+  );
+  html = upsert(
+    html,
+    /<link rel="canonical" href="[^"]*"\s*\/?>/,
+    `<link rel="canonical" href="${escapeAttr(canonical)}" />`,
+  );
+
+  // hreflang: bidirectional, x-default on Spanish (Panama is the primary market).
+  const alternates = [
+    `<link rel="alternate" hreflang="es" href="${escapeAttr(route.alternates.es)}" />`,
+    `<link rel="alternate" hreflang="en" href="${escapeAttr(route.alternates.en)}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${escapeAttr(route.alternates.es)}" />`,
+  ].join("\n    ");
+
+  html = html.replace(
+    /<!-- seo:alternates:start -->[\s\S]*?<!-- seo:alternates:end -->/,
+    `<!-- seo:alternates:start -->\n    ${alternates}\n    <!-- seo:alternates:end -->`,
+  );
+
+  const og = {
+    "og:title": route.title,
+    "og:description": route.description,
+    "og:url": canonical,
+    "og:image": ogImage,
+    "og:type": route.ogType,
+    "og:locale": OG_LOCALE[route.locale],
+  };
+  for (const [prop, content] of Object.entries(og)) {
+    html = upsert(
+      html,
+      new RegExp(`<meta property="${prop}" content="[^"]*"\\s*/?>`),
+      `<meta property="${prop}" content="${escapeAttr(content)}" />`,
+    );
+  }
+
+  const twitter = {
+    "twitter:title": route.title,
+    "twitter:description": route.description,
+    "twitter:image": ogImage,
+  };
+  for (const [name, content] of Object.entries(twitter)) {
+    html = upsert(
+      html,
+      new RegExp(`<meta name="${name}" content="[^"]*"\\s*/?>`),
+      `<meta name="${name}" content="${escapeAttr(content)}" />`,
+    );
+  }
+
+  // Page JSON-LD. Tagged `data-seo-head` so React replaces exactly these on navigation
+  // and leaves the site-wide Organization block in the template alone.
+  const schemas = route.jsonLd
+    .map((schema) => {
+      const json = JSON.stringify(schema).replace(/</g, "\\u003c");
+      return `<script type="application/ld+json" data-seo-head="true">${json}</script>`;
+    })
+    .join("\n    ");
+
+  html = html.replace("</head>", `    ${schemas}\n  </head>`);
+
+  return html;
+}
+
+// ── Sitemap ──
+function renderSitemap(routes) {
+  const urls = routes
+    .map((route) => {
+      const loc = `${BASE_URL}${route.path === "/" ? "/" : route.path}`;
+      const links = [
+        `      <xhtml:link rel="alternate" hreflang="es" href="${escapeAttr(route.alternates.es)}"/>`,
+        `      <xhtml:link rel="alternate" hreflang="en" href="${escapeAttr(route.alternates.en)}"/>`,
+        `      <xhtml:link rel="alternate" hreflang="x-default" href="${escapeAttr(route.alternates.es)}"/>`,
+      ].join("\n");
+
+      return [
+        "   <url>",
+        `      <loc>${escapeAttr(loc)}</loc>`,
+        links,
+        route.lastmod ? `      <lastmod>${route.lastmod}</lastmod>` : null,
+        `      <changefreq>${route.changefreq}</changefreq>`,
+        `      <priority>${route.priority.toFixed(1)}</priority>`,
+        "   </url>",
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls}
+</urlset>
+`;
+}
+
+// ── Main ──
 const templatePath = join(DIST, "index.html");
 if (!existsSync(templatePath)) {
   console.error("❌ dist/index.html not found. Run `vite build` first.");
   process.exit(1);
 }
+
 const template = readFileSync(templatePath, "utf8");
 
-// ── Generate per-route HTML ──
-let count = 0;
-
-for (const route of routes) {
-  if (route.path === "/") continue; // homepage is already dist/index.html
-
-  const canonicalUrl = `${BASE_URL}${route.path}`;
-  const ogImage = route.ogImage
-    ? (route.ogImage.startsWith("http") ? route.ogImage : `${BASE_URL}${route.ogImage}`)
-    : DEFAULT_OG_IMAGE;
-  const fullTitle = `${route.title}`;
-
-  let html = template;
-
-  // Replace <title>
-  html = html.replace(
-    /<title>[^<]*<\/title>/,
-    `<title>${fullTitle}</title>`
-  );
-
-  // Replace meta description
-  html = html.replace(
-    /<meta name="description" content="[^"]*"/,
-    `<meta name="description" content="${route.description}"`
-  );
-
-  // Replace meta keywords
-  if (route.keywords) {
-    html = html.replace(
-      /<meta name="keywords" content="[^"]*"/,
-      `<meta name="keywords" content="${route.keywords}"`
-    );
-  }
-
-  // Replace canonical
-  html = html.replace(
-    /<link rel="canonical" href="[^"]*"/,
-    `<link rel="canonical" href="${canonicalUrl}"`
-  );
-
-  // Replace OG tags
-  html = html.replace(
-    /<meta property="og:title" content="[^"]*"/,
-    `<meta property="og:title" content="${fullTitle}"`
-  );
-  html = html.replace(
-    /<meta property="og:description" content="[^"]*"/,
-    `<meta property="og:description" content="${route.description}"`
-  );
-  html = html.replace(
-    /<meta property="og:url" content="[^"]*"/,
-    `<meta property="og:url" content="${canonicalUrl}"`
-  );
-  html = html.replace(
-    /<meta property="og:image" content="[^"]*"/,
-    `<meta property="og:image" content="${ogImage}"`
-  );
-
-  // Replace Twitter tags
-  html = html.replace(
-    /<meta name="twitter:title" content="[^"]*"/,
-    `<meta name="twitter:title" content="${fullTitle}"`
-  );
-  html = html.replace(
-    /<meta name="twitter:description" content="[^"]*"/,
-    `<meta name="twitter:description" content="${route.description}"`
-  );
-  html = html.replace(
-    /<meta name="twitter:image" content="[^"]*"/,
-    `<meta name="twitter:image" content="${ogImage}"`
-  );
-
-  // Write file
-  const dir = join(DIST, route.path);
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "index.html"), html, "utf8");
-  count++;
+if (!template.includes("<!-- seo:alternates:start -->")) {
+  console.error("❌ index.html is missing the seo:alternates markers — hreflang cannot be injected.");
+  process.exit(1);
 }
 
-console.log(`\n✅ Pre-rendered ${count} route HTML files with unique SEO meta tags.`);
+const routes = await loadManifest();
+
+let written = 0;
+for (const route of routes) {
+  const html = renderRoute(template, route);
+
+  // "/" is dist/index.html itself; every other route gets its own directory.
+  const outDir = route.path === "/" ? DIST : join(DIST, route.path);
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(join(outDir, "index.html"), html, "utf8");
+  written++;
+}
+
+writeFileSync(join(DIST, "sitemap.xml"), renderSitemap(routes), "utf8");
+
+const es = routes.filter((r) => r.locale === "es").length;
+const en = routes.filter((r) => r.locale === "en").length;
+
+console.log(`\n✅ Pre-rendered ${written} routes (${es} es · ${en} en) with baked meta, hreflang and JSON-LD.`);
+console.log(`🗺️  sitemap.xml written with ${routes.length} URLs + hreflang alternates.`);
 console.log(`📁 Output: ${DIST}/\n`);

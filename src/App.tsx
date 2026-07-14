@@ -1,19 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import ValuePillars from './components/ValuePillars';
-import AboutUsSection from './components/AboutUsSection';
-import InteractiveMap from './components/InteractiveMap';
-import ProjectsGrid from './components/ProjectsGrid';
-import GallerySection from './components/GallerySection';
-import InteractiveServices from './components/InteractiveServices';
-import CaseStudy from './components/CaseStudy';
-import Clients from './components/Clients';
-import CTAForm from './components/CTAForm';
 import Footer from './components/Footer';
-import SEOHead from './components/SEOHead';
+import HomePage from './pages/HomePage';
 import Agenda from './pages/Agenda';
 import ServicePage from './pages/ServicePage';
 import ProjectPage from './pages/ProjectPage';
@@ -23,39 +13,9 @@ import Galeria from './pages/Galeria';
 import Nosotros from './pages/Nosotros';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import NotFound from './pages/NotFound';
+import { LanguageProvider } from './i18n/LanguageProvider';
 import './styles/globals.css';
-
-// Home Page Component
-const HomePage: React.FC = () => {
-  const jsonLd = useMemo(() => ({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" }
-    ]
-  }), []);
-
-  return (
-    <>
-      <SEOHead
-        title="Arte y Dimensiones - Arquitectura Corporativa e Institucional en Panamá"
-        description="Estudio de arquitectura especializado en diseño corporativo, comercial e institucional en Panamá. Oficinas que elevan la productividad y la marca."
-        keywords="arquitectura corporativa Panamá, diseño de espacios comerciales Panamá, arquitectura institucional Panamá, estudio arquitectura Panama"
-        jsonLd={jsonLd}
-      />
-      <Hero />
-      <ValuePillars />
-      <AboutUsSection />
-      <InteractiveMap />
-      <ProjectsGrid />
-      <GallerySection showImages={false} />
-      <InteractiveServices />
-      <CaseStudy />
-      <Clients />
-      <CTAForm />
-    </>
-  );
-};
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -67,18 +27,51 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
+/**
+ * The same page tree is mounted twice: Spanish at the root (those URLs are already
+ * indexed and must not move) and English under `/en` with English slugs. The page
+ * components read their locale from the router, so they are shared, not duplicated.
+ */
+const AppRoutes: React.FC = () => (
+  <Routes>
+    {/* ── Spanish (root) ── */}
+    <Route path="/" element={<HomePage />} />
+    <Route path="/servicios" element={<Navigate to="/servicios/arquitectura-corporativa" replace />} />
+    <Route path="/servicios/:slug" element={<ServicePage />} />
+    <Route path="/proyectos/:slug" element={<ProjectPage />} />
+    <Route path="/nosotros" element={<Nosotros />} />
+    <Route path="/equipo" element={<Equipo />} />
+    <Route path="/equipo/:slug" element={<TeamMemberPage />} />
+    <Route path="/galeria" element={<Galeria />} />
+    <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/:slug" element={<BlogPost />} />
+    <Route path="/agenda" element={<Agenda />} />
+
+    {/* ── English (/en) ── */}
+    <Route path="/en" element={<HomePage />} />
+    <Route path="/en/services" element={<Navigate to="/en/services/corporate-architecture" replace />} />
+    <Route path="/en/services/:slug" element={<ServicePage />} />
+    <Route path="/en/projects/:slug" element={<ProjectPage />} />
+    <Route path="/en/about" element={<Nosotros />} />
+    <Route path="/en/team" element={<Equipo />} />
+    <Route path="/en/team/:slug" element={<TeamMemberPage />} />
+    <Route path="/en/gallery" element={<Galeria />} />
+    <Route path="/en/blog" element={<Blog />} />
+    <Route path="/en/blog/:slug" element={<BlogPost />} />
+    <Route path="/en/contact" element={<Agenda />} />
+
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Add smooth scrolling behavior
   useEffect(() => {
     const handleScroll = () => {
-      const elements = document.querySelectorAll('[data-animate]');
-      elements.forEach((element) => {
+      document.querySelectorAll('[data-animate]').forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
+        if (elementTop < window.innerHeight - 150) {
           element.classList.add('animate-fade-in');
         }
       });
@@ -90,30 +83,17 @@ function App() {
 
   return (
     <Router>
-      <Analytics />
-      <ScrollToTop />
-      <div className="min-h-screen bg-white">
-        <Header
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-        />
-        <main id="main-content" className="pt-20 lg:pt-24">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/servicios" element={<Navigate to="/servicios/arquitectura-corporativa" replace />} />
-            <Route path="/servicios/:slug" element={<ServicePage />} />
-            <Route path="/proyectos/:slug" element={<ProjectPage />} />
-            <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/equipo" element={<Equipo />} />
-            <Route path="/equipo/:slug" element={<TeamMemberPage />} />
-            <Route path="/galeria" element={<Galeria />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/agenda" element={<Agenda />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <LanguageProvider>
+        <Analytics />
+        <ScrollToTop />
+        <div className="min-h-screen bg-white">
+          <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+          <main id="main-content" className="pt-20 lg:pt-24">
+            <AppRoutes />
+          </main>
+          <Footer />
+        </div>
+      </LanguageProvider>
     </Router>
   );
 }

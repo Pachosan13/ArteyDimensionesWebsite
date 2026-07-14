@@ -4,4 +4,20 @@ Allow: /
 Disallow: /assets/
 Disallow: /dist/
 
+# AI crawlers are explicitly welcome — being cited in AI answers is a goal, not a leak.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://artedim.com/sitemap.xml

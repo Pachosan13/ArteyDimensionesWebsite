@@ -13,6 +13,19 @@
       {"q":"¿Qué incluye el diseño de una plaza comercial?","a":"Diseño arquitectónico completo: fachadas, distribución de locales, estacionamientos, áreas comunes, paisajismo, señalización y coordinación con contratistas."},
       {"q":"¿Cuántos proyectos comerciales han completado?","a":"Más de 150 proyectos entregados, incluyendo plazas comerciales en Ciudad de Panamá, Colón, Penonomé y otras ciudades del país."}
     ],
+    "en": {
+      "slug": "commercial-architecture",
+      "name": "Commercial Architecture",
+      "tagline": "Retail space designed to sell, not just to look good.",
+      "keywords": ["commercial architecture Panama","commercial architect Panama","retail design Panama","shopping mall design Panama","retail architecture Panama","restaurant design Panama"],
+      "valueCopy": "We are commercial architects in Panama with 26 years designing shopping centers, retail plazas and storefronts that earn their rent. Our built work includes Terrazas de Sabanitas (40-unit retail plaza in Colón), Boulevard Penonomé (23,500 m² of retail), Brisas Capital (11,950 m² with a 6-screen cinema) and Brisas Capital Este. We plan anchor placement, circulation and sightlines so tenants get traffic and shoppers stay longer, and we run the permitting and contractor coordination that foreign brands entering Panama usually underestimate.",
+      "faq": [
+        {"q":"What does a commercial architect in Panama do?","a":"A commercial architect in Panama designs the building and takes it through local permitting and construction — retail plazas, shopping centers, restaurants and storefronts. That means schematic design, tenant mix and circulation planning, facades, parking, construction drawings, municipal and MUPA permit submissions, and coordination with the contractor on site. In Panama the permitting and utility approvals are a real part of the schedule, so the architect who designs the project should be the one who walks it through approvals."},
+        {"q":"Do you work with international retail brands entering Panama?","a":"Yes. We work from franchise manuals and brand standards, adapt them to Panamanian building code and site conditions, and handle the local approvals your head office cannot run from abroad. We have delivered projects for tenants including banks, cinemas and national chains, and we report to remote clients in English on a fixed schedule."},
+        {"q":"What is included in the design of a retail plaza?","a":"Full architectural design: facades, tenant layout and unit sizing, parking, common areas, landscaping, wayfinding and signage, construction documents, and coordination with contractors through completion. We also model anchor placement and pedestrian flow before the layout is frozen, because that decision drives tenant rents for the life of the asset."},
+        {"q":"How many commercial projects have you delivered?","a":"More than 150 projects since 1999, totaling over 410,000 m² built. These include retail plazas and shopping centers in Panama City, Colón and Penonomé, plus corporate and industrial work such as Santa María Business Park and Industrias Correagua."}
+      ]
+    },
     "gallery": [
       "/images/services/arquitectura-comercial/gallery-1.jpg",
       "/images/services/arquitectura-comercial/gallery-2.jpg",
@@ -35,6 +48,19 @@
       {"q":"¿Trabajan con espacios ocupados?","a":"Sí, planificamos por fases y horarios para minimizar interrupciones y garantizar seguridad."},
       {"q":"¿Pueden alinear diseño con la marca?","a":"Integramos identidad visual y cultura en materiales, señalización y experiencia del espacio."}
     ],
+    "en": {
+      "slug": "corporate-architecture",
+      "name": "Corporate Architecture",
+      "tagline": "Regional headquarters, built to open on schedule.",
+      "keywords": ["corporate architecture Panama","workplace strategy Panama","office fit out Panama","regional headquarters Panama","corporate office design Panama"],
+      "valueCopy": "We design corporate headquarters and office fit outs in Panama for companies that need to be operating, not just permitted. Our work includes Santa María Business Park, a corporate campus that attracts banks, insurers and multinationals, with solar panels, EV charging and energy-efficient systems. We handle workplace strategy, base-building coordination, construction documents and the local approvals — the part a foreign head office cannot run remotely. Most of our corporate clients land in Costa del Este or Panamá Pacífico, and we know what each district's landlords, utilities and inspectors require.",
+      "faq": [
+        {"q":"Do you work with foreign companies opening a regional headquarters in Panama?","a":"Yes. Multinationals setting up a regional HQ in Panama are a core part of our practice, and we work with clients who are not in the country. We handle the local side end to end: site or building selection input, landlord and base-building coordination, municipal permitting, contractor bidding and site supervision. You get drawings, budgets and a schedule in English, plus a fixed reporting cadence so decisions can be made from your head office."},
+        {"q":"How long does a corporate office project take in Panama?","a":"For a 200–500 m² office, design runs 4–8 weeks, and construction typically adds 3–5 months depending on scope and landlord approvals. Larger headquarters and ground-up corporate buildings run longer. The variable that moves the date most is permitting, so we start those submissions in parallel with design instead of waiting for drawings to be final."},
+        {"q":"Can you deliver a project while our current office keeps operating?","a":"Yes. We phase the work by floor or zone and schedule noisy and dusty trades for nights and weekends, so your team keeps working through the build. This is standard on occupied corporate floors in Costa del Este towers, where landlords restrict work hours and freight elevator access anyway."},
+        {"q":"How do you align the office with our brand and global standards?","a":"We build from your existing global design standards and brand guidelines, then adapt them to Panamanian code, local material availability and lead times. Where a specified finish is not available in Panama or has a 16-week import lead time, we bring you a matched local alternative with the cost and schedule difference stated up front."}
+      ]
+    },
     "gallery": [
       "/images/services/arquitectura-corporativa/gallery-1.jpg",
       "/images/services/arquitectura-corporativa/gallery-2.jpg",
@@ -56,6 +82,19 @@
       {"q":"¿Cómo definen el layout ideal?","a":"Levantamos datos de ocupación, entrevistas y tipos de trabajo para asignar áreas por necesidad real."},
       {"q":"¿Miden utilización de salas y puestos?","a":"Sí, proponemos métricas de ocupación y herramientas para seguimiento."}
     ],
+    "en": {
+      "slug": "space-planning",
+      "name": "Space Planning & Workplace Strategy",
+      "tagline": "Know how much space you actually need before you sign the lease.",
+      "keywords": ["space planning Panama","office space planning","workplace strategy Panama","office layout Panama","headcount planning Panama"],
+      "valueCopy": "Space planning tells you how many square meters you need and how they should be laid out, before you commit to a lease. We work from real inputs: headcount and growth plan, how much of the team is in the office on a given day, the split between focus work and collaboration, meeting room demand and circulation. The output is a test fit for each building you are considering, so you can compare candidate floors in Costa del Este or Panamá Pacífico on the same basis and negotiate the lease knowing exactly what fits.",
+      "faq": [
+        {"q":"What is office space planning and when should we do it?","a":"Space planning is the study that determines how much floor area you need and how to arrange it — desks, meeting rooms, collaboration areas, support space and circulation. Do it before you sign a lease, not after. A test fit on two or three candidate floors usually changes which building you pick, and it routinely cuts 10–20% off the area a company thought it needed."},
+        {"q":"How do you decide the right layout?","a":"We collect occupancy data, interview department heads and classify work types (focus, collaboration, client-facing, support), then allocate area by actual demand rather than by org chart. For hybrid teams we plan against real peak-day attendance, not total headcount, which is where most companies overbuy space."},
+        {"q":"Can you do this for a company that is not yet in Panama?","a":"Yes. We produce test fits and space programs for companies evaluating Panama before they have any staff on the ground. We visit the candidate buildings, verify the landlord's real usable area against what the brochure claims, and send you comparable layouts and area takeoffs so the decision can be made from your head office."},
+        {"q":"Do you measure how the space actually gets used afterward?","a":"Yes. We define occupancy and utilization metrics up front — desk and meeting room usage, peak-day density — and recommend the tools to track them. That gives you a factual basis for your next lease renewal instead of a guess."}
+      ]
+    },
     "gallery": [
       "/images/services/space-planning/gallery-1.jpg",
       "/images/services/space-planning/gallery-2.jpg",
@@ -79,6 +118,19 @@
       {"q":"¿Qué incluye el servicio de diseño de oficinas?","a":"Análisis de necesidades, layout funcional, diseño de interiores, especificaciones técnicas, planos constructivos, coordinación con contratistas y supervisión de obra."},
       {"q":"¿Pueden diseñar oficinas sin interrumpir las operaciones actuales?","a":"Sí, planificamos por fases y coordinamos horarios con el contratista para minimizar el impacto en el negocio."}
     ],
+    "en": {
+      "slug": "office-design",
+      "name": "Office Design",
+      "tagline": "From empty shell to move-in, on one schedule.",
+      "keywords": ["office design Panama","corporate interior design Panama","office renovation Panama","office fit out Panama","workplace design Panama"],
+      "valueCopy": "We design and deliver offices in Panama — open-plan floors, hybrid layouts, and full renovations of occupied space. Every project covers circulation, acoustics, lighting and ergonomics, plus construction documents and on-site coordination with the contractor, so one team owns the result from first sketch to move-in day. Santa María Business Park shows the standard we work to: energy-efficient systems, solar panels, EV charging, and floors that attract banks, insurers and multinationals. Our clients are typically fitting out in Costa del Este or Panamá Pacífico and need a firm that can run the local permitting while they run the business.",
+      "faq": [
+        {"q":"How much does office design cost in Panama?","a":"Design fees run from $45/m² for a layout redesign to $150+/m² for a full project with interiors, technical specifications, construction drawings and site supervision. Scope drives the number: a re-plan of an existing floor sits at the low end, while a complete fit out of a raw shell with new MEP, custom millwork and brand elements sits at the high end. We give a free scoping assessment and a fixed fee before you commit."},
+        {"q":"How long does office design take?","a":"A typical 200–500 m² office takes 4–8 weeks of design. Construction then runs 3–5 months depending on scope, landlord rules and permit timing. We start permit submissions during design rather than after, which is usually where projects in Panama lose weeks."},
+        {"q":"Can you design our office without shutting down operations?","a":"Yes. We phase the work by zone and schedule demolition, drilling and other loud trades for nights and weekends, so the business keeps running during the build. We have done this on occupied corporate floors where the landlord limits work hours and elevator access, and we plan the sequence around those restrictions from day one."},
+        {"q":"What is included in the office design service?","a":"Needs analysis, functional layout, interior design, technical specifications, construction drawings, contractor coordination and site supervision. We also handle municipal permitting and landlord approvals, and we hold the contractor to the drawings during construction — the same team that designed it is on site checking what gets built."}
+      ]
+    },
     "gallery": [
       "/images/portfolio/BusinessPark/businesspark1.jpg",
       "/images/portfolio/BusinessPark/businesspark2.jpg",

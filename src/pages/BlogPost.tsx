@@ -1,8 +1,11 @@
 import React, { useMemo, useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
-import SEOHead from "../components/SEOHead";
-import { blogPosts, getBlogBySlug, BlogSection } from "../data/blogs";
 import { Clock, ArrowLeft, ChevronDown, ArrowRight } from "lucide-react";
+import SEOHead from "../components/SEOHead";
+import type { BlogSection } from "../data/blogs";
+import { useI18n } from "../i18n/LanguageProvider";
+import { getBlogPost, getBlogPosts } from "../i18n/data";
+import { buildPath } from "../i18n/config";
 
 function renderSection(section: BlogSection, idx: number) {
   switch (section.type) {
@@ -28,7 +31,9 @@ function renderSection(section: BlogSection, idx: number) {
       return (
         <ul key={idx} className="list-disc list-inside space-y-2 mb-6 text-neutral-700 text-lg pl-2">
           {section.items?.map((item, i) => (
-            <li key={i} className="leading-relaxed">{item}</li>
+            <li key={i} className="leading-relaxed">
+              {item}
+            </li>
           ))}
         </ul>
       );
@@ -78,9 +83,10 @@ function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
       {items.map((item, idx) => {
         const isOpen = open === idx;
         return (
-          <div key={idx} className="bg-white rounded-2xl shadow-md">
+          <div key={item.q} className="bg-white rounded-2xl shadow-md">
             <button
               onClick={() => setOpen(isOpen ? null : idx)}
+              aria-expanded={isOpen}
               className="w-full text-left px-5 py-4 font-semibold text-[var(--neutral-900)] flex items-center justify-between"
             >
               <span>{item.q}</span>
@@ -88,11 +94,8 @@ function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
                 className={`h-5 w-5 text-neutral-500 transition-transform flex-shrink-0 ml-4 ${isOpen ? "rotate-180" : ""}`}
               />
             </button>
-            {isOpen && (
-              <div className="px-5 pb-5 pt-0 text-neutral-700 leading-relaxed">
-                {item.a}
-              </div>
-            )}
+            {/* Kept in the DOM when collapsed so the FAQPage schema has matching on-page text. */}
+            <div className={isOpen ? "px-5 pb-5 pt-0 text-neutral-700 leading-relaxed" : "sr-only"}>{item.a}</div>
           </div>
         );
       })}
@@ -102,93 +105,34 @@ function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
-  const post = useMemo(() => getBlogBySlug(slug || ""), [slug]);
+  const { locale, t, path } = useI18n();
 
-  // Get related posts (same category, excluding current)
+  const post = useMemo(() => (slug ? getBlogPost(slug, locale) : undefined), [slug, locale]);
+
   const relatedPosts = useMemo(() => {
     if (!post) return [];
-    return blogPosts
-      .filter(p => p.slug !== post.slug)
+    return getBlogPosts(locale)
+      .filter((p) => p.slug !== post.slug)
       .slice(0, 2);
-  }, [post]);
+  }, [post, locale]);
 
-  const jsonLd = useMemo(() => {
-    if (!post) return undefined;
-    return [
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": post.title,
-        "description": post.metaDescription,
-        "url": `https://artedim.com/blog/${post.slug}`,
-        "datePublished": post.publishDate,
-        "dateModified": post.publishDate,
-        "author": {
-          "@type": "Organization",
-          "@id": "https://artedim.com/#organization",
-          "name": "Arte y Dimensiones"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://artedim.com/#organization",
-          "name": "Arte y Dimensiones",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://artedim.com/images/general/logoarteydim.jpg"
-          }
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": `https://artedim.com/blog/${post.slug}`
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": post.faq.map((item) => ({
-          "@type": "Question",
-          "name": item.q,
-          "acceptedAnswer": { "@type": "Answer", "text": item.a }
-        }))
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://artedim.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://artedim.com/blog" },
-          { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://artedim.com/blog/${post.slug}` }
-        ]
-      }
-    ];
-  }, [post]);
+  
 
-  if (!post) return <Navigate to="/blog" replace />;
+  if (!post) return <Navigate to={path("blog")} replace />;
 
   return (
     <>
-      <SEOHead
-        title={post.title}
-        description={post.metaDescription}
-        keywords={[post.targetKeyword, ...post.secondaryKeywords].join(", ")}
-        ogType="article"
-        jsonLd={jsonLd}
-      />
+      <SEOHead />
 
-      {/* Breadcrumb + Back link */}
       <section className="bg-[var(--neutral-100)] py-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            to="/blog"
-            className="inline-flex items-center text-brand font-medium hover:underline"
-          >
+          <Link to={path("blog")} className="inline-flex items-center text-brand font-medium hover:underline">
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Volver al Blog
+            {t.blogPage.backToBlog}
           </Link>
         </div>
       </section>
 
-      {/* Article Header */}
       <section className="py-12 md:py-16 bg-[var(--neutral-100)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-6">
@@ -197,7 +141,7 @@ export default function BlogPost() {
             </span>
             <span className="flex items-center text-sm text-neutral-500">
               <Clock className="h-4 w-4 mr-1" />
-              {post.readTime} min de lectura
+              {post.readTime} {t.blogPage.readingTime}
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--neutral-900)] leading-tight">
@@ -206,33 +150,26 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Article Body */}
       <article className="py-12 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {post.content.map((section, idx) => renderSection(section, idx))}
         </div>
       </article>
 
-      {/* FAQ Section */}
       <section className="py-16 md:py-24 bg-[var(--neutral-100)]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--neutral-900)] mb-8 md:mb-10">
-            Preguntas Frecuentes
+            {t.blogPage.faqHeading}
           </h2>
           <FAQAccordion items={post.faq} />
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="rounded-2xl bg-[var(--neutral-900)] shadow-xl p-8 md:p-12 space-y-4">
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
-              {post.ctaTitle}
-            </h3>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-              {post.ctaText}
-            </p>
+            <h3 className="text-2xl md:text-3xl font-bold text-white">{post.ctaTitle}</h3>
+            <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">{post.ctaText}</p>
             <Link
               to={post.ctaLink}
               className="inline-flex items-center justify-center rounded-xl px-8 py-4 font-semibold shadow-lg bg-brand text-white hover:bg-brand/90 transition mt-4"
@@ -244,18 +181,17 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <section className="py-16 md:py-24 bg-[var(--neutral-100)]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-bold text-[var(--neutral-900)] mb-8">
-              Articulos Relacionados
+              {t.blogPage.relatedHeading}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
-                  to={`/blog/${related.slug}`}
+                  to={`${buildPath("blog", locale)}/${related.slug}`}
                   className="group block bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-brand/20"
                 >
                   <div className="p-6 md:p-8 flex flex-col h-full">
@@ -265,17 +201,15 @@ export default function BlogPost() {
                       </span>
                       <span className="flex items-center text-sm text-neutral-500">
                         <Clock className="h-4 w-4 mr-1" />
-                        {related.readTime} min
+                        {related.readTime} {t.blogPage.minutesSuffix}
                       </span>
                     </div>
                     <h3 className="text-lg md:text-xl font-bold text-[var(--neutral-900)] mb-3 group-hover:text-brand transition-colors leading-tight">
                       {related.title}
                     </h3>
-                    <p className="text-neutral-600 leading-relaxed mb-4 flex-grow text-sm">
-                      {related.excerpt}
-                    </p>
+                    <p className="text-neutral-600 leading-relaxed mb-4 flex-grow text-sm">{related.excerpt}</p>
                     <div className="flex items-center text-brand font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                      Leer articulo
+                      {t.blogPage.readMore}
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </div>
                   </div>

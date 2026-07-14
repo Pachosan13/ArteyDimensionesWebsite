@@ -401,6 +401,407 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 
+export const blogPostsEn: BlogPost[] = [
+  {
+    slug: "commercial-architect-panama",
+    title: "What a Commercial Architect in Panama Actually Does (And How Foreign Companies Hire One)",
+    metaDescription: "A commercial architect in Panama designs revenue-generating space and manages municipal permitting through occupancy. Fees, timelines, and how foreign companies engage a Panamanian firm.",
+    targetKeyword: "commercial architect Panama",
+    secondaryKeywords: ["architecture firm Panama", "architects in Panama", "commercial architecture Panama", "commercial building design Panama"],
+    category: "Commercial Architecture",
+    readTime: 8,
+    excerpt: "A commercial architect in Panama designs revenue-generating space, coordinates engineering, and carries the project through municipal permitting to occupancy. Here is how the process works and what it costs.",
+    publishDate: "2026-04-10",
+    content: [
+      { type: "paragraph", text: "A commercial architect in Panama designs the buildings a business earns money in: retail plazas, offices, warehouses, plants, showrooms, clinics. The role goes past drawing. It includes coordinating structural, electrical and mechanical engineering, and pushing the project through municipal permitting until you hold an occupancy permit. That last part is where most foreign companies get stuck, and it is the main reason you hire a local firm instead of shipping drawings in from abroad." },
+      { type: "paragraph", text: "This article explains what commercial architecture in Panama covers, what it costs, how long it takes, and how a company headquartered somewhere else engages a Panamanian architecture firm." },
+      { type: "h2", text: "What a Commercial Architect in Panama Does" },
+      { type: "paragraph", text: "Commercial architecture is not residential architecture at a larger scale. The variables are different, and so is the definition of a good outcome. A house is judged on how it feels. A commercial building is judged on what it produces." },
+      { type: "paragraph", text: "A commercial architect works against five constraints that a residential architect never touches:" },
+      { type: "list", items: [
+        "Customer and employee circulation. How people move through the space determines dwell time in retail and throughput in industrial.",
+        "Panamanian commercial code. Municipal permits, fire department (Bomberos) certification, MOP construction permits, MINSA health approvals for food service and clinical use.",
+        "Brand expression. The space is a physical asset of the brand, not a container for it.",
+        "Operating efficiency. Square meters that do not earn are square meters you pay rent, power and cooling on.",
+        "Return on the build. Every design decision has a payback period, and the architect should be able to name it."
+      ]},
+      { type: "h2", text: "The Services an Architecture Firm in Panama Should Provide" },
+      { type: "paragraph", text: "A full-service architecture firm in Panama should cover the project end to end. If you have to hire three vendors to get to opening day, you are absorbing the coordination risk yourself." },
+      { type: "h3", text: "Architectural design" },
+      { type: "paragraph", text: "Space planning, materials, lighting strategy, finishes, and 3D renderings so you approve the result on a screen instead of discovering it in concrete." },
+      { type: "h3", text: "Fit-out and remodeling" },
+      { type: "paragraph", text: "Most commercial space in Panama is leased in shell condition, sometimes called obra gris. It has a slab, a roof, and a service connection. Everything else is on you. A fit-out converts that shell into an operating space." },
+      { type: "h3", text: "Corporate office design" },
+      { type: "paragraph", text: "Headcount planning, meeting-room ratios, focus space, and the layout of the visitor path from lobby to boardroom." },
+      { type: "h3", text: "Industrial architecture" },
+      { type: "paragraph", text: "Plants, warehouses and distribution centers, where the design problem is throughput, clear height, truck maneuvering and expansion phasing. Our Industrias Correagua Phase 2 project runs 24,000 m2, designed as an expansion of a working facility." },
+      { type: "h3", text: "Permitting and project management" },
+      { type: "paragraph", text: "The architect files with the municipality, coordinates the fire and health approvals, tenders the work to contractors, supervises construction, and hands over the keys." },
+      { type: "h2", text: "Can a Foreign Company Hire an Architect in Panama?" },
+      { type: "paragraph", text: "Yes, and it is routine. Construction drawings submitted for permit in Panama must be signed and sealed by a professional licensed to practice here. A foreign company, or a foreign design firm, cannot file on its own. The standard structure is straightforward:" },
+      { type: "list", items: [
+        "The foreign company contracts a Panamanian firm directly, and that firm handles design, engineering coordination and permitting.",
+        "Or the foreign company brings its own global design standard, and the Panamanian firm acts as architect of record: it adapts the standard to local code, seals the drawings, files them, and supervises the build.",
+        "Either way, one licensed local firm carries permit responsibility. Budget for that from day one instead of discovering it at submission."
+      ]},
+      { type: "paragraph", text: "Practical note for a headquarters team operating from another time zone: ask who your single point of contact is, and whether they will report in English. Ask for photo progress reports on a fixed cadence. Site visits from abroad are expensive, and a firm that reports well saves you flights." },
+      { type: "h2", text: "Who Handles Municipal Approval" },
+      { type: "paragraph", text: "The architect does, and you should make that explicit in the contract. Approvals in Panama are sequential, not parallel, so a missed document early costs weeks later. The typical chain for a commercial project:" },
+      { type: "table", headers: ["Approval", "What it covers", "Who files"], rows: [
+        ["Municipal plan review", "Zoning, use, setbacks, drawings", "Architect"],
+        ["MOP construction permit", "Structural and construction compliance", "Architect / engineer"],
+        ["Fire department (Bomberos)", "Egress, suppression, alarms", "Architect"],
+        ["MINSA health permit", "Required for food service, clinical and some manufacturing", "Architect"],
+        ["Occupancy", "Legal right to operate in the space", "Architect"]
+      ]},
+      { type: "blockquote", text: "If a firm tells you permitting is your responsibility, you are not hiring an architecture firm. You are hiring a draftsman." },
+      { type: "h2", text: "What a Commercial Architect Costs in Panama" },
+      { type: "paragraph", text: "Fees track the construction cost of the project, not the hours spent drawing." },
+      { type: "list", items: [
+        "Architectural design: typically 5% to 12% of total construction cost, depending on complexity",
+        "Smaller remodels: often quoted as a fixed fee based on area",
+        "Project management and construction supervision: an additional 3% to 5%"
+      ]},
+      { type: "paragraph", text: "Read that against the alternative. An underspecified drawing set produces change orders, rework and schedule slip during construction, and construction is where the real money is. The fee is small. What the fee protects is not." },
+      { type: "h2", text: "How to Evaluate an Architecture Firm in Panama" },
+      { type: "paragraph", text: "There is no official ranking of the top architecture firms in Panama, and you should be skeptical of any list that claims otherwise. Evaluate on evidence instead:" },
+      { type: "list", items: [
+        "Built commercial work, not renderings. Ask for completed projects in your asset class. Retail experience does not transfer automatically to industrial.",
+        "Volume. Arte y Dimensiones has been in practice since 1999, with more than 150 projects and over 410,000 m2 built in Panama.",
+        "Comparable scale. Boulevard Penonome is 23,500 m2 of retail. Brisas Capital is 11,950 m2 including a six-screen cinema. Terrazas de Sabanitas is a 40-unit retail plaza in Colon. Santa Maria Business Park is a corporate campus. If your project resembles one of these, ask about it directly.",
+        "Permit track record. Ask how many projects the firm has taken through occupancy, not how many it has designed.",
+        "A named contract scope. What is included, what is not, what triggers a change order, and what the payment schedule is."
+      ]},
+      { type: "h2", text: "What to Bring to the First Meeting" },
+      { type: "paragraph", text: "The quality of the first conversation determines the quality of the fee proposal. Bring the lease or the deed, the area in square meters, your headcount or expected traffic, your target opening date, and a budget range you are willing to say out loud. An architect who does not know your budget is designing blind, and you will pay for that in redesign." },
+    ],
+    faq: [
+      { q: "What does a commercial architect do in Panama?", a: "A commercial architect in Panama designs revenue-generating space, including retail, offices and industrial facilities, coordinates the structural, electrical and mechanical engineering, and manages municipal permitting through to an occupancy permit. Residential architects generally do not handle the commercial code and permitting chain." },
+      { q: "Can a foreign company hire an architect in Panama?", a: "Yes. Construction drawings filed for permit in Panama must be sealed by a locally licensed professional, so a foreign company engages a Panamanian firm either as full designer or as architect of record adapting the company's global design standard to local code. Both structures are common with multinationals." },
+      { q: "How much does a commercial architect cost in Panama?", a: "Architectural design fees typically run 5% to 12% of total construction cost, with an additional 3% to 5% for project management and construction supervision. Smaller remodels are often quoted as a fixed fee based on floor area." },
+      { q: "How long does a commercial architecture project take in Panama?", a: "A commercial fit-out generally takes 3 to 6 months from design start to handover. A large corporate project runs 8 to 18 months. Design alone is usually 4 to 8 weeks, and permitting runs in parallel with contractor tendering." },
+      { q: "Do I need municipal approval for a commercial project in Panama, and who handles it?", a: "Yes. Any commercial construction or remodel that touches structure, layout or building systems requires municipal plan approval, an MOP construction permit and fire department certification, plus MINSA health approval for food service or clinical use. Your architect files and manages all of it." },
+      { q: "What are the top architecture firms in Panama?", a: "There is no official ranking. Evaluate firms on built commercial work in your asset class, total area delivered, and the number of projects they have carried through to occupancy. Arte y Dimensiones has practiced in Panama since 1999, with 150+ projects and over 410,000 m2 built." }
+    ],
+    ctaTitle: "Talk to a Commercial Architecture Firm That Has Built 410,000 m2 in Panama",
+    ctaText: "Arte y Dimensiones has designed and delivered retail, corporate and industrial projects across Panama since 1999. If you are opening, expanding or relocating here, we can tell you what it will cost and how long it will take before you sign a lease.",
+    ctaLink: "/en/contact",
+    ctaLabel: "Request a consultation"
+  },
+  {
+    slug: "retail-space-design-panama",
+    title: "Retail Space Design in Panama: What It Costs to Fit Out a Store and What to Demand From Your Architect",
+    metaDescription: "What retail space design costs in Panama, per square meter, with fit-out ranges, timelines and the permits required. Written for brands entering the Panamanian market.",
+    targetKeyword: "retail space design Panama",
+    secondaryKeywords: ["retail design Panama", "commercial space Panama", "shopping mall design Panama", "retail fit out cost Panama"],
+    category: "Retail",
+    readTime: 10,
+    excerpt: "Fitting out a retail space in Panama runs roughly $500 to $1,500 per square meter turnkey. Here is what drives that number, what the design service must include, and what to require in the contract.",
+    publishDate: "2026-04-10",
+    content: [
+      { type: "paragraph", text: "Retail space design in Panama costs roughly $500 to $1,500 per square meter on a turnkey basis, design and construction included. A 120 m2 store in a Panamanian mall with mid-level finishes typically lands between $60,000 and $120,000 all in. That is the number most brands entering the market want first, so there it is." },
+      { type: "paragraph", text: "The rest of this article explains what moves that number, what the design service has to include, and what to put in the contract before you sign it. If you are a brand entering Panama for the first time, the traps are not in the design. They are in the shell condition of the space and in the permit chain." },
+      { type: "h2", text: "What Retail Space Design Costs in Panama" },
+      { type: "paragraph", text: "Commercial space in Panama is almost always leased as a shell: a slab, a roof, a demised boundary, and a service connection at the wall. Nothing else. Local operators call this obra gris. If your real estate team assumed a US-style delivered condition with ceiling, HVAC distribution and finished floor, your budget is already wrong." },
+      { type: "h3", text: "What drives the cost" },
+      { type: "table", headers: ["Factor", "Effect on cost"], rows: [
+        ["Floor area", "Larger area raises total spend but lowers cost per m2"],
+        ["Type of business", "Food service costs more than apparel because of grease, gas, ventilation and drainage"],
+        ["Location", "Premium districts like Costa del Este and Punta Pacifica carry higher build costs"],
+        ["Finish level", "Premium finishes can double the budget versus standard"],
+        ["Shell condition", "A raw shell costs more to fit out than a previously occupied unit"]
+      ]},
+      { type: "h3", text: "Reference ranges for 2026" },
+      { type: "list", items: [
+        "Architectural design: $15 to $45 per m2, depending on complexity",
+        "Basic build-out and fit-out: $350 to $600 per m2",
+        "Premium finishes: $600 to $1,200+ per m2",
+        "Turnkey, design plus construction: $500 to $1,500 per m2"
+      ]},
+      { type: "blockquote", text: "These are reference ranges, not a quote. Food service, cold chain and anything requiring MINSA approval sits at the top of the range or above it." },
+      { type: "h2", text: "What the Retail Design Service Must Include" },
+      { type: "paragraph", text: "A serious commercial design engagement in Panama has five phases. If a proposal is missing one, you will pay for it later, out of contingency." },
+      { type: "h3", text: "Phase 1: Survey and diagnosis" },
+      { type: "list", items: [
+        "Site visit and exact measurement of the unit as built, not as drawn in the lease exhibit",
+        "Assessment of existing conditions: electrical capacity, plumbing, drainage, structure",
+        "Review of applicable code, including mall landlord criteria, municipal rules, fire and MINSA where relevant",
+        "Alignment on the brand, the target customer, and the commercial objective for the store"
+      ]},
+      { type: "h3", text: "Phase 2: Concept design" },
+      { type: "list", items: [
+        "Layout and space allocation",
+        "The customer journey through the store, from entry to point of sale",
+        "Materials and finish palette",
+        "3D renderings so the decision is made on screen, where changes are free"
+      ]},
+      { type: "h3", text: "Phase 3: Construction documents" },
+      { type: "list", items: [
+        "Full architectural drawing set",
+        "Electrical and mechanical drawings",
+        "Ceiling, flooring and construction details",
+        "Technical specifications for every material, so contractors bid on identical scope"
+      ]},
+      { type: "h3", text: "Phase 4: Permits" },
+      { type: "list", items: [
+        "MOP construction permit",
+        "Municipal plan approval in the corresponding municipality",
+        "Fire department (Bomberos) certification",
+        "MINSA health permits where the use requires them"
+      ]},
+      { type: "h3", text: "Phase 5: Construction supervision" },
+      { type: "list", items: [
+        "Site visits to verify the build matches the drawings",
+        "Coordination of contractors and suppliers",
+        "Quality control on materials and finishes",
+        "Handover"
+      ]},
+      { type: "h2", text: "Landlord Criteria: The Constraint Foreign Brands Miss" },
+      { type: "paragraph", text: "Malls and retail plazas in Panama publish tenant design criteria, and the landlord approves your drawings before the municipality ever sees them. Storefront line, signage zone, allowable materials, permitted work hours, and the point where your services connect to the building are all fixed by that document. Get it before you design, not after. Landlord rejection is the single most common cause of a delayed opening in Panamanian retail, and it is entirely avoidable." },
+      { type: "h2", text: "Seven Things to Demand From Your Architect" },
+      { type: "h3", text: "1. A written contract with an explicit scope" },
+      { type: "paragraph", text: "What is included, what is excluded, delivery dates, payment schedule, and how changes are priced. This protects both sides." },
+      { type: "h3", text: "2. A realistic schedule" },
+      { type: "paragraph", text: "Dates per phase. A professional can estimate and commit. Anyone who cannot has not done this before." },
+      { type: "h3", text: "3. A line-item budget before construction starts" },
+      { type: "paragraph", text: "Broken down by trade. If something changes mid-project, it gets communicated and approved in writing. No surprises at invoice time." },
+      { type: "h3", text: "4. Renderings" },
+      { type: "paragraph", text: "See the store before it exists. Changes on screen are free. Changes in concrete are not." },
+      { type: "h3", text: "5. Proven commercial portfolio" },
+      { type: "paragraph", text: "Ask for built retail work. Arte y Dimensiones has delivered Boulevard Penonome at 23,500 m2, Brisas Capital at 11,950 m2 with a six-screen cinema, and Terrazas de Sabanitas, a 40-unit retail plaza in Colon. Ask any firm you interview for the equivalent." },
+      { type: "h3", text: "6. Full permit handling" },
+      { type: "paragraph", text: "Permitting in Panama is sequential and document-heavy. Your architect files it. If the answer is that you handle it, keep looking." },
+      { type: "h3", text: "7. Reporting you can read from another country" },
+      { type: "paragraph", text: "If your team is not in Panama, you need scheduled progress reports with photos and a named point of contact. That is not a nice-to-have. It is how you avoid a $12,000 flight to discover the wrong tile went in." },
+      { type: "h2", text: "How Long a Retail Fit-Out Takes in Panama" },
+      { type: "table", headers: ["Phase", "Typical duration"], rows: [
+        ["Design", "4 to 8 weeks"],
+        ["Landlord and municipal approvals", "Runs in parallel with tendering"],
+        ["Construction, 80 to 150 m2 unit", "2 to 4 months"],
+        ["Total, first meeting to opening", "3 to 6 months"]
+      ]},
+      { type: "paragraph", text: "Build backwards from the date the lease starts charging rent. Rent-free fit-out periods in Panama are negotiable, and they are worth negotiating hard, because every week your architect spends waiting on landlord approval is a week you are paying for an empty box." },
+      { type: "h2", text: "Common Mistakes in Retail Design" },
+      { type: "paragraph", text: "Designing for the owner instead of the shopper. The store is not for you. Circulation, sightlines and lighting all have to be planned from the perspective of the person walking in with a wallet." },
+      { type: "paragraph", text: "Cutting the design fee and paying double in construction. Cheap drawings produce expensive job sites. Incomplete documentation is the root of most change orders." },
+      { type: "paragraph", text: "Ignoring code. We have seen stores rip out entire electrical installations because they did not meet code. An experienced architect prevents that at the drawing stage, where it costs nothing." },
+      { type: "paragraph", text: "Designing for today's store count. If the plan is five locations in Panama, design a kit of parts you can repeat, not a one-off. The second store should cost less to design than the first." },
+    ],
+    faq: [
+      { q: "How much does it cost to fit out a retail space in Panama?", a: "Expect $500 to $1,500 per square meter turnkey, covering design and construction. A 120 m2 store with mid-level finishes typically costs $60,000 to $120,000 in total. Basic build-out alone runs $350 to $600 per m2, and premium finishes push past $1,200 per m2." },
+      { q: "How long does it take to open a retail store in Panama?", a: "Plan on 3 to 6 months from the first meeting with your architect to opening day. Design takes 4 to 8 weeks, and construction of an 80 to 150 m2 unit takes 2 to 4 months. Landlord and municipal approvals run in parallel with contractor tendering." },
+      { q: "Is retail space in Panama delivered ready to occupy?", a: "No. Retail space in Panama is almost always leased as a bare shell with a slab, roof and a service connection at the boundary. Ceiling, flooring, HVAC distribution, lighting, storefront and finishes are all the tenant's cost, which is why fit-out budgets are higher than teams expect." },
+      { q: "Can a foreign retail brand hire a Panamanian architect?", a: "Yes, and drawings filed for permit must be sealed by a locally licensed professional, so a local firm is required regardless. Most international brands hand their global store standard to a Panamanian firm, which adapts it to local code, files the permits and supervises construction." },
+      { q: "Do I need a permit to remodel a leased commercial space in Panama?", a: "Yes. Any remodel that touches layout, structure or building systems requires municipal plan approval and an MOP construction permit, plus fire department certification and, for food service, MINSA health approval. The landlord also has to approve the drawings against the mall's tenant criteria first." },
+      { q: "Does an architect help me choose the location?", a: "A good one will. Reviewing a candidate unit before you sign the lease can reveal electrical capacity limits, drainage problems or structural constraints that add tens of thousands of dollars to the fit-out. That review costs a fraction of what it saves." }
+    ],
+    ctaTitle: "Get a Real Number Before You Sign the Lease",
+    ctaText: "Arte y Dimensiones has designed retail across Panama, from a 40-unit plaza in Colon to a 23,500 m2 boulevard in Penonome. Send us the unit you are considering and we will tell you what it costs to open in it.",
+    ctaLink: "/en/contact",
+    ctaLabel: "Request a project estimate"
+  },
+  {
+    slug: "office-design-productivity-panama",
+    title: "Five Signs Your Office in Panama Is Costing You Productivity",
+    metaDescription: "Office design in Panama: five signs your workplace is holding your team back, what an office renovation costs per square meter, and how long a fit out takes.",
+    targetKeyword: "office design Panama",
+    secondaryKeywords: ["workplace strategy Panama", "office renovation Panama", "office fit out Panama", "office space Panama"],
+    category: "Corporate Offices",
+    readTime: 9,
+    excerpt: "An office that was adapted rather than designed costs more than the rent. Here are the five signals that your workplace in Panama is holding your team back, and what fixing it costs per square meter.",
+    publishDate: "2026-04-10",
+    content: [
+      { type: "paragraph", text: "Office design in Panama is usually treated as a real estate decision and priced as a facilities line item. That is backwards. Your largest fixed cost is not the lease. It is payroll, and the office either supports payroll or taxes it." },
+      { type: "paragraph", text: "If your company operates from a space that was adapted rather than designed, the cost shows up somewhere other than the rent line: in lost hours, in turnover, in the meeting that never got the room. Here are the five signs, and what an office renovation in Panama actually costs to fix them." },
+      { type: "h2", text: "Sign 1: Your Team Avoids the Office" },
+      { type: "paragraph", text: "If your best people prefer working from home not for convenience but because the office drains them, that is a design problem, not a culture problem. No amount of attendance policy fixes a room that is unpleasant to sit in for eight hours." },
+      { type: "paragraph", text: "What causes it:" },
+      { type: "list", items: [
+        "Noise, because there is no acoustic separation between focus work and phone calls",
+        "Poor artificial lighting that produces visual fatigue by mid-afternoon",
+        "Inconsistent temperature, with frozen zones next to hot zones. In Panama's climate an undersized or badly zoned HVAC system is not a comfort issue, it is an attendance issue",
+        "No place to concentrate without being interrupted"
+      ]},
+      { type: "paragraph", text: "The fix: a layout that separates focus work, collaboration and recovery. This is not about a ping-pong table. It is about designing a space people are willing to commute to." },
+      { type: "h2", text: "Sign 2: Meetings Are a Logistics Problem" },
+      { type: "paragraph", text: "If every meeting starts with a hunt for a room, if people cram into an unventilated box, or if video calls happen from open desks and disturb half the floor, the office was designed for a way of working you abandoned years ago." },
+      { type: "paragraph", text: "What causes it:" },
+      { type: "list", items: [
+        "Too few meeting rooms for the headcount",
+        "Rooms with no functioning conferencing technology, which matters more when half the participants are in another country",
+        "No informal space for the five-minute conversation, so it happens at someone's desk",
+        "Rooms located so badly that reaching one means crossing the entire floor"
+      ]},
+      { type: "paragraph", text: "The fix: count the actual demand before drawing anything. Meetings per day, participants per meeting, how many are hybrid. Room ratios should come out of that data, not out of a template." },
+      { type: "h2", text: "Sign 3: Clients Notice Something Is Off" },
+      { type: "paragraph", text: "A client or partner forms an impression of your company in the first 30 seconds inside your office. If reception is a desk shoved in a corner, if there is nowhere to wait, if the meeting room has a broken chair and a projector that does not work, that impression works against you before you say a word." },
+      { type: "paragraph", text: "What causes it:" },
+      { type: "list", items: [
+        "An improvised reception area, or none",
+        "No coherent brand presence anywhere in the space",
+        "Client areas designed with whatever was left over",
+        "An abrupt transition from public area to work floor, so visitors see the mess"
+      ]},
+      { type: "paragraph", text: "The fix: design the visitor path with the same intent you put into a sales deck. Every square meter a client sees should reinforce the same message the deck does." },
+      { type: "h2", text: "Sign 4: You Grew and the Office Did Not" },
+      { type: "paragraph", text: "The most common failure we see in Panama. You started with five people in a space built for five. You are now fifteen. Desks are in the corridor, the meeting room became an office, and the file area is a closet nobody can open." },
+      { type: "paragraph", text: "What causes it:" },
+      { type: "list", items: [
+        "Organic growth with no space planning",
+        "An original layout that never contemplated expansion",
+        "Reluctance to invest in a redesign while everything technically still works, even though nothing works well"
+      ]},
+      { type: "paragraph", text: "The fix: a well-executed redesign can double the functional capacity of an office without doubling the floor area. Multi-use furniture, shared desking, and professional redistribution do a lot before you ever have to sign a bigger lease. Compare that against a move, which means new fit-out costs, a new permit cycle and downtime." },
+      { type: "h2", text: "Sign 5: The Space Does Not Reflect the Company You Are Now" },
+      { type: "paragraph", text: "Maybe the office was designed ten years ago, when you were a different company. Maybe you inherited it from a previous tenant and never made it yours. Either way, the space communicates nothing about the business." },
+      { type: "paragraph", text: "What causes it:" },
+      { type: "list", items: [
+        "A visual identity that evolved while the space stayed frozen",
+        "Generic design with no brand elements",
+        "Dated materials and finishes that project an outdated company"
+      ]},
+      { type: "paragraph", text: "The fix: you rarely need to demolish anything. A strategic change of materials, lighting, signage and furniture can reset how the space is read. A good architect tells you which changes buy the most perception per dollar." },
+      { type: "h2", text: "What an Office Renovation Costs in Panama" },
+      { type: "paragraph", text: "Office fit-out and renovation costs in Panama vary widely with scope. These are working ranges:" },
+      { type: "table", headers: ["Type of intervention", "Investment per m2"], rows: [
+        ["Cosmetic refresh (paint, lighting, furniture)", "$80 - $200 / m2"],
+        ["Partial renovation (redistribution plus finishes)", "$250 - $500 / m2"],
+        ["Full renovation (structure plus building systems)", "$500 - $1,000+ / m2"]
+      ]},
+      { type: "paragraph", text: "Example: renovating a 200 m2 office with partial redistribution and modern finishes typically runs $50,000 to $100,000. The point of hiring an architect is not to spend that money. It is to know which portion of it produces a result and which portion is decoration." },
+      { type: "h2", text: "How Long an Office Fit-Out Takes" },
+      { type: "table", headers: ["Scope", "Duration"], rows: [
+        ["Planning and design", "4 to 6 weeks"],
+        ["Partial renovation, 150 to 300 m2", "6 to 12 weeks of construction"],
+        ["Full renovation", "3 to 5 months of construction"]
+      ]},
+      { type: "paragraph", text: "The planning phase is the one companies try to compress, and it is the one that determines whether the construction phase runs clean." },
+      { type: "h2", text: "Renovate or Relocate" },
+      { type: "paragraph", text: "Three questions settle it:" },
+      { type: "list", items: [
+        "Can the existing space adapt? If the structure is sound and the location is strategic, renovating almost always beats moving on cost.",
+        "What is the current inefficiency costing? If each employee loses 30 minutes a day to a badly planned space, 20 employees means 200 wasted hours a month. Put your loaded hourly cost against that number.",
+        "Does the lease allow it? Many landlords in Panama permit tenant improvements at the tenant's cost, and some grant rent-free months for fit-out. Negotiate that before you sign, not after."
+      ]},
+    ],
+    faq: [
+      { q: "How much does office design cost in Panama?", a: "An office renovation in Panama runs $80 to $200 per m2 for a cosmetic refresh, $250 to $500 per m2 for partial renovation with redistribution and finishes, and $500 to $1,000+ per m2 for a full renovation touching structure and building systems. A 200 m2 office with partial redistribution typically costs $50,000 to $100,000." },
+      { q: "How long does an office renovation in Panama take?", a: "A partial renovation of a 150 to 300 m2 office typically takes 6 to 12 weeks of construction. A full renovation takes 3 to 5 months. Add 4 to 6 weeks of planning and design before construction begins, which is what keeps the build on schedule." },
+      { q: "Can an office be renovated without stopping operations?", a: "Yes. The renovation is phased so teams keep working while sections of the floor are built out, typically moving people into temporary zones as each phase completes. It requires more coordination and adds some time, but it avoids the cost of temporary premises." },
+      { q: "Open plan or private offices: which is more productive?", a: "Neither wins universally. The productive answer is a hybrid: open areas for collaboration, enclosed rooms for focus work, and intermediate zones for calls and short meetings. The right ratio depends on how much of your work is deep focus versus coordination, which should be measured before the layout is drawn." },
+      { q: "Does an office renovation increase the property value?", a: "Yes. A well-designed office in good condition leases or sells faster and at a better price, which is why some landlords in Panama share the cost of tenant improvements or grant rent-free fit-out periods. Negotiate that contribution before signing the lease." }
+    ],
+    ctaTitle: "Your Office Should Work as Hard as Your Team",
+    ctaText: "Arte y Dimensiones has designed corporate workplaces across Panama since 1999, with more than 410,000 m2 built. Send us your floor plan and headcount and we will tell you what your space is costing you.",
+    ctaLink: "/en/contact",
+    ctaLabel: "Request an office assessment"
+  },
+  {
+    slug: "corporate-architecture-panama",
+    title: "Corporate Architecture in Panama: Where Multinationals Build Their Regional Headquarters and What It Costs",
+    metaDescription: "Corporate architecture in Panama for multinationals: where regional headquarters locate, what a corporate office costs per project size, timelines, and how to engage a Panamanian firm.",
+    targetKeyword: "corporate architecture Panama",
+    secondaryKeywords: ["regional headquarters Panama", "office design Panama", "workplace strategy", "Costa del Este office", "Panama Pacifico"],
+    category: "Corporate Architecture",
+    readTime: 11,
+    excerpt: "Panama is where companies base their Latin America headquarters. Corporate architecture is how that decision becomes a functioning building. Here is where multinationals locate, what it costs, and how long it takes.",
+    publishDate: "2026-04-10",
+    content: [
+      { type: "paragraph", text: "Corporate architecture in Panama is the discipline of designing a company's operating base so it does three jobs at once: house the team, express the brand to clients and recruits, and hold up for the next decade of growth. For a multinational standing up a regional headquarters here, it is also the point where a strategy decision made in another country becomes a physical building subject to Panamanian code." },
+      { type: "paragraph", text: "Panama is a regional headquarters market. Companies base their Latin America operations here for the geography, the dollarized economy and the multinational headquarters regime. That means a steady flow of corporate fit-outs where the client team sits in Miami, Madrid or Sao Paulo and the building sits here. Getting that arrangement right is a specific skill, and it is worth understanding before you sign anything." },
+      { type: "h2", text: "Where Multinationals Locate Offices in Panama" },
+      { type: "paragraph", text: "Two districts absorb most corporate demand, and they solve different problems." },
+      { type: "h3", text: "Costa del Este" },
+      { type: "paragraph", text: "A master-planned district on the eastern edge of Panama City, Panama. Modern towers, corporate campuses, banking and consumer multinationals, close to the airport corridor. This is the default for a regional headquarters that needs a client-facing address and executive floors. Build costs are at the top of the market, and so is the signal the address sends." },
+      { type: "h3", text: "Panama Pacifico" },
+      { type: "paragraph", text: "A special economic area on the former Howard air base, on the Pacific side of the Canal. Its profile is different: logistics, manufacturing, back office, shared services, regional distribution. Larger floor plates, land available, and a special regime designed to attract exactly this kind of operation. If the requirement is a shared services center or a distribution operation rather than an executive suite, this is usually the answer." },
+      { type: "h3", text: "The banking district and Santa Maria" },
+      { type: "paragraph", text: "The traditional financial corridor still holds professional services and banking. Santa Maria, where we designed the Santa Maria Business Park corporate campus, has become a credible alternative for companies that want a campus format rather than a floor in a tower." },
+      { type: "paragraph", text: "The right district is a function of what the office does, not of what looks impressive in a board deck. A shared services center of 200 people does not belong on an executive floor in a Costa del Este tower, and a regional CEO does not belong in a warehouse park." },
+      { type: "h2", text: "What Corporate Architecture Covers" },
+      { type: "paragraph", text: "Corporate architecture is not interior decoration at a larger budget. It is the design of a business environment that:" },
+      { type: "list", items: [
+        "Communicates the brand without a single word of signage",
+        "Helps you recruit and keep people in a competitive labor market",
+        "Makes an impression on clients and partners from the first step through the door",
+        "Supports how the team actually works, measured rather than assumed",
+        "Produces a return you can defend to a CFO"
+      ]},
+      { type: "h2", text: "The Five Elements of a Corporate Project" },
+      { type: "h3", text: "1. Brand expressed in material" },
+      { type: "paragraph", text: "The design should carry the company's identity through material, light and detail. A law firm reads as dark wood, leather and glass. A fintech reads as exposed concrete, color and open space. Both are correct. Neither is achieved by putting the logo on more walls." },
+      { type: "h3", text: "2. Zoning" },
+      { type: "list", items: [
+        "Public zone: reception, waiting, client meeting rooms",
+        "Work zone: individual stations, collaboration areas, focus space",
+        "Service zone: kitchen, break areas, restrooms, storage",
+        "Executive zone: private offices, boardroom"
+      ]},
+      { type: "paragraph", text: "The proportions come from how your company operates, not from a formula. A trading floor and a consulting office with 60% travel do not get the same ratios." },
+      { type: "h3", text: "3. Technology, designed in" },
+      { type: "list", items: [
+        "Robust network coverage in every area",
+        "Video conferencing built into meeting rooms, which is non-negotiable when your reporting line sits in another country",
+        "Intelligent lighting and climate control",
+        "Structured cabling sized for growth, so expansion does not mean construction"
+      ]},
+      { type: "paragraph", text: "This gets coordinated with IT during design, not bolted on after the ceiling closes." },
+      { type: "h3", text: "4. Efficiency" },
+      { type: "list", items: [
+        "Daylight maximized to cut electrical load and improve how the space feels",
+        "Durable materials that generate less waste over the life of the fit-out",
+        "Efficient HVAC, which in Panama's climate is the single largest operating line in the building",
+        "Green certification (LEED, EDGE) where it adds asset value or satisfies a global corporate mandate"
+      ]},
+      { type: "paragraph", text: "Many multinationals carry a global sustainability standard. Bring it to the first meeting. Retrofitting a certification requirement into a project already in construction is expensive and sometimes impossible." },
+      { type: "h3", text: "5. Flexibility" },
+      { type: "list", items: [
+        "Modular partitions that reconfigure without construction",
+        "Furniture that adapts to more than one use",
+        "Infrastructure sized for roughly double current capacity",
+        "A layout that can expand in phases"
+      ]},
+      { type: "h2", text: "Corporate Architecture Versus Interior Design" },
+      { type: "table", headers: ["Aspect", "Corporate architecture", "Interior design"], rows: [
+        ["Scope", "The full project, including structure", "Interior aesthetics"],
+        ["Permits", "Files and manages all approvals", "Not applicable"],
+        ["Engineering", "Coordinates structural, electrical, mechanical", "Not included"],
+        ["Brand", "Built into the architecture", "Applied as decoration"],
+        ["Investment", "Higher up front, higher return", "Lower, limited impact"]
+      ]},
+      { type: "paragraph", text: "Short answer: if the project involves structural change, relocation or new construction, you need an architect. If you are only refreshing furniture and finishes, an interior designer may be enough. Firms like ours cover both under one contract." },
+      { type: "h2", text: "What Corporate Architecture Costs in Panama" },
+      { type: "table", headers: ["Project size", "Estimated investment"], rows: [
+        ["Corporate office, 200 to 500 m2", "$100,000 - $400,000"],
+        ["Regional headquarters, 500 to 1,500 m2", "$400,000 - $1,500,000"],
+        ["Corporate building, 1,500+ m2", "$1,500,000+"]
+      ]},
+      { type: "paragraph", text: "These ranges include design, permits, construction and executive-level finishes. Design fees typically represent 8% to 15% of total project cost. That fraction determines the outcome of the other 85% to 92%." },
+      { type: "h2", text: "How a Multinational Engages a Panamanian Firm" },
+      { type: "paragraph", text: "Drawings filed for permit in Panama must be sealed by a locally licensed professional. A foreign design firm cannot file here on its own. In practice there are two workable structures:" },
+      { type: "list", items: [
+        "Full engagement. The Panamanian firm designs, coordinates engineering, permits and supervises construction. Simplest, and the right choice when there is no global design standard to honor.",
+        "Architect of record. Your global design standard comes in, and the local firm adapts it to Panamanian code, seals the drawings, files them, and runs the site. This is how most global brands do it."
+      ]},
+      { type: "paragraph", text: "In both cases, insist on three things in the contract: a named project lead who reports in English, a fixed reporting cadence with photo documentation, and clarity on who owns the permit risk. Distance is manageable. Ambiguity is not." },
+      { type: "h2", text: "Why Track Record Matters More Than Style" },
+      { type: "paragraph", text: "Corporate work in Panama is a delivery problem more than an aesthetic one. Arte y Dimensiones has practiced since 1999, with more than 150 projects and over 410,000 m2 built: the Santa Maria Business Park corporate campus, Brisas Capital at 11,950 m2 with a six-screen cinema, Boulevard Penonome at 23,500 m2, Industrias Correagua Phase 2 at 24,000 m2 of industrial space, and work for Cemento Chagres. Whatever firm you shortlist, ask for the equivalent list, and ask how many of those projects reached occupancy on the schedule that was promised at signing." },
+    ],
+    faq: [
+      { q: "Where do multinationals locate their offices in Panama?", a: "Most corporate demand concentrates in two districts: Costa del Este, a master-planned business district favored by regional headquarters, banking and consumer multinationals, and Panama Pacifico, a special economic area suited to logistics, manufacturing, shared services and back-office operations. The traditional banking corridor and the Santa Maria area also hold significant corporate space." },
+      { q: "How much does a corporate office cost to build in Panama?", a: "A 200 to 500 m2 corporate office typically costs $100,000 to $400,000. A 500 to 1,500 m2 regional headquarters runs $400,000 to $1,500,000, and a corporate building above 1,500 m2 starts at $1,500,000. Those figures include design, permits, construction and executive-level finishes, with design fees representing 8% to 15% of total cost." },
+      { q: "How long does a corporate architecture project take in Panama?", a: "A 300 m2 corporate office can be completed in 4 to 8 months including design and construction. A large regional headquarters takes 12 to 24 months. The design phase, typically 2 to 3 months, is where the decisions that govern the entire budget get made." },
+      { q: "Can a multinational headquartered abroad hire a Panamanian architecture firm?", a: "Yes, and it must. Construction drawings filed for permit in Panama have to be sealed by a locally licensed professional, so a foreign company either engages a Panamanian firm to design the project outright or retains one as architect of record to adapt its global design standard to local code, file permits and supervise construction." },
+      { q: "Can corporate architecture be done in a leased space?", a: "Yes. Most corporate offices in Panama operate from leased space and are fully transformed through fit-out. The key is negotiating the scope of permitted modifications with the landlord before signing, and asking for rent-free fit-out months or a landlord contribution toward the improvements, both of which are common in this market." },
+      { q: "What happens when the company outgrows the space?", a: "A properly designed corporate project plans for it from the start, with modular partitions, structured cabling and HVAC sized above current load, and a layout that can expand in phases. Growth then costs a reconfiguration rather than a relocation and a second permit cycle." }
+    ],
+    ctaTitle: "Building a Regional Headquarters in Panama?",
+    ctaText: "Arte y Dimensiones has designed corporate, commercial and industrial projects in Panama since 1999, with over 410,000 m2 built. We work with foreign companies as full designer or as architect of record for a global standard. Tell us the scope and we will tell you the cost and the schedule.",
+    ctaLink: "/en/contact",
+    ctaLabel: "Request a consultation"
+  }
+];
+
 export const getBlogBySlug = (slug: string) => {
   return blogPosts.find(post => post.slug === slug);
 };

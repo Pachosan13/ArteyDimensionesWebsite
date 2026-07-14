@@ -23,30 +23,56 @@
     <meta name="twitter:image" content="https://artedim.com/images/general/logoarteydim.jpg" />
     <link rel="canonical" href="https://artedim.com/" />
 
-    <!-- Organization + LocalBusiness Schema -->
+    <!-- Language alternates. The pre-render script rewrites this block per route. -->
+    <!-- seo:alternates:start -->
+    <link rel="alternate" hreflang="es" href="https://artedim.com/" />
+    <link rel="alternate" hreflang="en" href="https://artedim.com/en" />
+    <link rel="alternate" hreflang="x-default" href="https://artedim.com/" />
+    <!-- seo:alternates:end -->
+
+    <!--
+      Organization + LocalBusiness Schema.
+
+      `geo`, `streetAddress` and `addressCountry: PA` are load-bearing, not decoration:
+      in English, "Panama City" overwhelmingly resolves to Panama City, FLORIDA. These
+      properties are what tell a search or AI engine which Panama this firm is in.
+    -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["Organization", "LocalBusiness"],
       "@id": "https://artedim.com/#organization",
       "name": "Arte y Dimensiones",
-      "alternateName": "Arte y Dimensiones Arquitectos",
+      "alternateName": ["Arte y Dimensiones Arquitectos", "Arte y Dimensiones Architects"],
       "url": "https://artedim.com",
       "logo": "https://artedim.com/images/general/logoarteydim.jpg",
       "image": "https://artedim.com/images/general/logoarteydim.jpg",
-      "description": "Estudio de arquitectura especializado en diseño corporativo, comercial e institucional en Panamá. Más de 25 años de experiencia y 150+ proyectos completados.",
+      "description": "Estudio de arquitectura especializado en diseño corporativo, comercial e institucional en Panamá. Más de 26 años de experiencia, 150+ proyectos y 410,000+ m² diseñados.",
       "foundingDate": "1999",
       "telephone": "+507 263-2109",
       "email": "info@artedim.com",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Calle Alberto Navarro, Mandalay Apartments, Planta Baja",
         "addressLocality": "Ciudad de Panamá",
+        "addressRegion": "Panamá",
         "addressCountry": "PA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 8.9824,
+        "longitude": -79.5199
       },
       "areaServed": {
         "@type": "Country",
-        "name": "Panamá"
+        "name": "Panama",
+        "alternateName": "Panamá"
       },
+      "availableLanguage": [
+        { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
       "sameAs": [
         "https://www.instagram.com/artedimpty",
         "https://www.facebook.com/artedimpty"
@@ -56,11 +82,14 @@
         "value": 12
       },
       "knowsAbout": [
-        "Arquitectura Corporativa",
-        "Arquitectura Comercial",
+        "Corporate Architecture",
+        "Commercial Architecture",
+        "Industrial Architecture",
         "Space Planning",
-        "Diseño de Oficinas",
-        "Workplace Strategy"
+        "Office Design",
+        "Workplace Strategy",
+        "Arquitectura Corporativa",
+        "Arquitectura Comercial"
       ]
     }
     </script>
