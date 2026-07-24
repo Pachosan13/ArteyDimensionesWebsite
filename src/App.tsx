@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
+import HeroFlythrough from './components/HeroFlythrough';
 import ValuePillars from './components/ValuePillars';
 import AboutUsSection from './components/AboutUsSection';
 import InteractiveMap from './components/InteractiveMap';
@@ -43,7 +43,7 @@ const HomePage: React.FC = () => {
         keywords="arquitectura corporativa Panamá, diseño de espacios comerciales Panamá, arquitectura institucional Panamá, estudio arquitectura Panama"
         jsonLd={jsonLd}
       />
-      <Hero />
+      <HeroFlythrough />
       <ValuePillars />
       <AboutUsSection />
       <InteractiveMap />
