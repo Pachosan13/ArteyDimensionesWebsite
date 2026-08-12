@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import { useI18n } from "../i18n/LanguageProvider";
 
 const InteractiveMap: React.FC = () => {
-  const { t, path } = useI18n();
+  const { locale, t, path } = useI18n();
   const [open, setOpen] = useState(false);
 
   return (
     <section id="mapa-panama" className="bg-[#F5F5F5] py-16 lg:py-24" aria-label={t.map.sectionAria}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl bg-white shadow-2xl">
-          <div className="relative w-full aspect-[18/14]">
+          <div className="relative w-full aspect-video">
             <img
-              src="/images/portfolio/mapa-panama-flat.jpg"
+              src={`/images/portfolio/mapa-proyectos-galardonados-${locale}.png`}
               alt={t.map.imageAlt}
               className="absolute inset-0 h-full w-full object-contain"
               loading="lazy"
@@ -24,7 +24,7 @@ const InteractiveMap: React.FC = () => {
                 onClick={() => setOpen(true)}
                 aria-label={t.map.viewDetailsAria}
                 className="absolute bg-transparent border-none p-0"
-                style={{ left: "44%", top: "79%", width: "190px", height: "34px", cursor: "pointer" }}
+                style={{ left: "44%", top: "82%", width: "14%", height: "7%", cursor: "pointer" }}
               >
                 <span className="sr-only">{t.map.penonomeTitle}</span>
               </button>
