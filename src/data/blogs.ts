@@ -297,8 +297,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "arquitectura-corporativa-panama",
-    title: "Arquitectura Corporativa en Panama: Como un Espacio Bien Disenado Construye tu Marca y Aumenta tus Ventas",
-    metaDescription: "Descubre como la arquitectura corporativa en Panama transforma tu espacio en una herramienta de branding y ventas. Casos reales y estrategia de diseno para empresas.",
+    title: "Guía de Arquitectura Corporativa Panamá",
+    metaDescription: "Qué es la arquitectura corporativa en Panamá, qué incluye, cuánto cuesta y cómo tu espacio construye marca y ventas. Guía práctica para empresas.",
     targetKeyword: "arquitectura comercial",
     secondaryKeywords: ["arquitectura institucional", "diseno corporativo Panama", "arquitectura empresarial"],
     category: "Arquitectura Corporativa",
