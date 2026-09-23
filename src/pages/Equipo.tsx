@@ -82,7 +82,8 @@ const Equipo: React.FC = () => {
                 }}
                 aria-hidden="true"
               />
-              <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-10">
+              {/* Texto abajo, no al centro: centrado caía sobre la cara de quien está en el medio de la foto. */}
+              <div className="absolute inset-0 flex items-end justify-center px-6 sm:px-10 pb-8 md:pb-12">
                 <div className="text-center text-white max-w-4xl">
                   <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
                     {teamPage.heroPre} <span className="text-brand">{teamPage.heroHighlight}</span>
