@@ -3,7 +3,7 @@
     "slug": "terrazas-de-sabanitas",
     "title": "Terrazas de Sabanitas",
     "category": "Plaza Comercial",
-    "heroImage": "/images/portfolio/sabanitas.png",
+    "heroImage": "/images/portfolio/sabanitas.jpg",
     "roi": "+40% retención de arrendatarios",
     "description": "Terrazas de Sabanitas es una plaza comercial en Colón con 40 locales, incluyendo tres anclas y una franquicia de restaurantes. El diseño tipo colonial contemporáneo ofrece módulos en ‘U’, torre icónica, murales artísticos, fuente y áreas verdes. La planta alta alberga locales para oficinas y servicios. El proyecto prioriza la eficiencia energética con iluminación LED y utiliza materiales como adoquines, piedra y madera sintética. Las áreas técnicas están ocultas para preservar la estética. La paleta de colores incluye arena, chocolate y grises, brindando un ambiente moderno y acogedor para compras, entretenimiento y gastronomía.",
     "keywords": ["plaza comercial", "diseño arquitectónico", "retail", "Panamá", "Colón"],
@@ -30,7 +30,7 @@
     "slug": "santa-maria-business-park",
     "title": "Santa Maria Business Park",
     "category": "Desarrollo Corporativo",
-    "heroImage": "/images/portfolio/santamaria.png",
+    "heroImage": "/images/portfolio/santamaria.jpg",
     "roi": "+25% tráfico peatonal",
     "description": "Santa Maria Business Park es un complejo corporativo en el ‘Santa Maria Business District’, diseñado para promover la conectividad urbana y espacios verdes. El proyecto incluye varios edificios, permitiendo construcción por fases y vistas agradables, con oficinas para bancos y aseguradoras, así como empresas familiares y transnacionales. Los estacionamientos se ubican en cuatro sótanos, optimizando el área útil y el espacio público. En la planta baja hay locales comerciales para restaurantes y cafés. El diseño priorizó eficiencia energética, control de costos y sostenibilidad, incorporando sistemas de riego con agua freática, preparación para paneles solares y cargadores para autos eléctricos.",
     "keywords": ["oficinas", "arquitectura corporativa", "campus empresarial", "Panamá", "business park"],
@@ -56,7 +56,7 @@
     "slug": "boulevard-penonome",
     "title": "Boulevard Penonomé",
     "category": "Plaza Comercial",
-    "heroImage": "/images/portfolio/Boulevard.png",
+    "heroImage": "/images/portfolio/Boulevard.jpg",
     "roi": "+30% eficiencia operativa",
     "description": "Boulevard Penonomé es un centro comercial de diseño contemporáneo con toques industriales, ubicado en Penonomé, Coclé. Ofrece locales ancla, restaurantes y tiendas medianas y pequeñas, distribuidos en espacios amplios y plazas para eventos. El proyecto cuenta con estacionamientos cómodos, sótano, acceso desde la Carretera Panamericana y el Boulevard Norte, y utiliza una paleta de colores sobrios, piedra y madera en sus acabados. El mobiliario y paisajismo emplean materiales y plantas nativas. Con 340 metros de frente y 23,500 m² de área comercial, todos los locales están conectados por pasillos techados amplios.",
     "keywords": ["plaza comercial", "retail", "diseño de fachadas", "Panamá", "Penonomé"],
@@ -81,7 +81,7 @@
     "slug": "brisas-capital",
     "title": "Brisas Capital",
     "category": "Plaza Comercial",
-    "heroImage": "/images/portfolio/brisasste.png",
+    "heroImage": "/images/portfolio/brisasste.jpg",
     "roi": "+50% satisfacción de visitantes",
     "description": "Brisas Capital es un centro comercial ubicado en Brisas de Golf, San Miguelito, con 11,950 m² de locales comerciales de diversos tamaños, incluyendo tiendas ancla, cine de seis salas, restaurantes y áreas de entretenimiento. Su diseño contemporáneo prioriza áreas verdes y espacios públicos, como un parque con juegos infantiles y zonas para mascotas. Cuenta con 401 plazas de estacionamiento y dos accesos vehiculares. La arquitectura utiliza materiales modernos, colores neutros y plantas nativas. La eficiencia energética se logra mediante iluminación LED y techos con termopáneles, mientras que los servicios y equipamientos están estratégicamente ubicados para no interferir con la experiencia del usuario.",
     "keywords": ["retail", "centro comercial", "diseño arquitectónico", "Panamá", "Brisas del Golf"],
@@ -95,19 +95,19 @@
       "metaDescription": "Brisas Capital: an 11,950 m² shopping center in San Miguelito, Panama — 401 parking spaces, six-screen cinema, LED lighting. Shopping mall design in Panama."
     },
     "gallery": [
-      "/images/portfolio/Brisascapital/BCE-2.png",
-      "/images/portfolio/Brisascapital/BCE-3.png",
-      "/images/portfolio/Brisascapital/BCE-4.png",
-      "/images/portfolio/Brisascapital/BCE-7.png",
-      "/images/portfolio/Brisascapital/BCE-8.png",
-      "/images/portfolio/Brisascapital/BCE-10.png"
+      "/images/portfolio/Brisascapital/BCE-2.jpg",
+      "/images/portfolio/Brisascapital/BCE-3.jpg",
+      "/images/portfolio/Brisascapital/BCE-4.jpg",
+      "/images/portfolio/Brisascapital/BCE-7.jpg",
+      "/images/portfolio/Brisascapital/BCE-8.jpg",
+      "/images/portfolio/Brisascapital/BCE-10.jpg"
     ]
   },
   {
     "slug": "brisas-capital-este",
     "title": "Brisas Capital Este",
     "category": "Plaza Comercial",
-    "heroImage": "/images/portfolio/Brisascapital.png",
+    "heroImage": "/images/portfolio/Brisascapital.jpg",
     "roi": "+35% valorización inmobiliaria",
     "description": "Proyecto comercial en el sector este de Brisas del Golf con diseño sostenible, áreas verdes y accesos claros para una experiencia moderna. La integración de espacios abiertos, iluminación natural y materiales ecológicos crea un ambiente premium que aumenta el valor del desarrollo y atrae marcas de prestigio.",
     "keywords": ["retail", "plaza comercial", "sostenibilidad", "Panamá", "diseño verde"],
@@ -121,10 +121,10 @@
       "metaDescription": "Brisas Capital Este: a sustainable retail development in Brisas del Golf, Panama — green areas, natural light and clear access. Retail design in Panama."
     },
     "gallery": [
-      "/images/portfolio/BrisasCapitaldeleste/BCE-1.png",
-      "/images/portfolio/BrisasCapitaldeleste/BCE-5.png",
-      "/images/portfolio/BrisasCapitaldeleste/BCE-6.png",
-      "/images/portfolio/BrisasCapitaldeleste/BCE-9.png"
+      "/images/portfolio/BrisasCapitaldeleste/BCE-1.jpg",
+      "/images/portfolio/BrisasCapitaldeleste/BCE-5.jpg",
+      "/images/portfolio/BrisasCapitaldeleste/BCE-6.jpg",
+      "/images/portfolio/BrisasCapitaldeleste/BCE-9.jpg"
     ]
   },
   {

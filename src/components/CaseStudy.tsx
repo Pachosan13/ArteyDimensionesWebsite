@@ -48,7 +48,7 @@ const CaseStudy: React.FC = () => {
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
-                src="/images/portfolio/business2.png"
+                src="/images/portfolio/business2.jpg"
                 alt={t.caseStudy.title}
                 className="w-full h-64 md:h-full object-cover"
                 loading="lazy"

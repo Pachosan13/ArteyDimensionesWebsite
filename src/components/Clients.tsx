@@ -26,7 +26,7 @@ const Clients: React.FC = () => {
   return (
     <section id="clientes" className="relative py-16 lg:py-24 overflow-hidden" aria-labelledby="clientes-title">
       <img
-        src="/images/portfolio/Boulevard.png"
+        src="/images/portfolio/Boulevard.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"

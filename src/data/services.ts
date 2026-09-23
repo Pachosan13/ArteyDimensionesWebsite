@@ -50,10 +50,10 @@ export const SERVICES = [
     ],
     imagen_hero: "/images/services/consultoria.png",
     imagenes_galeria: [
-      "/images/portfolio/sabanitas.png",
-      "/images/portfolio/santamaria.png",
-      "/images/portfolio/Boulevard.png",
-      "/images/portfolio/Brisascapital.png"
+      "/images/portfolio/sabanitas.jpg",
+      "/images/portfolio/santamaria.jpg",
+      "/images/portfolio/Boulevard.jpg",
+      "/images/portfolio/Brisascapital.jpg"
     ]
   },
   {
@@ -97,9 +97,9 @@ export const SERVICES = [
     ],
     imagen_hero: "/images/services/masterplanning.png",
     imagenes_galeria: [
-      "/images/portfolio/santamaria.png",
-      "/images/portfolio/Boulevard.png",
-      "/images/portfolio/business2.png",
+      "/images/portfolio/santamaria.jpg",
+      "/images/portfolio/Boulevard.jpg",
+      "/images/portfolio/business2.jpg",
       "/images/services/serviciosparallax.png"
     ]
   },
@@ -144,10 +144,10 @@ export const SERVICES = [
     ],
     imagen_hero: "/images/services/estudios.png",
     imagenes_galeria: [
-      "/images/portfolio/Brisascapital.png",
-      "/images/portfolio/brisasste.png",
-      "/images/portfolio/sabanitas.png",
-      "/images/portfolio/business2.png"
+      "/images/portfolio/Brisascapital.jpg",
+      "/images/portfolio/brisasste.jpg",
+      "/images/portfolio/sabanitas.jpg",
+      "/images/portfolio/business2.jpg"
     ]
   }
 ];
