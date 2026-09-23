@@ -105,7 +105,7 @@ export default function Nosotros() {
             <img
               src="/images/team/fotoequipo.jpg"
               alt={aboutPage.teamPhotoAlt}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[50%_20%]"
               loading="lazy"
             />
           </motion.div>

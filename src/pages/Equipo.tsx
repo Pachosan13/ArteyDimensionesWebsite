@@ -71,7 +71,7 @@ const Equipo: React.FC = () => {
               <img
                 src="/images/team/fotoequipo.jpg"
                 alt={teamPage.heroAlt}
-                className="w-full h-[52vh] md:h-[62vh] object-cover"
+                className="w-full h-[52vh] md:h-[62vh] object-cover object-[50%_20%]"
                 loading="lazy"
               />
               <div
