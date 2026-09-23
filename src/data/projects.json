@@ -157,14 +157,14 @@
     "title": "Cemento Chagres",
     "category": "Industrial",
     "heroImage": "/images/portfolio/Chagres/chagres-hero.jpg",
-    "roi": "85 estacionamientos",
+    "roi": "Buen diseño, mejor producción",
     "description": "Cemento Chagres se ubica estratégicamente en el Parque Industrial Las Américas, a la orilla de la Carretera Panamericana, en Pacora. Su diseño arquitectónico destaca por la integración de dos galeras funcionales y un edificio de oficinas para veinte personas, optimizando la distribución de espacios y la operación industrial. La zonificación incluye dos plazas de estacionamiento con 85 espacios. El edificio administrativo, independiente de las galeras, tiene su propia plaza, tinaquera y cuartos técnicos, garantizando eficiencia y seguridad. Galera 1 está destinada al ensacado y despacho de cemento, mientras que Galera 2 almacena clinker como materia prima para la fabricación del cemento. Áreas verdes y recorridos internos mejoran la circulación y el entorno.",
     "keywords": ["planta de cemento", "diseño industrial", "galera", "Pacora", "Panamá", "logística industrial"],
     "metaDescription": "Cemento Chagres: planta industrial con dos galeras funcionales y diseño logístico eficiente en Pacora, Panamá.",
     "en": {
       "title": "Cemento Chagres",
       "category": "Industrial",
-      "roi": "85 parking spaces",
+      "roi": "Good design, better production",
       "description": "Cemento Chagres is located in the Las Américas Industrial Park in Pacora, Panama, directly on the Pan-American Highway. The plan pairs two functional warehouses with a separate office building for twenty staff, keeping administrative work clear of plant operations. Warehouse 1 handles cement bagging and dispatch; Warehouse 2 stores clinker, the raw material for cement production. Zoning splits parking into two lots totaling 85 spaces. The administrative building stands independent of the warehouses, with its own plaza, water storage and technical rooms. Green areas and internal circulation routes organize movement across the site.",
       "keywords": ["industrial architecture Panama", "warehouse design Panama", "industrial building design", "logistics center Panama", "cement plant design"],
       "metaDescription": "Cemento Chagres: a cement plant in the Las Américas Industrial Park, Pacora, Panama — two warehouses, a 20-person office building and 85 parking spaces."
@@ -175,6 +175,34 @@
       "/images/portfolio/Chagres/chagres3.jpg",
       "/images/portfolio/Chagres/chagres4.jpg",
       "/images/portfolio/Chagres/chagres5.jpg"
+    ]
+  },
+  {
+    "slug": "viva-plaza-los-pueblos",
+    "title": "Viva Plaza Los Pueblos",
+    "category": "Plaza Comercial",
+    "heroImage": "/images/portfolio/VivaPlaza/vivaplaza-hero.jpg",
+    "roi": "13,000 m² de área vendible",
+    "description": "Viva Plaza Los Pueblos es un centro comercial que cuenta con 13,000 m² de área vendible, con dos tiendas anclas y una oferta diversa de locales pequeños para restaurantes y servicios. Dispone de un área de juegos para niños y una plaza pequeña para eventos, además de más de 350 estacionamientos para clientes y dos áreas de carga y descarga. Toda la iluminación de los estacionamientos es solar y el techo está completamente cubierto de paneles solares para el aprovechamiento de energía. Los recorridos peatonales están rodeados de zonas verdes que elevan la experiencia del visitante.",
+    "keywords": ["centro comercial", "plaza comercial", "paneles solares", "diseño arquitectónico", "Panamá", "Los Pueblos"],
+    "metaDescription": "Viva Plaza Los Pueblos: centro comercial de 13,000 m² con dos tiendas ancla, más de 350 estacionamientos y techo solar en Panamá.",
+    "en": {
+      "title": "Viva Plaza Los Pueblos",
+      "category": "Retail Plaza",
+      "roi": "13,000 m² sellable area",
+      "description": "Viva Plaza Los Pueblos is a shopping center in Panama with 13,000 m² of sellable area: two anchor stores and a varied mix of smaller units for restaurants and services. It includes a children's play area, a small plaza for events, more than 350 customer parking spaces and two loading and unloading areas. All parking-lot lighting is solar, and the roof is fully covered with solar panels to harvest energy on site. Pedestrian routes run through landscaped green areas that raise the quality of the visit.",
+      "keywords": ["retail design Panama", "shopping mall design Panama", "commercial architecture Panama", "solar shopping center", "anchor retail Panama"],
+      "metaDescription": "Viva Plaza Los Pueblos: a 13,000 m² shopping center in Panama with two anchor stores, 350+ parking spaces and a fully solar roof. Retail design in Panama."
+    },
+    "gallery": [
+      "/images/portfolio/VivaPlaza/vivaplaza1.jpg",
+      "/images/portfolio/VivaPlaza/vivaplaza2.jpg",
+      "/images/portfolio/VivaPlaza/vivaplaza3.jpg",
+      "/images/portfolio/VivaPlaza/vivaplaza4.jpg",
+      "/images/portfolio/VivaPlaza/vivaplaza5.jpg",
+      "/images/portfolio/VivaPlaza/vivaplaza6.jpg",
+      "/images/portfolio/VivaPlaza/vivaplaza7.jpg",
+      "/images/portfolio/VivaPlaza/vivaplaza8.jpg"
     ]
   }
 ]
