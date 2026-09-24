@@ -67,7 +67,7 @@ const TeamMemberPage: React.FC = () => {
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-[50%_10%]"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = PHOTO_FALLBACK;
                     }}
