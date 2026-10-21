@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import ProjectHero from "../components/ProjectHero";
 import ProjectInfo from "../components/ProjectInfo";
 import ProjectGallery from "../components/ProjectGallery";
+import ServiceFAQ from "../components/ServiceFAQ";
 import SEOHead from "../components/SEOHead";
 import { useI18n } from "../i18n/LanguageProvider";
 import { getProject, localizeProject } from "../i18n/data";
@@ -25,6 +26,7 @@ export default function ProjectPage() {
       <ProjectHero title={project.title} category={project.category} image={project.heroImage} />
       <ProjectInfo description={project.description} />
       <ProjectGallery images={project.gallery} projectTitle={project.title} />
+      {project.faq && project.faq.length > 0 && <ServiceFAQ items={project.faq} />}
 
       <section className="py-14 md:py-20 bg-[#F5F5F5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

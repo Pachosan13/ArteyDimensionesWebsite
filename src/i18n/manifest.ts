@@ -262,6 +262,7 @@ export function buildRouteManifest(): RouteEntry[] {
           proj.keywords.join(", "),
           [
             projectSchema(proj, locale, url),
+            ...(proj.faq && proj.faq.length > 0 ? [faqSchema(proj.faq, locale)] : []),
             breadcrumbSchema(locale, [
               home,
               { name: sectionLabel(locale, "projects"), section: "home", url: `${absoluteUrl(buildPath("home", locale))}#portafolio` },

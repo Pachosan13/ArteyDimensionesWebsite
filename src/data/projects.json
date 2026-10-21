@@ -61,13 +61,27 @@
     "description": "Boulevard Penonomé es un centro comercial de diseño contemporáneo con toques industriales, ubicado en Penonomé, Coclé. Ofrece locales ancla, restaurantes y tiendas medianas y pequeñas, distribuidos en espacios amplios y plazas para eventos. El proyecto cuenta con estacionamientos cómodos, sótano, acceso desde la Carretera Panamericana y el Boulevard Norte, y utiliza una paleta de colores sobrios, piedra y madera en sus acabados. El mobiliario y paisajismo emplean materiales y plantas nativas. Con 340 metros de frente y 23,500 m² de área comercial, todos los locales están conectados por pasillos techados amplios.",
     "keywords": ["plaza comercial", "retail", "diseño de fachadas", "Panamá", "Penonomé"],
     "metaDescription": "Boulevard Penonomé: plaza comercial con circulación eficiente y fachadas de alto impacto en Panamá.",
+    "faq": [
+      {"q":"¿Dónde queda Boulevard Penonomé?","a":"En la ciudad de Penonomé, provincia de Coclé. La plaza tiene entrada por la Carretera Panamericana y otra por el Boulevard Norte, así que se llega desde cualquiera de las dos vías."},
+      {"q":"¿Qué tipo de locales tiene Boulevard Penonomé?","a":"Reúne tiendas ancla, restaurantes y comercios de formato mediano y pequeño. Entre los locales se dejaron plazas abiertas pensadas para hacer eventos."},
+      {"q":"¿Qué tamaño tiene Boulevard Penonomé?","a":"Suma 23,500 m² de área comercial y tiene un frente de 340 metros."},
+      {"q":"¿Boulevard Penonomé tiene estacionamiento?","a":"Sí. Tiene estacionamiento en superficie y en sótano. Desde ahí se recorre toda la plaza por pasillos amplios con techo que conectan cada local."},
+      {"q":"¿Quién diseñó Boulevard Penonomé?","a":"El diseño arquitectónico es de Arte y Dimensiones, firma de arquitectura comercial y corporativa con oficina en Ciudad de Panamá. Es un diseño contemporáneo con detalles industriales: colores sobrios, acabados en piedra y madera, y mobiliario y jardines hechos con materiales y plantas nativas."}
+    ],
     "en": {
       "title": "Boulevard Penonomé",
       "category": "Retail Plaza",
       "roi": "+30% operating efficiency",
       "description": "Boulevard Penonomé is a shopping center in Penonomé, Coclé, Panama, with a contemporary design and an industrial edge. The tenant mix runs from anchor stores and restaurants to mid-size and small-format retail, laid out around wide circulation and open plazas sized for events. It has 340 meters of frontage and 23,500 m² of commercial area, with every unit connected by wide covered walkways. Parking is surface plus a basement level, and the site is reached from both the Pan-American Highway and Boulevard Norte. Finishes use a restrained color palette with stone and wood; furniture and landscaping use native materials and native plant species.",
       "keywords": ["retail design Panama", "shopping mall design Panama", "commercial architecture Panama", "shopping center Penonomé", "anchor retail Coclé"],
-      "metaDescription": "Boulevard Penonomé: a 23,500 m² shopping center in Coclé, Panama, with 340 m of frontage, anchor tenants and covered walkways. Retail design in Panama."
+      "metaDescription": "Boulevard Penonomé: a 23,500 m² shopping center in Coclé, Panama, with 340 m of frontage, anchor tenants and covered walkways. Retail design in Panama.",
+      "faq": [
+        {"q":"Where is Boulevard Penonomé?","a":"In the town of Penonomé, in Coclé province, Panama. The center has one entrance from the Pan-American Highway and another from Boulevard Norte, so it can be reached from either road."},
+        {"q":"What kind of stores does Boulevard Penonomé have?","a":"It brings together anchor stores, restaurants, and mid-size and small-format shops. Open plazas between the units were planned so the center can host events."},
+        {"q":"How big is Boulevard Penonomé?","a":"It has 23,500 m² of commercial area and 340 meters of frontage."},
+        {"q":"Does Boulevard Penonomé have parking?","a":"Yes. There is surface parking and a basement level. From there, wide covered walkways link every unit in the center."},
+        {"q":"Who designed Boulevard Penonomé?","a":"The architectural design is by Arte y Dimensiones, a commercial and corporate architecture firm with its office in Panama City. The look is contemporary with an industrial edge: a restrained palette, stone and wood finishes, and furniture and landscaping built with native materials and plants."}
+      ]
     },
     "gallery": [
       "/images/portfolio/Penonome/Boulevardpenonome1.jpg",

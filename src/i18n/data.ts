@@ -53,6 +53,7 @@ interface ProjectEn {
   description: string;
   keywords: string[];
   metaDescription: string;
+  faq?: FAQ[];
 }
 
 export interface Project {
@@ -64,6 +65,7 @@ export interface Project {
   description: string;
   keywords: string[];
   metaDescription: string;
+  faq?: FAQ[];
   gallery: string[];
   en: ProjectEn;
 }
