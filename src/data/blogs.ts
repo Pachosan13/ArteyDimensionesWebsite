@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "diseno-locales-comerciales-panama",
-    title: "Diseno de Locales Comerciales en Panama",
+    title: "Diseno de Locales Comerciales en Panama: Cuanto Cuesta y Que Debes Exigirle a tu Arquitecto",
     metaDescription: "Conoce cuanto cuesta disenar un local comercial en Panama, que incluye el servicio de un arquitecto y que debes exigir para proteger tu inversion.",
     targetKeyword: "locales comerciales Panama",
     secondaryKeywords: ["diseno comercial Panama", "costo arquitecto Panama", "remodelacion local comercial"],
