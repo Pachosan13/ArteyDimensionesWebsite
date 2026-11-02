@@ -6,6 +6,8 @@ export interface BlogFAQ {
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Title corto solo para buscadores (<title>, og:title). El H1 visible sigue siendo `title`. */
+  seoTitle?: string;
   metaDescription: string;
   targetKeyword: string;
   secondaryKeywords: string[];
@@ -33,6 +35,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "arquitecto-comercial-panama",
     title: "Que Hace un Arquitecto Comercial en Panama y Por Que Tu Negocio lo Necesita",
+    seoTitle: "Arquitecto Comercial en Panama: Que Hace",
     metaDescription: "Descubre que hace un arquitecto comercial en Panama, como transforma tu negocio y por que contratar un estudio de arquitectura es la mejor inversion para tu empresa.",
     targetKeyword: "arquitecto Panama",
     secondaryKeywords: ["arquitecto corporativo", "estudio de arquitectura Panama", "arquitecto comercial Panama"],

@@ -283,7 +283,7 @@ export function buildRouteManifest(): RouteEntry[] {
         entry(
           path,
           locale,
-          post.title,
+          post.seoTitle ?? post.title,
           post.metaDescription,
           [post.targetKeyword, ...post.secondaryKeywords].join(", "),
           [
