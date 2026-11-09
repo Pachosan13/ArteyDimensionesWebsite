@@ -53,12 +53,15 @@ interface ProjectEn {
   description: string;
   keywords: string[];
   metaDescription: string;
+  seoTitle?: string;
   faq?: FAQ[];
 }
 
 export interface Project {
   slug: string;
   title: string;
+  /** `<title>` for search engines only; the visible heading keeps using `title`. */
+  seoTitle?: string;
   category: string;
   heroImage: string;
   roi: string;
@@ -90,7 +93,10 @@ export function localizeService(svc: Service, locale: Locale): LocalizedService 
 
 export function localizeProject(proj: Project, locale: Locale): LocalizedProject {
   const { en, ...rest } = proj;
-  return locale === DEFAULT_LOCALE ? rest : { ...rest, ...en };
+  if (locale === DEFAULT_LOCALE) return rest;
+  // The Spanish `seoTitle` must not leak into the English page.
+  const { seoTitle: _esSeoTitle, ...restNoSeo } = rest;
+  return { ...restNoSeo, ...en };
 }
 
 export function getService(canonicalSlug: string): Service | undefined {

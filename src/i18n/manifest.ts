@@ -257,7 +257,7 @@ export function buildRouteManifest(): RouteEntry[] {
         entry(
           path,
           locale,
-          proj.title,
+          proj.seoTitle ?? proj.title,
           proj.metaDescription,
           proj.keywords.join(", "),
           [
