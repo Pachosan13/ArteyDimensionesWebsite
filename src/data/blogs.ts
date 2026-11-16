@@ -702,6 +702,7 @@ export const blogPostsEn: BlogPost[] = [
   {
     slug: "corporate-architecture-panama",
     title: "Corporate Architecture in Panama: Where Multinationals Build Their Regional Headquarters and What It Costs",
+    seoTitle: "Corporate Architecture in Panama: Costs",
     metaDescription: "Corporate architecture in Panama for multinationals: where regional headquarters locate, what a corporate office costs per project size, timelines, and how to engage a Panamanian firm.",
     targetKeyword: "corporate architecture Panama",
     secondaryKeywords: ["regional headquarters Panama", "office design Panama", "workplace strategy", "Costa del Este office", "Panama Pacifico"],
