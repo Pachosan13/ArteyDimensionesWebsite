@@ -408,6 +408,7 @@ export const blogPostsEn: BlogPost[] = [
   {
     slug: "commercial-architect-panama",
     title: "What a Commercial Architect in Panama Actually Does (And How Foreign Companies Hire One)",
+    seoTitle: "Commercial Architect in Panama: Fees",
     metaDescription: "A commercial architect in Panama designs revenue-generating space and manages municipal permitting through occupancy. Fees, timelines, and how foreign companies engage a Panamanian firm.",
     targetKeyword: "commercial architect Panama",
     secondaryKeywords: ["architecture firm Panama", "architects in Panama", "commercial architecture Panama", "commercial building design Panama"],
